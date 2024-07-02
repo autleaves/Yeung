@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example</title>
+        <meta name="author" content="JKL" />
+        <meta name="description" content="A sample example" />
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+        <style type="text/css">
+            /* p ~ a{
+                border: thin black solid;
+                padding: 4px;
+            } */
+            /* ::first-letter {
+                background-color: grey;
+                color: white;
+            } */
+            /* a:before {
+                content: "Click here to";
+            }
+            a::after {
+                content: "!";
+            } */
+            /* body {
+                counter-reset: paracount;
+            }
+            p::before {
+                content: counter(paracount) ". ";
+                counter-increment: paracount;
+            } */
+            /* :enabled {
+                border: thin black solid;
+                padding: 4px;
+            } */
+            /* :checked + span {
+                background-color: red;
+                color: white;
+                padding: 5px;
+                border: medium solid black;
+            } */
+            /* :default {
+                outline: medium solid red;
+            } */
+            /* :optional {
+                outline: medium solid red;
+            }
+            :required {
+                outline: medium solid green;
+            } */
+            /* :link {
+                border: thin black solid;
+                background-color: lightgray;
+                padding: 4px;
+                color: red;
+            }
+            :visited {
+                background-color: grey;
+                color: white;
+            } */
+            /* a:not([href*="apress"]) {
+                border: thin black solid;
+                padding: 4px;
+            } */
+            :target {
+                border: thin black solid;
+                padding: 4px;
+                color: red;
+            } 
+        </style>
+    </head>
+    <body>
+        <!-- <p>
+            Fourscore and seven years ago our fathers brought forth on this continet a new nation,conceived in liberty,
+            and dedicated to the proposition that all men are created equal.
+        </p> -->
+        <a lang="en-us" id="apressanchor" class="class1 class2" href="http://apress.com">Visit the Apress website</a>
+        <p id="mytarget">I like <span lang="en-gb" class="class2">apples</span> and oranges.</p>
+        <p>I also like <span>mangoes</span> and cherries.</p>
+        <a lang="en" id="w3canchor" href="http://w3c.org">Visit the W3C website</a>
+        <!-- <textarea> This is an enabled textarea</textarea>
+        <textarea disabled> This is a disabled textarea</textarea> -->
+        <!-- <a href="http://google.com">Visit Google</a> -->
+        <!-- <table id="mytable">
+            <tr><th>Name</th><th>City</th></tr>
+            <tr><td>Adam Freeman</td><td>London</td></tr>
+            <tr><td>Joe Smith</td><td>New York</td></tr>
+            <tr><td>Anne Jones</td><td>Pairs</td></tr>
+        </table>
+       <p>I like <span id="" lang="en-uk" class="class2">apples</span> and oranges.</p>
+        <table id="othertable">
+            <tr><th>Name</th><th>City</th></tr>
+            <tr><td>Peter Pererson</td><td>Boston</td></tr>
+            <tr><td>Chuck Fellows</td><td>Pairs</td></tr>
+            <tr><td>Jane Firth</td><td>Pairs</td></tr>
+        </table> -->
+        <!-- <form method="post" action="/form">
+            <p>
+                <label for="apples">Do you like apples:</label>
+                <input type="checkbox" id="apples" name="apples" />
+                <span>This will go red when checked</span>
+            </p>
+            <input type="submit" value="Submit" />
+        </form> -->
+        <!-- <form method="post" action="/form" >
+            <p>
+                <label for="name">Name: <input id="name" name="name" /></label>
+            </p>
+            <p>
+                <label for="city">City: <input disabled id="city" name="city" /></label>
+            </p>
+            <button type="submit">Submit Vote</button>
+            <button type="reset">Reset</button>
+        </form> -->
+        <!-- <form method="post" action="/form" >
+            <p>
+                <label for="price1">
+                    $ per unit in your area:
+                    <input type="number" min="0" max="100" required value="1" id="price1" name="price1" />
+                </label>
+                <label for="price2">
+                    $ per unit in your area:
+                    <input type="number" min="0" max="100" required value="1" id="price2" name="price2" />
+                </label>
+            </p>
+            <input type="submit" value="Submit">
+        </form> -->
+    </body>
+</html>

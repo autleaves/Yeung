@@ -1,0 +1,8 @@
+INDEX VERSION 1.134+/Users/yeung/Documents/Projects/Algorithms/.metadata/.plugins/org.eclipse.jdt.core
+1855550908.index
+2064801972.index
+4252405379.index
+1865797976.index
+912072642.index
+1176614365.index
+3306866449.index

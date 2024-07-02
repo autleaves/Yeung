@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Example</title>
+        <meta name="author" content="JKL" />
+        <meta name="description" content="A sample example" />
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+        <script defer src="chapter26.js"></script>
+        <style type="text/css">
+          /* p {border: medium double black;}
+          p.newclass {
+            background-color: grey;
+            color: white;
+          } */
+          table {
+            border: solid thin black;
+            border-collapse: collapse;
+            margin: 10px;
+          }
+          td {
+            padding: 4px 5px;
+          }
+        </style>
+        
+    </head>
+    <body>
+        <table border="1">
+            <thead><th>Fruit</th><th>Color</th></thead>
+            <tbody>
+            <tr id="">
+                <td>Banana</td><td>Yellow</td>
+            </tr>
+            <tr id="apple">
+                <td>Apple</td><td>Red/Green</td>
+            </tr>
+            </tbody>
+        </table>
+        <table border="1">
+            <thead><th>Fruit</th><th>Color</th></thead>
+            <tbody id="fruitsBody">
+            <tr id="">
+                <td>Plum</td><td>Purple</td>
+            </tr>
+            <tr id="targetrow">
+                <td colspan="2">This is the placeholder</td>
+            </tr>
+            </tbody>
+        </table>
+        <!-- <textarea rows="5" id="results"></textarea> -->
+        <p>
+        <button id="move">Move Row</button>
+        </p>
+        <script>
+            document.getElementById("move").onclick = function() {
+                var source = document.getElementById("apple");
+                var target = document.getElementById("targetrow");
+                target.innerHTML = source.innerHTML;
+                source.outerHTML = '<tr id="targetrow"><td colspan="2">' +
+                    'This is the placeholder</td>';
+            }
+           
+
+        </script>
+        <!-- <script>
+            debugger
+            var results = document.getElementById("results");
+            document.getElementById("toggle").onclick = toggleClass;
+
+            listClasses();
+            function listClasses() {
+                var classlist = document.getElementById("textblock").classList;
+                results.innerHTML = "Current classes: ";
+                for(var i = 0; i < classlist.length; i++) {
+                    results.innerHTML += classlist[i] + " ";
+                }
+            }
+            function toggleClass() {
+                document.getElementById("textblock").classList.toggle("newclass");
+                listClasses();
+            }
+        </script> -->
+    <!-- <script>
+        debugger
+        var results = document.getElementById("results");
+        var elem = document.getElementById("textblock");
+
+        results.innerHTML += "tag: " + elem.tagName + "\n";
+        results.innerHTML += "id: " + elem.id + "\n";
+        results.innerHTML += "dir: " + elem.dir + "\n";
+        results.innerHTML += "lang: " + elem.lang + "\n";
+        results.innerHTML += "hidden: " + elem.hidden + "\n";
+        results.innerHTML += "disabled: " + elem.disabled + "\n";
+        
+    </script> -->
+    </body>
+</html>
+
+<!-- <p id="textblock" dir="ltr"  class="fruit numbers" data-fruit="apple" data-sentiment="like">
+    There are lots of different kinks of fruit - there are over <b>500</b> varieties of banana alone.
+    By the time we add the countless types of apples, orange, and other well-know fruit, 
+    we are faced with thousand of choices.
+</p>
+<pre id="results"></pre>
+<button id="pressme">Press Me</button> -->
+
+<!-- 
+<script>
+   document.getElementById("ow").innerHTML = window.outerWidth;
+   document.getElementById("oh").innerHTML = document.defaultView.outerHeight;
+   document.getElementById("iw").innerHTML = document.defaultView.innerWidth;
+   document.getElementById("ih").innerHTML = document.defaultView.innerHeight;
+   document.getElementById("sw").innerHTML = document.defaultView.screen.width;
+   document.getElementById("sh").innerHTML = document.defaultView.screen.height;
+</script> -->
+<!-- <p id="first">
+    There are lots of different kinks of fruit - there are over 500 varieties of banana alone.
+    By the time we add the countless types of apples, orange, and other well-know fruit, 
+    we are faced with thousand of choices.
+    <img id="apple" src="images/apple.png" alt="small bananaa" />
+    One of the most interesting aspects of fruit is the varity available in each country.
+    I live near London, in an area which is known for its apples.
+    <img id="banana" src="images/banana-small.png" alt="small banana" />
+    When travelling in Asia, I was struck by how many different kinds of banana were available - 
+    many of which had unique flavours and which were only available within a small region.
+    And, of course, there are fruits which are truely unique - I am put in mind of the durian,
+    which is widely consumed in SE Asia and is known as the "king of fruits". The durian is 
+    largely unkown in Europe and the USA - if it is known at all, it is for the overwheling smell,
+        which is compared to a combination of almonds, rotten onions and gym socks.
+    </p> -->
+
+    <!-- // var results = document.getElementById("results");
+    // var elem = document.getElementById("textblock");
+
+    // document.getElementById("pressme").onclick = function() {
+    //     var textElem = elem.firstChild;
+    //     results.innerText = "The element has " + textElem.length + " chars\n";
+    //     textElem.replaceWholeText("This is a new string ");
+    // }
+
+    // for(var attr in elem.dataset) {
+    //     results.innerHTML += attr + "\n";
+    // }
+
+    // results.innerHTML = "Element has lang attribute: " +
+    //             elem.hasAttribute("lang") + "\n";
+    // results.innerHTML += "Adding lang attribute: " + 
+    //             elem.setAttribute("lang", "en-US");
+    // results.innerHTML += "Attr value is : " +
+    //             elem.getAttribute("lang") + "\n";
+    // results.innerHTML += "Set new value for lang Attribute\n";
+    // elem.setAttribute("lang", "en-UK");
+    // results.innerHTML += "Value of data-fruit: " + elem.dataset["fruit"]; -->
+
+    <!-- var tableBody = document.getElementById("fruitsBody");
+
+           document.getElementById("add").onclick = function() {
+            var row = tableBody.appendChild(document.createElement("tr"));
+            row.setAttribute("id", "newrow");
+            row.appendChild(document.createElement("td"))
+                .appendChild(document.createTextNode("Plum"));
+            row.appendChild(document.createElement("td"))
+                .appendChild(document.createTextNode("Purple"));
+           }
+
+           document.getElementById("remove").onclick = function() {
+            var row = document.getElementById("newrow");
+            row.parentNode.removeChild(row);
+           } -->

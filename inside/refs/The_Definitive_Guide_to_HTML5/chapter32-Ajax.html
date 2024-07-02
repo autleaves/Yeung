@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example</title>
+        <meta name="author" content="Yeung" />
+        <meta name="description" content="A simple example" />
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <div>
+            <button>Apples</button>
+            <button>Cherries</button>
+            <button>Bananas</button>
+        </div>
+        <div id="target">
+            Press a button
+        </div>
+        <script>
+            var buttons = document.getElementsByTagName("button");
+            for(var i=0; i<buttons.length; i++) {
+                buttons[i].onclick = handleButtonPress;
+            }
+
+            function handleButtonPress(e) {
+                var httpRequest = new XMLHttpRequest();
+               
+                httpRequest.open("GET","http://www.autleaves.org/apples.html");
+                httpRequest.send();
+                httpRequest.onreadystatechange = handleResponse;
+            }
+
+            function handleResponse(e) {
+                if(e.target.readyState == XMLHttpRequest.DONE &&
+                    e.target.status == 200) {
+                        document.getElementById("target").innerHTML = e.target.responseText;
+                    }
+            }
+        </script>
+    </body>
+</html>

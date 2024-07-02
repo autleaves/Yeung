@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example</title>
+        <meta name="author" content="JKL" />
+        <meta name="description" content="A sample example" />
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+        <script defer src="chapter26.js"></script>
+        <style type="text/css">
+            pre {
+                border: medium double black;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <pre id="results"></pre>
+        <p id="tblock">
+            There are lots of different kinks of fruit - there are over 500 varieties of 
+            <span id="banana">banana</span> alone.
+            By the time we add the countless types of <span id="apple">apples</span>, 
+            <span="orange">orange</span="orange">, and other well-know fruit, 
+            we are faced with thousand of choices.
+            One of the most interesting aspects of fruit is the varity available in each country.
+            I live near London, in an area which is known for its apples.
+        </p>
+        <script>
+            var resultsElement = document.getElementById("results");
+
+            var elems = document.getElementById("tblock").getElementsByTagName("span");
+            resultsElement.innerHTML += "There are " + elems.length + " span elements\n";
+
+            var elems2 = document.getElementById("tblock").querySelectorAll("span");
+            resultsElement.innerHTML += "There are " + elems2.length + " span elements(Mix)\n";
+
+            var selElems = document.querySelectorAll("#tblock > span");
+            resultsElement.innerHTML += "There are " + selElems.length + " span elements(CSS)\n";
+        </script>
+
+    </body>
+</html>
+
+
+
+
+<!-- <img id="lemon" class="fruits" name="apple" src="images/lemon.png" alt="lemon" />
+        <p id="fruittext">
+            There are lots of different kinks of fruit - there are over 500 varieties of banana alone.
+            By the time we add the countless types of apples, orange, and other well-know fruit, 
+            we are faced with thousand of choices.
+        </p>
+        <img id="apple" class="fruits images" name="apple" src="images/apple.png" alt="apple" />
+        <p id="apples">
+            One of the most interesting aspects of fruit is the varity available in each country.
+            I live near London, in an area which is known for its apples.
+        </p>
+        <img id="banana" src="images/banana-small.png" alt="small banana" /> -->
+<!-- <p id="cookiedata">
+
+        </p>
+        <button id="write" >Add Cookie</button>
+        <button id="update" >Update Cookie</button> -->
+
+        <!-- <script>
+            let cookieCount = 0;
+            document.getElementById("update").onclick = updateCookie;
+            document.getElementById("write").onclick = createCookie;
+            readCookies();
+            function readCookies() {
+                document.getElementById("cookiedata").innerHTML = document.cookie;
+            }
+            function createCookie() {
+                cookieCount++;
+                document.cookie = "Cookie_" + cookieCount + "=Value_" + cookieCount;
+                readCookies();
+            }
+            function updateCookie() {
+                document.cookie = "Cookie_" + cookieCount + "=Update_" + cookieCount;
+                readCookies();
+            }
+        </script> -->
+<!-- <p id="fruittext">
+    There are lots of different kinks of fruit - there are over 500 varieties of banana alone.
+    By the time we add the countless types of apples, orange, and other well-know fruit, 
+    we are faced with thousand of choices.
+    </p>
+    <button id="pressme">Press Me</button>
+    <p id="apples">
+        One of the most interesting aspects of fruit is the varity available in each country.
+        I live near London, in an area which is known for its apples.
+    </p>
+    <img id="banana" src="images/banana-small.png" alt="small banana" />
+    <script>
+      document.getElementById("pressme").onclick = function() {
+        document.location.hash = "banana";
+        // document.location.replace("http://apress.com");
+      }
+
+
+    </script> -->
+<!-- var images;
+if(document.querySelectorAll) {
+    images = document.querySelectorAll("#fruittext > img");
+} else {
+    images = document.getElementById("fruittext").getElementsByTagName("img");
+}
+for(var i=0; i<images.length; i++) {
+    images[i].style.border = "thick solid black";
+    images[i].style.padding = "4px";
+}
+document.writeln("<pre>URL: " + document.URL);
+var elems = document.getElementsByTagName("p");
+for(var i=0; i<elems.length; i++){
+    document.writeln("Element ID: " + elems[i].id);
+    elems[i].style.border = "medium double black";
+    elems[i].style.padding = "4px";
+}
+document.write("</pre>");
+
+document.writeln("<pre>");
+document.writeln("characterSet: " + document.characterSet);
+document.writeln("charset: " + document.charset);
+document.writeln("commpatMode: " + document.compatMode);
+document.writeln("defaultCharset: " + document.defaultCharset);
+document.writeln("dir:" + document.dir);
+document.writeln("domain: " + document.domain);
+document.writeln("lastModified: " + document.lastModified);
+document.writeln("referrer: " + document.referrer);
+document.writeln("title: " + document.title);
+document.writeln("</pre>");
+
+document.writeln("<pre>");
+document.writeln("protocol: " + document.location.protocol);
+document.writeln("host: " + document.location.host);
+document.writeln("hostname: " + document.location.hostname);
+document.writeln("port: " + document.location.port);
+document.writeln("pathname:" + document.location.pathname);
+document.writeln("search: " + document.location.search);
+document.writeln("hash: " + document.location.hash);
+document.writeln("</pre>"); -->

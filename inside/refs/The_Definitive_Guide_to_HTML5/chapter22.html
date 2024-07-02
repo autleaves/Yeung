@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example</title>
+        <meta name="author" content="JKL" />
+        <meta name="description" content="A sample example" />
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+        <style type="text/css">
+            @font-face {
+                font-family: 'MyFont';
+                font-style: normal;
+                font-weight: normal;
+                src: url('fonts/webfonts/julius-sans-one-v6-latin-regular.woff2');
+            }
+           h1 {
+            text-shadow: 0.5em 0.5em 5px lightgray;
+           }
+            #fruittext {
+                margin: 2px;
+                padding: 5px;
+                float: left;
+                border: medium double black;
+                background-color: lightgray;
+                font-family: MyFont, Courier, monospace;
+            }
+            /* span {
+                font-size: large;
+                border: medium solid black;
+            } */
+            #banana {
+                animation-duration:2500ms;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                animation-direction: alternate;
+                animation-name: 'GSH';
+            }
+            /* #apple {
+                animation-duration:500ms;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+                animation-direction: normal;
+                animation-name: 'GSH';
+            } */
+            /* #banana:hover {
+                animation-delay: 100ms;
+                animation-duration:250ms;
+                animation-iteration-count: 1;
+                animation-timing-function: linear;
+                animation-name: 'GSH';
+                animation-direction: alternate;
+            } */
+            @keyframes GSH {
+                from {
+                    font-size: large;
+                    border: medium solid black;
+                to {
+                    font-size: x-large;
+                    border: medium solid white;
+                    background-color: green;
+                    padding: 4px;
+                    color: white;
+                }
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+        <p id="fruittext">
+        There are lots of different kinks of fruit - there are over 500 varieties of 
+        <span id="banana">banana</span> alone.
+        By the time we add the countless types of <span id="apple">apples</span>, orange, and other well-know fruit, 
+        we are faced with thousand of choices.
+        </p>
+        <p>
+            <button>Running</button>
+            <button>Paused</button>
+        </p>
+        <script>
+            var buttons = document.getElementsByTagName("BUTTON");
+            for(var i=0; i<buttons.length; i++){
+                buttons[i].onclick = function(e) {
+                    document.getElementById("banana").style.webkitAnimationPlayState =
+                    e.target.innerHTML; };
+                    
+            }
+        </script>
+    </body>
+</html>
+<!-- One of the most interesting aspects of fruit is the varity available in each country.
+I live near London, in an area which is known for its apples.
+When travelling in Asia, I was struck by how many different kinds of banana were available - 
+many of which had unique flavours and which were only available within a small region.
+And, of course, there are fruits which are truely unique - I am put in mind of the durian,
+which is widely consumed in SE Asia and is known as the "king of fruits". The durian is 
+largely unkown in Europe and the USA - if it is known at all, it is for the overwheling smell,
+ which is compared to a combination of almonds, rotten onions and gym socks. -->

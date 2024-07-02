@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example</title>
+        <base href="http://www.yang.com:8080">
+        <meta name="author" content="Yang" />
+        <meta name="description" content="A sample example"/>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    </head>
+    <body>
+        <!-- <form target="_blank" method="post" action="/form">
+            <p><label for="fave">Fruit: <input autofocus id="fave" name="fave" /></label></p>
+            <p><label for="name">Name: <input disabled id="name" name="name" /></label></p>
+            <button>Submit Vote</button>
+        </form> -->
+        <!-- <form method="post" action="/form">
+            <input type="hidden" name="recordID" value="1234" />
+            <fieldset>
+                <legend>Enter Your Details</legend>
+                <p><label for="name">Name: <input  placeholder="Your name" id="name" name="name" /></label></p> -->
+                <!-- <p><label for="city">City: <input placeholder="Where you live" id="city" name="city" /></label></p> -->
+                <!-- <p><label for="passwd">Password: <input type="password" placeholder="Min 6 characters" id="passwd" name="passwd" /></label></p>
+            </fieldset> -->
+            <!-- <fieldset>
+                <legend>Vote For Your Three Favorite Fruits</legend>
+                <p><label for="fave1">#1: <input list="fruitlist" id="fave1" name="fave1" /></label></p>
+                <p><label for="fave2">#2: <input maxlength="10" id="fave2" name="fave2" /></label></p>
+                <p><label for="fave3">#1: <input id="fave3" name="fave3" /></label></p>
+            </fieldset> -->
+            <!-- <fieldset>
+                <legend>Vote for your favorite fruit</legend>
+                <label for="apples">
+                    <input type="radio" checked value="Apples" id="apples" name="fave" />Apples
+                </label>
+                <label for="oranges">
+                    <input type="radio" value="Oranges" id="oranges" name="fave" />Oranges
+                </label>
+                <label for="cherries">
+                    <input type="radio" value="Cherries" id="cherries" name="fave" />Cherries
+                </label>
+            </fieldset> -->
+            <!-- <p>
+                <label for="email">
+                    Email: <input type="email" placeholder="user@domain.com" id="email" name="email" />
+                </label>
+            </p>
+            <p>
+                <label for="tel">
+                    Tel: <input type="tel" placeholder="(XXX)-XXX-XXXX" id="tel" name="tel" />
+                </label>
+            </p>
+            <p>
+                <label for="url">
+                    Your homepage: <input type="url" id="url" name="url" />
+                </label>
+            </p> -->
+            <!-- <p>
+                <label for="lastbuy">
+                    When did you last buy: <input type="datetime" id="lastbuy" name="lastbut" />
+                </label>
+            </p>
+            <p>
+                <label for="color">
+                    Color: <input type="color" id="color" name="color" />
+                </label>
+            </p>
+            <p>
+                <label for="search">
+                    Search: <input type="search" id="search" name="search" />
+                </label>
+            </p> -->
+            <!-- <p> -->
+                <!-- <label for="price">
+                    $ per unit in your area: 1
+                    <input type="range" step="3" min="0" max="100" value="1" id="price" name="price" />100
+                </label> -->
+                <!-- <label for="veggie">
+                    Are you vegetarian: <input type="checkbox" required id="veggie" name="veggie" />
+
+                </label> -->
+            <!-- </p> -->
+            <!-- <p>
+                <input type="file" name="filedata" />
+            </p>
+            <p>
+                <label for="fave" style="vertical-align: top;">
+                    Favorite Fruit:
+                    <select id="fave" name="fave">
+                        <optgroup label="Top Choices">
+                            <option value="apples" label="Apples">Apples</option>
+                            <option value="oranges" label="Oranges">Oranges</option>
+                        </optgroup>
+                        <optgroup label="Others">
+                            <option value="cherries" label="Cherries">Cherries</option>
+                            <option value="pears" label="Pears">Pears</option>
+                        </optgroup>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <textarea cols="20" rows="5" wrap="hard" id="story" name="story">
+                    Tell us why this is your favorite fruit
+                </textarea>
+            </p> -->
+            
+            <!-- <button type="submit">Submit Vote</button>
+            <button type="reset">Reset</button>
+            <button type="button">Do <strong>NOT</strong> press this button</button> -->
+            <!-- <input type="image" src="/images/chiyuan-4by3.jpg" name="submit" value="Submit Vote" />
+        </form> -->
+        <form onsubmit="return false" oninput="res.value = quant.valueAsNumber * price.valueAsNumber">
+            <fieldset>
+                <legend>Price Calculator</legend>
+                <input type="number" placeholder="Quantity" id="quant" name="quant" /> x
+                <input type="number" placeholder="Price" id="price" name="price" /> = 
+                <output for="quant name" name="res" />
+            </fieldset>
+        </form>
+        <!-- <datalist id="fruitlist">
+            <option value="Apples" label="Lovely Apples" />
+            <option value="Oranges">Refreshing Oranges</option>
+            <option value="Cherries" />
+        </datalist> -->
+    </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Example</title>
+        <meta name="author" content="JKL" />
+        <meta name="description" content="A sample example" />
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+        <script defer src="chapter26.js"></script>
+        <style type="text/css">
+          
+        </style>
+        
+    </head>
+    <body>
+    <p id="msg"></p>
+    <p>
+    <button id="settime">Set Time</button>
+    <button id="cleartime">Clear Time</button>
+    <button id="setinterval">Set Interval</button>
+    <button id="clearinterval">Clear Interval</button>
+    </p>
+    <script>
+        debugger
+
+        var buttons = document.getElementsByTagName("button");
+        for(var i=0; i<buttons.length; i++){
+            buttons[i].onclick = handleButtonPress;
+        }
+        var timeID;
+        var intervalID;
+        var count = 0;
+
+        function handleButtonPress(e) {
+            if(e.target.id == "settime") {
+                timeID = window.setTimeout(function() {
+                    displayMsg("Timeout Expired");}, 5000);
+            displayMsg("Timeout Set");
+            } else if(e.target.id == "cleartime") {
+                window.clearTimeout(timeID);
+                displayMsg("Timeout Cleared");
+            } else if(e.target.id == "setinterval") {
+                intervalID = window.setInterval(function() {
+                    displayMsg("Interval expired. Counter: " + count++);
+                }, 2000);
+                displayMsg("Interval Set");
+            } else if(e.target.id == "clearinterval") {
+                window.clearInterval(intervalID);
+                displayMsg("Interval Cleared");
+            }
+        }
+        function displayMsg(msg) {
+            document.getElementById("msg").innerHTML = msg;
+        }
+    </script>
+    </body>
+</html>
+
+<!-- <table>
+    <tr>
+        <th>outerWidth:</th><td id="ow"></td><th>outerHeight:</th><td id="oh"></td>
+    </tr>
+    <tr>
+        <th>innerWidth:</th><td id="iw"></td><th>innerHeight:</th><td id="ih"></td>
+    </tr>
+    <tr>
+        <th>screen.width:</th><td id="sw"></td>
+        <th>screen.height:</th><td id="sh"></td>
+    </tr>
+</table>
+<script>
+   document.getElementById("ow").innerHTML = window.outerWidth;
+   document.getElementById("oh").innerHTML = document.defaultView.outerHeight;
+   document.getElementById("iw").innerHTML = document.defaultView.innerWidth;
+   document.getElementById("ih").innerHTML = document.defaultView.innerHeight;
+   document.getElementById("sw").innerHTML = document.defaultView.screen.width;
+   document.getElementById("sh").innerHTML = document.defaultView.screen.height;
+</script> -->
+<!-- <p id="first">
+    There are lots of different kinks of fruit - there are over 500 varieties of banana alone.
+    By the time we add the countless types of apples, orange, and other well-know fruit, 
+    we are faced with thousand of choices.
+    <img id="apple" src="images/apple.png" alt="small bananaa" />
+    One of the most interesting aspects of fruit is the varity available in each country.
+    I live near London, in an area which is known for its apples.
+    <img id="banana" src="images/banana-small.png" alt="small banana" />
+    When travelling in Asia, I was struck by how many different kinds of banana were available - 
+    many of which had unique flavours and which were only available within a small region.
+    And, of course, there are fruits which are truely unique - I am put in mind of the durian,
+    which is widely consumed in SE Asia and is known as the "king of fruits". The durian is 
+    largely unkown in Europe and the USA - if it is known at all, it is for the overwheling smell,
+        which is compared to a combination of almonds, rotten onions and gym socks.
+    </p> -->

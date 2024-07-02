@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdDraw"/>
+    <fullyQualifiedTypeName name="edu.princeton.cs.algs4.Stack"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="edu.princeton.cs.algs4.Quick"/>
+    <fullyQualifiedTypeName name="edu.princeton.cs.algs4.Heap"/>
+    <fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdRandom"/>
+    <fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
+    <fullyQualifiedTypeName name="edu.princeton.cs.algs4.In"/>
+    <fullyQualifiedTypeName name="yeung.algorithms.fundamental.Queue"/>
+    <fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdOut"/>
+    <fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdIn"/>
+</qualifiedTypeNameHistroy>

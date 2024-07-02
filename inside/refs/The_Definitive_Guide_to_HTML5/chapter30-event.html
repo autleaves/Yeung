@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example</title>
+        <meta name="author" content="Yeung" />
+        <meta name="description" content="A simple example" />
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+        <style>
+            p {
+                border: thin solid black;
+                background: gray;
+                color: white;
+                padding: 10px;
+                margin: 5px;
+            }
+            span {
+                background: white;
+                color: black;
+                padding: 2px;
+                cursor: default;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="block1">There are lots of different kinks of fruit - there are over 500 varieties of <span id="banana">banana</span> alone.By the time we add the countless types of apples, orange, and other well-know fruit, we are faced with thousand of choices.</p>
+        <script>
+            debugger
+            var banana = document.getElementById("banana");
+            var textblock = document.getElementById("block1");
+            banana.addEventListener("mouseover", handleMouseEvent);
+            banana.addEventListener("mouseout", handleMouseEvent);
+            textblock.addEventListener("mouseover", handleDescendantEvent, true);
+            textblock.addEventListener("mouseout", handleDescendantEvent, true);
+            textblock.addEventListener("mouseover", handleBubbleMouseEvent, false);
+            textblock.addEventListener("mouseout", handleBubbleMouseEvent, false);
+            function handleBubbleMouseEvent(e) {
+                if (e.type == "mouseover" && e.eventPhase == Event.BUBBLING_PHASE) {
+                    e.target.style.textTransform = "uppercase";
+                } else if(e.type == "mouseout" && e.eventPhase == Event.BUBBLING_PHASE) {
+                    e.target.style.textTransform = "none";}}
+            function handleDescendantEvent(e) {
+                if(e.type == "mouseover" && e.eventPhase == Event.CAPTURING_PHASE) {
+                    e.target.style.border = "thick solid red";
+                    e.currentTarget.style.border = "thick double black";
+                } else if(e.type == "mouseout" && e.eventPhase == Event.CAPTURING_PHASE){
+                    e.target.style.removeProperty("border");
+                    e.currentTarget.style.removeProperty("border");
+                }
+                // e.stopPropagation();
+            }
+            function handleMouseEvent(e) {
+                if(e.type == 'mouseover') {
+                    e.target.style.background = 'white';
+                    e.target.style.color = 'black';
+                } else {
+                    e.target.style.removeProperty("color")
+                    e.target.style.removeProperty("background");
+                }
+            }
+        </script>
+
+    </body>
+</html>
+<!-- <p id="block2">
+            One of the most interesting aspects of fruit is the varity available in each country.
+            I live near London, in an area which is known for its apples.
+        </p>
+        <button id="pressme">Press Me</button> -->
+
+<!--        var pElems = document.getElementsByTagName("p");
+            for(var i=0; i<pElems.length; i++) {
+                pElems[i].onmouseover = handleMouseEvent;
+                pElems[i].onmouseout = handleMouseEvent;
+            }
+            document.getElementById('pressme').onclick = function() {
+                document.getElementById('block2').removeEventListener('mouseout',
+                    handleMouseOut);
+            }
+
+            function handleMouseEvent(e) {
+                if(e.type == 'mouseover') {
+                    e.target.style.background = 'white';
+                    e.target.style.color = 'black';
+                } else {
+                    e.target.style.removeProperty("color")
+                    e.target.style.removeProperty("background");
+                }
+            } -->
