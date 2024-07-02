@@ -1,0 +1,68 @@
+/* CSS Document */
+.nav{
+	width:780px;
+	height:64px;
+	margin:0 auto;
+	background:url(../../images/rhm1_bg.gif) repeat-x;		
+}
+.nav-left{
+	background:url(../../images/rhm1_l.gif) no-repeat;
+	width:15px;
+	height:64px;
+	float:left;
+}
+.nav-right{
+	background:url(../../images/rhm1_r.gif) no-repeat;
+	width:15px;
+	height:64px;
+	float:right;
+}
+.nav-bg{
+	background:url(../../images/rhm1_bg.gif) repeat-x;
+	height:64px;
+}
+.nav-bg ul{
+	list-style:none;
+	margin:0 auto;
+}
+.nav-bg li{
+	float:left;
+	list-style:none;
+}
+.nav-bg li a span{
+	float:left;
+	display:block;
+	color:#ffe8cc;
+	text-decoration:none;
+	font:12px 'Lucida Sans', sans-serif;
+	font-weight:bold;
+	padding:0 32px 0 18px;
+	height:64px;
+	line-height:40px;
+	text-align:center;
+	cursor:pointer;	
+}
+.nav-bg li a{
+	float:left;
+	display:block;
+	padding:0 0 0 18px;
+}
+.nav-bg li.current a{
+	color:#fff;
+	background:url(../../images/rhm1_hover_l.gif) no-repeat left 5px;
+}
+.nav-bg li.current a span{
+	color:#fff;
+	background:url(../../images/rhm1_hover_r.gif) no-repeat right 5px;
+}
+.nav-bg li.current a:hover span{
+	color:#ffe8cc;
+}
+.nav-bg li a:hover{
+	color:#fff;
+	background:url(../../images/rhm1_hover_l.gif) no-repeat left 5px;
+}
+.nav-bg li a:hover span{
+	color:#fff;
+	background:url(../../images/rhm1_hover_r.gif) no-repeat right 5px;
+}

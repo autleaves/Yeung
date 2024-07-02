@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/viewproduct.do" location="405,195" dimension="292,84" />
+  <StrutsActivity path="/proxoolcheck.do" location="350,50" dimension="292,84" />
+  <StrutsActivity path="/product.jsp" location="50,150" dimension="112,48" />
+  <StrutsActivity path="/regist.jsp" location="50,450" dimension="106,48" />
+  <StrutsActivity path="" location="950,50" dimension="40,48" />
+  <StrutsActivity path="/secondlist.jsp" location="650,350" dimension="130,48" />
+  <StrutsActivity path="/viewproduct_.do" location="50,250" dimension="292,84" />
+  <StrutsActivity path="/category.do" location="950,150" dimension="100,60" />
+  <StrutsTransition id="/category.do,,,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="975,150" />
+      <AbsolutePoint location="975,98" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/category.do,null,/category_.do.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1000,210" />
+      <AbsolutePoint location="1000,350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/viewproduct.do,null,/viewproduct.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="551,195" />
+      <AbsolutePoint location="551,165" />
+      <AbsolutePoint location="742,165" />
+      <AbsolutePoint location="742,237" />
+      <AbsolutePoint location="697,237" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/category.do,secondlist$,/secondlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,165" />
+      <AbsolutePoint location="772,165" />
+      <AbsolutePoint location="772,350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/viewproduct_.do,product$,/product.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="147,250" />
+      <AbsolutePoint location="147,198" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/category_.do.do,null,/category_.do.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1012,350" />
+      <AbsolutePoint location="1012,-70" />
+      <AbsolutePoint location="1149,-70" />
+      <AbsolutePoint location="1149,386" />
+      <AbsolutePoint location="1074,386" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/category.do,null,/category.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1005,150" />
+      <AbsolutePoint location="1005,-100" />
+      <AbsolutePoint location="1125,-100" />
+      <AbsolutePoint location="1125,180" />
+      <AbsolutePoint location="1050,180" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/category.do,secondlist,/secondlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1000,210" />
+      <AbsolutePoint location="1000,374" />
+      <AbsolutePoint location="780,374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/category_.do.do,secondlist$,/secondlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,383" />
+      <AbsolutePoint location="780,383" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/viewproduct_.do,null,/viewproduct_.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="196,250" />
+      <AbsolutePoint location="196,213" />
+      <AbsolutePoint location="365,213" />
+      <AbsolutePoint location="365,294" />
+      <AbsolutePoint location="342,294" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/proxoolcheck.do,null,/proxoolcheck.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="496,50" />
+      <AbsolutePoint location="496,5" />
+      <AbsolutePoint location="892,5" />
+      <AbsolutePoint location="892,83" />
+      <AbsolutePoint location="642,83" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/category_.do.do,null,/category.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1012,350" />
+      <AbsolutePoint location="1012,210" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/category.do,secondlist,,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="975,150" />
+      <AbsolutePoint location="975,98" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id=",null,/category.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="970,98" />
+      <AbsolutePoint location="970,150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

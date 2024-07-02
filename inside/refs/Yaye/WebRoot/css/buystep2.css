@@ -1,0 +1,67 @@
+#buystep2_main {
+	margin-top: 20px;
+	margin-left: 70px;
+	border: 2px solid #FFF2DF;
+	padding: 10px;
+	width: 850px;
+}#buystep2_main h2 {
+	font-size: 14px;
+	font-weight: bold;
+}#buystep2_main h3 {
+	color: #9E9E9E;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}#buystep2_main p.addrs {
+	margin-left: 11px;
+	margin-bottom: 7px;
+	display: block;
+}
+#buystep2_main #addrs_wrapper {
+	margin-left: 35px;
+	margin-top: 20px;
+	width: 770px;
+}#buystep2_main #newAddr_form {
+	display: none;
+	border: 4px solid #FFF2CA;
+	padding-left: 7px;
+	padding-top: 3px;
+}#buystep2_main #span_close{
+	margin-top: 14px;
+	/*display: block;*/
+}
+#newAddr_form h4 {
+	margin-top: 15px;
+	margin-left: 10px;
+	margin-bottom: 15px;
+}
+#newAddr_form #adspa_spa1 {
+	margin-left: 67px;
+}#newAddr_form #adspa_spa2 {
+	margin-left: 30px;
+}#newAddr_form #adspa_spa3 {
+	margin-left: 18px;
+}#newAddr_form #adspa_spa4 {
+	margin-left: 60px;
+}#newAddr_form #adspa_spa5 {
+	margin-left: 60px;
+}
+#newAddr_form .hr {
+	height: 1px;
+	width: 700px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #E0E0E0;
+	margin-left: 10px;
+}
+#addrs_wrapper #btns {
+	margin-top: 30px;
+	margin-left: 200px;
+}
+
+#newAddr_form .adspa {;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	margin-left: 30px;
+}#newAddr_form .re_vip {
+	color: #FF0000;
+}

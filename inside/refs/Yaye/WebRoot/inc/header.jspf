@@ -1,0 +1,101 @@
+<%@ page pageEncoding="utf-8"%>
+
+<div id='preface_wrapper'>
+	<div id='preface_left'>
+		<img src='http://localhost:8077/Yaye/images/logo.jpg' alt='红玫瑰商城Logo' width='210' height='97' />
+	</div>
+	<div id='preface_right'>
+		<div id='right_up'>
+			<div id='three'>
+				<dl>
+					<dd class='thre'><a href='#'>购物车</a></dd>
+					<dd class='thre'><a href='#'>我的账户</a></dd>
+					<dd class='thre'><a href='#'>帮助</a></dd>
+				</dl>
+			</div>
+			<div id='logon'>
+				<%--一种方式是把该用户的个人信息存放在session中的一个userInfo属性中,然后在服务器端把这个地方显示的内容改变为这个用户的姓名--%>
+				<%--<span id="logonid"><%=userInfo.getUsername()%></span>&nbsp;|&nbsp;<a href='http://localhost:8077/Yaye/exitByListener.do'>安全退出</a>-->
+				<%--<span><%=userInfo.getUsername()%></span>&nbsp;|&nbsp;<a href='http://localhost:8077/Yaye/exit.do?id=<%=userInfo.getLogonid()%>'>安全退出</a>--%>
+				<%--另一种方式是服务器端向客户端浏览器发送一个cookie,这个cookie的值为这个用户的姓名,然后在客户端用js脚本改变这个地方的内容--%>
+				<a href='<%=SERVER%>/logon.html'>登陆</a>|<a href='<%=SERVER%>/regist.html'>注册</a>
+			</div>
+			<script type="text/javascript">
+				var cookies = document.cookie.split("; ");
+				for(var i=0; i<cookies.length; i++){
+					if(cookies[i].search('LOGONID')>-1){
+						var cookie = cookies[i].split("=");
+						if(cookie[0] == "LOGONID" || cookie[0].equals("LOGONID")){
+							document.getElementById("logon").innerHTML="<span>"+ cookie[1] +"</span>&nbsp;|&nbsp;<a href='<%=SERVER%>/exitByListener.do'>安全退出</a>";
+						}
+					}
+				}
+			</script>
+		</div>
+		<div style='clear:both'></div>
+		<div class='nav' id='navigator'>
+			<div class='nav-right'></div>
+			<div class='nav-left'></div>
+			<div class='nav-bg'>
+				<ul>
+					<li class='current'><a href='http://localhost:8077/Yaye/index.jsp'><span>Home</span></a></li>
+					<li><a href='#'><span>女性内衣</span></a></li>
+					<li><a href='#'><span>服饰</span></a></li>
+					<li><a href='#'><span>化妆品</span></a></li>
+					<li><a href='#'><span>数码</span></a></li>
+					<li><a href='#'><span>鲜花</span></a></li>
+					<li><a href='#'><span>时尚杂志</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div style='clear:both;'></div>
+<div id='searchbar'>
+	<div id='searchbar_wrapper'>
+		<div class='magnifier'>
+			<img src='http://localhost:8077/Yaye/images/seach_1.gif' width='24' height='31' alt=''/></div>
+		<div class='searchform'>
+			<select id='classification' name='type'>
+			  <option value='0'>所有商品</option>
+			  <option value='1'>电脑/网络/办公/耗材</option>
+			  <option value='2'>数码视听/相机/摄影摄像</option>
+			  <option value='3'>随身视听/家电</option>
+			  <option value='4'>手机/通讯设备/数字卡</option>
+			  <option value='5'>服装鞋帽/箱包/服饰配件</option>
+			  <option value='6'>珠宝/眼镜/手表</option>
+			  <option value='7'>健康美容</option>
+			  <option value='8'>家居日用/装饰/宠物</option>
+			  <option value='9'>礼品/鲜花</option>
+			  <option value='10'>文具/玩具/卡通/模型/游戏</option>
+			  <option value='11'>运动/户外/军品</option>
+			  <option value='13'>图书/报刊/杂志</option>
+			  <option value='17'>电影/电视/音乐/曲艺</option>
+			  <option value='5455'>教育/票务/生活服务</option>
+			  <option value='8924'>网游/彩票/通讯/邮箱/教育</option>
+			</select><input type='text' id='txtSearchWord' class='' /><input id='searchbutton' type='button' value='搜索' onClick='doSearch('http://mall.sina.com.cn/srh');'/>
+		</div><div class='searchkeywords'>
+			<img src='http://localhost:8077/Yaye/images/keywords.gif' width='67' height='13'/>
+			<span class='' id='keywords'><%--&nbsp;--%>
+				<a href='' target=_blank class='ti'>激情系列</a><%--&nbsp;--%>
+				<a href='' target=_blank class='ti'>MP4</a><%--&nbsp;--%>
+				<a href='' target=_blank class='ti'>睡衣</a><%--&nbsp;--%>
+				<a href='' target=_blank class='ti'>靴子</a><%--&nbsp;--%>
+				<a href='' target=_blank class='ti'>铂金</a><%--&nbsp;--%>
+				<a href='' target=_blank class='ti'>吊坠</a><%--&nbsp;--%>
+				<a href='' target=_blank class='ti'>保湿</a><%--&nbsp;--%>
+				<a href='' target=_blank class='ti'>诺基亚</a><%--&nbsp;--%>
+				<a href='' target=_blank class='ti'>秀发飘飞</a><%--&nbsp;--%>
+				<a href='' target=_blank class='ti'>美白</a><%--&nbsp;--%>
+				<a href='' target=_blank class='ti'>丝芙兰</a>
+			</span>
+		</div>
+	</div>
+</div>
+<%--
+id='classification'的标签select和id='txtSearchWord'的标签input以及class='searchkeywords'的标签div
+之间一定不要为了好看,而进行换行,一定要连着写,要不然,jsp翻译为servlet后,会加上一个'\r\n',
+这会在客户端产生相当于一个空格(&nbsp;)的效果,从而影响到正常的显示
+同理我的id='keywords'的标签span里的每个<a>标签原本结束后都有一个空格,但为了能在这里以换行的方式进行编写,
+我就不得不把原来的&nbsp;去掉,来达到和原来的一样的显示效果
+--%>

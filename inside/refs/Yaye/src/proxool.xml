@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<something-else-entirely>
+	<proxool>
+		<alias>proxool_pool</alias>
+		<driver-url>jdbc:oracle:thin:@127.0.0.1:1521:MYORACLE</driver-url>
+		<driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+		<driver-properties>
+			<property name="user" value="Yaye" />
+			<property name="password" value="yaye16673" />
+		</driver-properties>
+		<!-- -->
+		<jndi-name>datasource_oracle9i</jndi-name>
+		<jndi-java.naming.factory.initial>org.apache.naming.java.javaURLContextFactory</jndi-java.naming.factory.initial>
+		<jndi-java.naming.factory.url.pkgs>org.apache.naming</jndi-java.naming.factory.url.pkgs>
+		
+		<maximum-connection-count>30</maximum-connection-count>
+		<minimum-connection-count>10</minimum-connection-count>
+		<maximun-connection-lifetime>30</maximun-connection-lifetime>
+		<maximum-active-time>5</maximum-active-time>
+		<simultaneous-build-throttle>10</simultaneous-build-throttle>
+		<house-keeping-sleep-time>30000</house-keeping-sleep-time>
+		<house-keeping-test-sql>SELECT sysdate FROM dual</house-keeping-test-sql>
+		<prototype-count>0</prototype-count>
+	</proxool>
+</something-else-entirely>

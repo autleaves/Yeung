@@ -1,0 +1,21 @@
+#space_main #spamain_wrapper {
+	margin-right: auto;
+	margin-left: auto;
+	width: 950px;	
+}#snap_c1_c, #snap_c2_c {
+	width: 44px;
+	margin-left: 1px;
+}#snap_c1_r, #snap_c2_r {
+	margin-left: 25px;
+}
+#spamain_wrapper #spa_bottom {
+	/*background-image: url(../images/spring_10.jpg);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	height: 224px;*/
+}
+
+
+#space_main .spa_center_snap {
+	float: left;
+}

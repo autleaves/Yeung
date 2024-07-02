@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/categoryGuide.do" location="0,578" dimension="292,84" />
+  <StrutsActivity path="/categoryBrandsGuide.do" location="337,578" dimension="292,84" />
+  <StrutsActivity path="/brandsGuide.do" location="0,707" dimension="292,84" />
+  <StrutsActivity path="/manualEngineControlCenter.do" location="0,449" dimension="454,84" />
+  <StrutsActivity path="/manualEngineControlCenter.jsp" location="117,301" dimension="220,48" />
+  <StrutsActivity path="/index.jsp" location="650,150" dimension="100,48" />
+  <StrutsActivity path="/engine/index.jsp" location="650,250" dimension="142,48" />
+  <StrutsActivity path="$index;6" />
+  <StrutsTransition id="%index;6,null,/engine/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1003,222" />
+      <AbsolutePoint location="1003,274" />
+      <AbsolutePoint location="792,274" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="$index;6,null,/engine/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="721,274" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="index;6,null,/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="456,183" />
+      <AbsolutePoint location="650,183" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/manualEngineControlCenter.jsp,null,/manualEngineControlCenter.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="227,349" />
+      <AbsolutePoint location="227,449" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="%index;6,null,/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,183" />
+      <AbsolutePoint location="750,183" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

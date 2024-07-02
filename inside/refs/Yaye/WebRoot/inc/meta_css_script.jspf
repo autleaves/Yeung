@@ -1,0 +1,22 @@
+<%@ page language="java" pageEncoding="utf-8"%>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+
+<meta http-equiv="keywords" content="RedRose,电子商城,B2C电子商务,女性,女性内衣,时尚女性">
+
+<link rel="SHORTCUT ICON" href="images/myfavicon.ico" />
+<link href="<%=SERVER%>/css/special-css/global.css" rel="stylesheet" type="text/css"/>
+<link href="<%=SERVER%>/css/block-css/header.css" rel="stylesheet" type="text/css" />
+<link href="<%=SERVER%>/css/block-css/nav.css" rel="stylesheet" type="text/css" />
+<link href="<%=SERVER%>/css/block-css/footer.css" rel="stylesheet" type="text/css" />
+
+<!-- common javascript -->
+<script type="text/javascript" src="<%=SERVER%>/js/header_values/KeywordsValue.js"></script><!-- for header inc words-->
+<script type="text/javascript" src="<%=SERVER%>/js/header_values/SearchwordsValue.js"></script><!-- for header inc words -->
+<script type="text/javascript" src="<%=SERVER%>/js/header_values/NavwordsValue.js"></script><!-- for header inc words -->
+<script type="text/javascript" src="<%=SERVER%>/js/common/header.js"></script><!-- for header write header -->
+<script type="text/javascript" src="<%=SERVER%>/js/common/footer.js"></script><!-- for footer -->
+<script type="text/javascript" src="<%=SERVER%>/js/common/Header_helper.js"></script><!-- for Fill words -->

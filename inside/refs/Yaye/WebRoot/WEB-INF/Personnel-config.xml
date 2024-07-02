@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <!-- ========== Form Bean Definitions =================================== -->
+  <form-beans >
+   <!-- %%%%% %%%%%% -->
+    <form-bean name="logonForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+      <form-property name="logonid" type="java.lang.String" /><!-- 登陆id -->
+      <form-property name="password" type="java.lang.String" /><!-- 密码 -->
+      <form-property name="validatecode" type="java.lang.String" /><!-- 验证码 -->
+    </form-bean>
+    <form-bean name="registForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+      <form-property name="logonid" type="java.lang.String" /><!-- 登陆id -->
+      <form-property name="password" type="java.lang.String" /><!-- 密码 -->
+      <form-property name="repasswd" type="java.lang.String" /><!-- 重复密码 -->
+      <form-property name="realname" type="java.lang.String" /><!-- 真实姓名 -->
+      <form-property name="birthday" type="java.lang.String" /><!-- 出生日期 -->
+      <form-property name="mobile" type="java.lang.String" /><!-- 移动电话 -->
+      <form-property name="tel" type="java.lang.String" /><!-- 固定电话 -->
+      <form-property name="idcard" type="java.lang.String" /><!-- 证件号码 -->
+      <form-property name="country" type="java.lang.String" /><!-- 国家 -->
+      <form-property name="province" type="java.lang.String" /><!-- 省份 -->
+      <form-property name="city" type="java.lang.String" /><!-- 城市 -->
+      <form-property name="selfaddress" type="java.lang.String" /><!-- 自己的详细地址 -->
+      <form-property name="safemail" type="java.lang.String" /><!-- 安全邮箱 -->
+      <form-property name="zipcode" type="java.lang.String" /><!-- 邮政编码 -->
+      <form-property name="validatecode" type="java.lang.String" /><!-- 验证码 -->
+    </form-bean>
+  </form-beans>
+
+  <global-exceptions />
+  
+  <!-- ========== Global Forward Definitions ============================== -->
+  
+  <global-forwards>
+  	<forward name="logon" path="/logon.html" />
+  	<forward name="logon$" path="/logon.jsp" />
+  	<forward name="regist" path="/regist.html" />
+  	<forward name="regist$" path="/regist.jsp" />
+  	<forward name="regist_succeed" path="/regist_succeed.html" />
+  </global-forwards>
+  
+  <!-- ========== Action Mapping Definitions ============================== -->
+  
+  <action-mappings >
+   <!-- %%%%%%personnel manager Action%%%%%% -->
+  	<!-- Logon Action -->
+    <action attribute="logonForm"
+      		input="/logon.jsp"
+			name="logonForm"
+			parameter="logon"
+			path="/logon"
+			scope="request"
+		    type="mil.yaye.yours.control.action.PersonnelAction"
+		    validate="true" />
+  	<!-- valcLogon Action -->
+    <action attribute="valcLogonForm"
+      		input="/logon.jsp"
+			name="logonForm"
+			parameter="valcLogon"
+			path="/valcLogon"
+			scope="request"
+		    type="mil.yaye.yours.control.action.PersonnelAction"
+		    validate="true" />
+   	<!-- Regist Token  --><!-- Preprocess Action -->
+  	<action input="/regist.jsp"
+  			path="/registpre"
+  			parameter="registToken"
+  			type="mil.yaye.yours.control.action.PreprocessAction" />
+    <!-- Regist Action -->
+    <action name="registForm"
+    		attribute="registForm"
+    		input="/regist.jsp"
+    		parameter="regist"
+    		path="/regist"
+    		scope="request"
+    		type="mil.yaye.yours.control.action.PersonnelAction"
+    		validate="false" />
+    
+  	<!-- Exit Action -->
+    <action input="/exit.do"
+    		parameter="exit"
+    		path="/exit"
+    		scope="request"
+    		type="mil.yaye.yours.control.action.PersonnelAction" />
+    <!-- Exit By Listener Action -->
+    <action input="/exitByListener.do"
+    		parameter="exitByListener"
+    		path="/exitByListener"
+    		scope="request"
+    		type="mil.yaye.yours.control.action.PersonnelAction" />
+    		
+   <!-- %%%%%% %%%%%% -->
+    <!--  -->
+    
+   <!-- %%%%% %%%%% -->
+    <!--  -->
+
+  </action-mappings>
+
+  <!-- =================== Message Resources Definitions ===================== -->
+
+  <!-- <message-resources parameter="mil.yaye.yours.conf.ApplicationResources" /> -->
+  
+  <!-- =================== Plug Ins Configuration ============================ -->
+</struts-config>
+

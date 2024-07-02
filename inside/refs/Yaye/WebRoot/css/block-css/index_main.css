@@ -1,0 +1,211 @@
+#main {
+	margin-top: 2px;
+}
+#main ._heading {
+	font-size: 14px;
+	color: #FFFFFF;
+	font-weight: bolder;
+}
+#main #main_top {
+	background-image: url(../../images/nav_bg.jpg);
+	background-repeat: repeat-x;
+	background-position: center center;
+	height: 35px;
+	color: #FFFFFF;
+}
+#main #main_left {
+	margin-left: 10px;
+	float: left;
+}
+#main_left ._spa {
+	height: 300px;
+	width: 225px;
+	border-top-width: 5px;
+	border-right-width: 3px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;
+	border-right-style: outset;
+	border-bottom-style: outset;
+	border-left-style: inset;
+	border-top-color: #777777;
+	border-top-style: outset;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	/*background-color: #E6E6E6;*/
+}
+#main_left ._spa_heading {
+	line-height: 27px;
+	background-image: url(../../images/spa_bg.jpg);
+	background-repeat: repeat-x;
+	background-position: center center;
+	text-indent: 15px;
+	height: 27px;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-weight: bolder;
+}
+
+#main_left ul {
+	padding-left: 25px;
+}
+#main_left ._spa li {
+	padding-top: 5px;
+}
+#main_left ._spa_content_name {
+	float: left;
+	width: 145px;
+}
+#main_left ._spa_content_price {
+	float: right;
+	margin-right: 7px;
+}
+#main_left ._spa_content_name a {
+	color: #0645FF;	
+}
+#main_left ._spa_content_name a:hover {
+	text-decoration: underline;	
+}
+#main_left ._spa_span {
+	font-weight: bold;
+	color: #FF0000;
+	padding-left: 20px;
+}
+#main_left #help_spa {
+	height: 190px;
+}
+#main_left #help_spa table {
+	border: 1px dotted #D9D9D9;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+#main #main_right {
+	float: right;
+	height: 470px;
+	width: 750px;
+	border: 3px groove #666666;
+}
+#main_right #main_catalog {
+	float: left;
+	width: 575px;
+}
+#main_right .catalogs_layer {
+}
+#main_right .catalogs_layer ._per_catalog {
+	float: left;
+	height: 215px;
+	width: 190px;
+	border-right-width: 1px;
+	border-right-style: dotted;
+	border-right-color: #999999;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #999999;
+}
+#main_catalog .catalogs_layer span {
+	line-height: 27px;
+	height: 27px;
+	width: 130px;
+	background-image: url(../../images/spa_bg.jpg);
+	background-repeat: repeat-x;
+	background-position: center center;
+	display: block;
+	text-indent: 10px;
+	margin-bottom: 7px;
+	border-right-width: 3px;
+	border-bottom-width: 3px;
+	border-right-style: outset;
+	border-bottom-style: outset;
+	border-right-color: #999999;
+	border-bottom-color: #999999;
+}
+#main_catalog .catalogs_layer span a {
+	font-size: 13px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+#main_catalog .catalogs_layer li {
+	margin-bottom: 5px;	
+}
+#main_catalog .catalogs_layer li a {
+	margin-left: 10px;
+	font-size: 13px;
+}
+#main_catalog .catalogs_layer li a:hover {
+	color: #FF0000;
+	text-decoration: underline;	
+}
+
+#main_right #catalog_heading {
+	background-image: url(../../images/spa_bg.jpg);
+	background-repeat: repeat-x;
+	background-position: center center;
+	text-indent: 15px;
+	height: 27px;
+	line-height: 27px;
+	border-bottom-width: 5px;
+	border-bottom-style: inset;
+	border-bottom-color: #666666;
+	border-top-width: 6px;
+	border-top-style: outset;
+	border-top-color: #666666;
+	border-left-width: 2px;
+	border-left-style: outset;
+	border-left-color: #666666;
+}
+#main_right #brands {
+	width: 170px;
+	float: right;
+	height: 458px;
+	border-top-width: 5px;
+	border-bottom-width: 5px;
+	border-left-width: 5px;
+	border-top-style: groove;
+	border-bottom-style: outset;
+	border-left-style: groove;
+	border-top-color: #BF0000;
+	border-bottom-color: #BF0000;
+	border-left-color: #BF0000;
+	/*margin-top: 1px;*/
+	margin-bottom: 1px;
+}
+#main_right ._brands_heading {
+	line-height: 27px;
+	background-image: url(../../images/spa_bg.jpg);
+	background-repeat: repeat-x;
+	background-position: center center;
+	text-indent: 10px;
+	height: 27px;
+	margin-top: 1px;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-weight: bolder;
+}
+#main_right ._brands_heading .goMore {
+	color: #FFFFFF;
+	margin-left: 65px;
+	font-size: 13px;
+	text-decoration: underline;
+}
+#main_right ._brands_heading a:hover {
+	color: #FF0000;
+}
+#main_right #brands li {
+	background-image: url(../../images/brand_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	line-height: 25px;
+	height: 25px;
+	text-indent: 20px;
+	
+	margin-left: 5px;
+	
+}
+#main_right #brands li a {
+	font-size: 12px;
+	font-weight: bolder;
+	/*color: #BD0000;*/
+}
+

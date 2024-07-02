@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <!-- ========== Form Bean Definitions =================================== -->
+  <form-beans >
+   <!-- %%%%% %%%%%% -->
+   
+  </form-beans>
+
+  <global-exceptions />
+  
+  <!-- ========== Global Forward Definitions ============================== -->
+  
+  <global-forwards />
+  
+  <!-- ========== Action Mapping Definitions ============================== -->
+  
+  <action-mappings >
+   <!-- %%%%%% %%%%%% -->
+   	<!-- view product info -->
+    <action
+      input="/viewproduct.do"
+      parameter="viewproduct"
+      path="/viewproduct"
+      type="mil.yaye.yours.control.action.GuideAction">
+    </action>
+    <action
+      input="/viewproduct_.do"
+      parameter="viewproduct_"
+      path="/viewproduct_"
+      type="mil.yaye.yours.control.action.GuideAction">
+      <forward name="product$" path="/product.jsp" />
+    </action>
+    <action
+      input="/category.do"
+      parameter="categoryGuide_"
+      path="/category"
+      type="mil.yaye.yours.control.action.GuideAction" >
+      <forward name="secondlist$" path="/secondlist.jsp" />
+    </action>
+    <action
+      input="/proxoolcheck.do"
+      parameter="proxoolcheck"
+      path="/proxoolcheck"
+      type="mil.yaye.yours.control.action.GuideAction" />
+  	<!--   --><!--  -->
+  			
+   <!-- %%%%%% %%%%%% -->
+  	<!--  -->
+    <!--  -->
+    
+   <!-- %%%%% %%%%% -->
+    <!--  -->
+     
+
+  </action-mappings>
+
+  <!-- =================== Message Resources Definitions ===================== -->
+
+  <!-- <message-resources parameter="mil.yaye.yours.conf.ApplicationResources" /> -->
+  
+  <!-- =================== Plug Ins Configuration ============================ -->
+</struts-config>
+

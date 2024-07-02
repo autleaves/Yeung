@@ -1,0 +1,69 @@
+#gallery {
+	font:11px verdana,arial,sans-serif;
+	width:407px;
+	/*padding:15px 0 0 0;*/
+	margin-left: 91px;
+	/*line-height:15px;*/
+}#gallery div.off {
+	color:#000;
+	height:33px;
+	margin-right:2px;
+	line-height:33px;
+	padding:0 20px;
+	float:left;
+	background:url(../images/tabs_0.gif) repeat-x left bottom;
+	border:1px solid #ddd;
+	border-bottom-color:#000;
+	cursor:pointer;
+	position:relative;
+	z-index:20;
+}#gallery div.on {
+	color:#c00;
+	padding:0 20px;
+	margin-right:2px;
+	margin-top:1px;
+	float:left;
+	background:url(../images/tabs_2.gif) repeat-x left bottom;
+	cursor:pointer;
+	height:33px;
+	line-height:32px;
+	position:relative;
+	z-index:100;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #FFD2A6;
+	border-right-color: #FFD2A6;
+	border-left-color: #FFD2A6;
+}
+
+div.hide {
+	display:none;
+	width:0;
+	overflow:hidden;
+}
+div.show {
+	clear:left;
+	background:#fff;
+	width:447px;
+	margin-top:0;
+	top:-1px;
+	border:1px solid #FFD2A6;
+	padding:20px;
+	position:relative;
+	z-index:50;
+	font:11px verdana, arial, sans-serif;
+	text-align: center;
+	/*line-height:18px;*/
+}
+div.show image {
+	float: left;
+	margin:0px 10px 10px 0;
+}
+.clear {clear:both;}
+
+
+

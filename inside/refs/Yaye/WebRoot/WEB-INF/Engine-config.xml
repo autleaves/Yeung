@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "struts-config_1_2.dtd" >
+<struts-config>
+	<data-sources />
+	
+	<form-beans>
+		<form-bean name="manualEngineControlCenterForm" type="org.apache.struts.action.DynaActionForm">
+			
+		</form-bean>
+	</form-beans>
+	
+	<global-exceptions />
+	
+	<global-forwards>
+		<forward name="$index" path="/engine/index.jsp" />
+	</global-forwards>
+	
+	<action-mappings>
+		<!-- %%%%Guide Action%%%%  -->
+	    <action
+	      parameter="categoryGuide"
+	      path="/categoryGuide"
+	      type="mil.yaye.yours.control.action.GuideAction"
+	      validate="false" />
+	    <action
+	      parameter="categoryBrandsGuide"
+	      path="/categoryBrandsGuide"
+	      type="mil.yaye.yours.control.action.GuideAction"
+	      validate="false" />
+	    <action
+	      parameter="brandsGuide"
+	      path="/brandsGuide"
+	      type="mil.yaye.yours.control.action.GuideAction"
+	      validate="false" />
+	     
+	    <!-- ManualEngine手动引擎控制中心 -->
+	    <action
+	      attribute="manualEngineControlCenterForm"
+	      input="/manualEngineControlCenter.jsp"
+	      name="manualEngineControlCenterForm"
+	      parameter="method"
+	      path="/manualEngineControlCenter"
+	      scope="request"
+	      type="mil.yaye.yours.engine.control.action.ManualEngineControlCenterAction" />
+	</action-mappings>
+	
+</struts-config>

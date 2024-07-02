@@ -1,0 +1,68 @@
+﻿var provinces_zh=
+{'data':[
+	{esp:'d',value:'zh_410000',text:'北京市'},
+	{esp:'d',value:'zh_420000',text:'重庆市'},
+	{esp:'d',value:'zh_470000',text:'上海市'},
+	{esp:'n',value:'zh_430',text:'湖北省',refcitys:'citys_430_zh'},
+	{esp:'n',value:'zh_450',text:'湖南省'},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'n',value:'zh_',text:''},
+	{esp:'z',value:'zh_',text:''},
+	{esp:'z',value:'zh_',text:''},
+	{esp:'z',value:'zh_',text:''},
+	{esp:'z',value:'zh_',text:''},
+	{esp:'z',value:'zh_',text:''},
+	{esp:'z',value:'zh_',text:''}  ]
+};
+var provinces_en=
+{'data':[
+	{esp:'n',value:'en_',text:''},
+	{esp:'n',value:'en_',text:''},
+	{esp:'n',value:'en_',text:''},
+	{esp:'n',value:'en_',text:''},
+	{esp:'n',value:'en_',text:''},
+	{esp:'n',value:'en_',text:''},
+	{esp:'n',value:'en_',text:''},
+	{esp:'n',value:'en_',text:''},
+	{esp:'n',value:'en_',text:''}  ]
+};
+var provinces_jp=
+{'data':[
+	{esp:'n',value:'jp_',text:''},
+	{esp:'n',value:'jp_',text:''},
+	{esp:'n',value:'jp_',text:''},
+	{esp:'n',value:'jp_',text:''},
+	{esp:'n',value:'jp_',text:''},
+	{esp:'n',value:'jp_',text:''},
+	{esp:'n',value:'jp_',text:''},
+	{esp:'n',value:'jp_',text:''},
+	{esp:'n',value:'jp_',text:''}  ]
+};

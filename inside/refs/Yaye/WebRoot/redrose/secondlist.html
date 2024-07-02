@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="keywords" content="" />
+<title>二级导航页面</title>
+<link rel="SHORTCUT ICON" href="images/myfavicon.ico" />
+
+<link href="css/special-css/global.css" rel="stylesheet" type="text/css"/>
+<link href="css/block-css/header.css" rel="stylesheet" type="text/css" />
+<link href="css/block-css/nav.css" rel="stylesheet" type="text/css" />
+<link href="css/block-css/footer.css" rel="stylesheet" type="text/css" />
+<!--<link href="css/newindex.css" rel="stylesheet" type="text/css" />-->
+<link href="css/block-css/searchbox.css" rel="stylesheet" type="text/css" />
+<link href="css/block-css/paginatebar.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/header_values/KeywordsValue.js"></script>
+<script type="text/javascript" src="js/header_values/SearchwordsValue.js"></script>
+<script type="text/javascript" src="js/header_values/NavwordsValue.js"></script>
+<script type="text/javascript" src="js/common/header.js"></script>
+<script type="text/javascript" src="js/common/footer.js"></script>
+<script type="text/javascript" src="js/common/Header_helper.js"></script>
+<script type="text/javascript" src="js/utils/paginatebar.js"></script>
+
+<link href="css/secondlist.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="header">
+	<script type="text/javascript" language="javascript">writeheader();</script>
+	<script type="text/javascript" language="javascript">FillLogon();FillNavwords();FillSearchwords();FillKeywords();</script>
+</div>
+<div style="clear: both;"></div>
+<div id="search_statistic_result" class="">
+	RedRose商城在<span id="ser_sta_re_ca" class="ser_sta_result">&quot;所有&quot;</span>分类中查找<span id="ser_sta_re_ke" class="ser_sta_result">&quot;Converse&quot;</span>，为您找到相关结果<span id="ser_sta_re_nu" class="ser_sta_result">104</span>条
+</div>
+<div id="secn_main">
+	<div id="secn_left">
+		<div id="search_box">
+    	<img src="images/sear_up.jpg" width="242" height="7" />
+		<div id="seb_cont">
+	    	<img src="images/searpr_sosotops.gif" width="74" height="16" />
+			<p class="seb_p"><label>品&nbsp;&nbsp;&nbsp;&nbsp;牌：</label>
+			<select id="seb_brands" name="seb_brands">
+				<option value="">婷美康美婷</option>
+			</select></p>
+			<p class="seb_p"><label>类&nbsp;&nbsp;&nbsp;&nbsp;别：</label>
+			<select id="seb_category" name="seb_category">
+				<option value="">婷美康美婷</option>
+				<option value="">纤诗婷</option>
+			</select></p>
+			<p class="seb_p"><label>关&nbsp;键&nbsp;字：</label><input type="text" id="" name="" /></p>
+			<p class="seb_p"><label>价格范围：</label><input type="text" id="" name="" style="width: 53px;" /><span>&nbsp;~&nbsp;</span><input type="text" id="" name="" style="width: 53px;" /></p>
+			<p id="subprbtn"><a href=""><img src="images/sear_soso.gif" width="170" height="25" /></a></p>
+		</div>
+    	<img src="images/sear_down.jpg" width="242" height="8" />
+		</div>
+		<div id="searchbrands_box">
+		<img src="images/sear_up.jpg" width="242" height="7" />
+		<div id="sebbr_cont">
+	    	<img src="images/searbr_cytops.gif" width="135" height="16" />
+			<p class="seb_p"><label>请选择品牌：</label>
+			<select id="sebbr_brands" name="sebbr_brands">
+				<option value="">婷美康美婷</option>
+			</select></p>
+			<p class="seb_p"><label>您所在城市：</label>
+			<select id="sebbr_province" name="sebbr_province">
+				<option value="">请选择</option>
+				<option value=""></option>
+			</select>
+			<select id="sebbr_city" name="sebbr_city">
+				<option value="">请选择</option>
+				<option value=""></option>
+			</select></p>
+			<p id="subbrbtn"><a href=""><img src="images/sear_soso.gif" width="170" height="25" /></a></p>
+		</div>
+    	<img src="images/sear_down.jpg" width="242" height="8" />
+		</div>
+	</div>
+	<div id="secn_right_productslist">
+		<div id="list_head">
+			<img src="images/keywords_up7.jpg" width="700" height="4" />
+			<div class="display">
+				显示方式：
+				<img src="images/list_on.gif" alt="横列式图标" id="ChangeStyleImg01" title="横列式" onclick="changeProducView('bar')" height="15" width="18" />
+				<img src="images/block_off.gif" alt="分块式图标" id="ChangeStyleImg02" title="分块式" onclick="changeProducView('block')" height="15" width="18" />
+				<span class="fav">
+				<img src="images/mall_myf_ws.gif" alt="收藏目录图标" class="GoodsTopL01OTFimg" title="查看您的收藏目录" height="15" width="19" />
+				<a href="" target="_blank">查看您的收藏目录</a>
+				</span>
+			</div>
+			<div class="orderinfo">
+				排序方式：&nbsp;时间：
+				<img id="time1" onclick="changeOrder('t1')" src="images/ico_sortdescena.gif"  alt="按更新时间从近到远" height="15" width="18" />
+				<img id="time0" onclick="changeOrder('t0')" src="images/ico_sortascdis.gif" alt="按更新时间从远到近" height="15" width="18" />
+				价格：
+				<img id="price0" onclick="changeOrder('p0')" src="images/ico_sortascdis.gif"  alt="按商品价格从高到低" height="15" width="18" />
+				<img id="price1" onclick="changeOrder('p1')" src="images/ico_sortdescdis.gif" alt="按商品价格从低到高" border="0" height="15" width="18" />
+				
+				<span class="shownumber">
+					每页显示商品数量：
+					<input name="Img_ProductCount20" id="Img_ProductCount20" src="images/20-2.gif" type="image" />
+					<input name="Img_ProductCount40" id="Img_ProductCount40" src="images/40-1.gif" type="image" />
+					<input name="Img_ProductCount80" id="Img_ProductCount80" src="images/80-1.gif" type="image" />
+				</span>
+			</div>
+			<img src="images/keywords_down7.jpg" width="700" height="4" />
+		</div>
+		<div id="list_wrapper">
+			<div><img src="images/keywords_up7.jpg" width="700" height="4" /></div>
+			<div id="products">
+				<div class="goods">
+					<div class="goodscheckbox">
+						<input type="checkbox" class="" />
+					</div>
+					<div class="goodsimage">
+				    	<img src="images/products/secondlistimages/PD_2002542_S.jpg" width="85" height="63" />															
+					</div>
+					<div class="goodsinfo">
+						<p>商品名称：<a target="_blank" href="" onclick="javascript:BrowseredProduct.addProduct('1686295','〓形色中国〓韩版个性系带纳米帆布CONVERSE低帮休闲鞋★Q728黑色','/Product_1686295.htm','001/686/PD_1686295S.jpg',118.00);">〓形色中国〓韩版个性系带纳米帆布<span style="color: rgb(204, 0, 51);">CONVERSE</span>低帮休闲鞋★Q728黑色</a>
+                        </p>
+                        <p>详细信息：<span>货号：Q728、Q727颜色：黑色（如图）白色品牌：CONVERSE尺码：38、39、40、41、42、43材质：纳米帆布跟高：2cm</span></p>
+                        <p>更新时间：2008-04-18 20:33:00</p>
+
+					</div>
+					<div class="goodsbuy">
+						<p class="fBlack01">商城价：<span class="price">78.00-118.00元</span></p>
+                        <p><img src="images/mall_buybtn02_ws.gif" style="cursor: pointer;" alt="购买按钮" title="立即购买" onclick="AddProductToCart(1686295,?)" />
+                        </p>
+                        <p><span class="goodsfav"><a href=""><img src="images/mall_myf02_ws.gif" alt="收藏夹图标" title="收藏"></a></span>
+                            <a href="">收藏</a>
+                        </p>
+					</div>
+				</div>
+				<div style="clear: both;"></div>
+				<div class="goods">
+					<div class="goodscheckbox">
+						<input type="checkbox" class="" />
+					</div>
+					<div class="goodsimage">
+				    	<img src="images/products/secondlistimages/PD_2002580_S.jpg" width="85" height="63" />															
+					</div>
+					<div class="goodsinfo">
+						<p>商品名称：<a target="_blank" href="" onclick="javascript:BrowseredProduct.addProduct('1686295','〓形色中国〓韩版个性系带纳米帆布CONVERSE低帮休闲鞋★Q728黑色','/Product_1686295.htm','001/686/PD_1686295S.jpg',118.00);">  〓形色中国〓韩版个性系带纳米帆布<span style="color: #CC0033;">CONVERSE</span>低帮休闲鞋★Q727白色</a>
+                        </p>
+                        <p>详细信息：<span>货号：Q727、Q728颜色：白色（如图）黑色品牌：CONVERSE尺码：38、39、40、41、42、43材质：纳米帆布跟高：2cm</span></p>
+                        <p>更新时间：2008-04-18 20:33:00</p>
+
+					</div>
+					<div class="goodsbuy">
+						<p class="fBlack01">商城价：<span class="price">78.00-118.00元</span></p>
+                        <p><img src="images/mall_buybtn02_ws.gif" style="cursor: pointer;" alt="购买按钮" title="立即购买" onclick="AddProductToCart(1686295,?)" />
+                        </p>
+                        <p><span class="goodsfav"><a href=""><img src="images/mall_myf02_ws.gif" alt="收藏夹图标" title="收藏"></a></span>
+                            <a href="">收藏</a>
+                        </p>
+					</div>
+				</div>
+				<div style="clear: both;"></div>
+				<div class="goods">
+					<div class="goodscheckbox">
+						<input type="checkbox" class="" />
+					</div>
+					<div class="goodsimage">
+				    	<img src="images/products/secondlistimages/PD_2002542_S.jpg" width="85" height="63" />															
+					</div>
+					<div class="goodsinfo">
+						<p>商品名称：<a target="_blank" href="" onclick="javascript:BrowseredProduct.addProduct('1686295','〓形色中国〓韩版个性系带纳米帆布CONVERSE低帮休闲鞋★Q728黑色','/Product_1686295.htm','001/686/PD_1686295S.jpg',118.00);">〓形色中国〓韩版个性系带纳米帆布<span style="color: #CC0033;">CONVERSE</span>低帮休闲鞋★Q728黑色</a>
+                        </p>
+                        <p>详细信息：<span>货号：Q728、Q727颜色：黑色（如图）白色品牌：CONVERSE尺码：38、39、40、41、42、43材质：纳米帆布跟高：2cm</span></p>
+                        <p>更新时间：2008-04-18 20:33:00</p>
+
+					</div>
+					<div class="goodsbuy">
+						<p class="fBlack01">商城价：<span class="price">78.00-118.00元</span></p>
+                        <p><img src="images/mall_buybtn02_ws.gif" style="cursor: pointer;" alt="购买按钮" title="立即购买" onclick="AddProductToCart(1686295,?)" />
+                        </p>
+                        <p><span class="goodsfav"><a href=""><img src="images/mall_myf02_ws.gif" alt="收藏夹图标" title="收藏"></a></span>
+                            <a href="">收藏</a>
+                        </p>
+					</div>
+				</div>
+				<div style="clear: both;"></div>
+				<div class="goods">
+					<div class="goodscheckbox">
+						<input type="checkbox" class="" />
+					</div>
+					<div class="goodsimage">
+				    	<img src="images/products/secondlistimages/PD_2002580_S.jpg" width="85" height="63" />															
+					</div>
+					<div class="goodsinfo">
+						<p>商品名称：<a target="_blank" href="" onclick="javascript:BrowseredProduct.addProduct('1686295','〓形色中国〓韩版个性系带纳米帆布CONVERSE低帮休闲鞋★Q728黑色','/Product_1686295.htm','001/686/PD_1686295S.jpg',118.00);">  〓形色中国〓韩版个性系带纳米帆布<span style="color: #CC0033;;">CONVERSE</span>低帮休闲鞋★Q727白色</a>
+                        </p>
+                        <p>详细信息：<span>货号：Q727、Q728颜色：白色（如图）黑色品牌：CONVERSE尺码：38、39、40、41、42、43材质：纳米帆布跟高：2cm</span></p>
+                        <p>更新时间：2008-04-18 20:33:00</p>
+
+					</div>
+					<div class="goodsbuy">
+						<p class="fBlack01">商城价：<span class="price">78.00-118.00元</span></p>
+                        <p><img src="images/mall_buybtn02_ws.gif" style="cursor: pointer;" alt="购买按钮" title="立即购买" onclick="AddProductToCart(1686295,?)" />
+                        </p>
+                        <p><span class="goodsfav"><a href=""><img src="images/mall_myf02_ws.gif" alt="收藏夹图标" title="收藏"></a></span>
+                            <a href="">收藏</a>
+                        </p>
+					</div>
+				</div>
+				<div style="clear: both;"></div>
+				<div class="goods">
+					<div class="goodscheckbox">
+						<input type="checkbox" class="" />
+					</div>
+					<div class="goodsimage">
+				    	<img src="images/products/secondlistimages/PD_2002542_S.jpg" width="85" height="63" />															
+					</div>
+					<div class="goodsinfo">
+						<p>商品名称：<a target="_blank" href="" onclick="javascript:BrowseredProduct.addProduct('1686295','〓形色中国〓韩版个性系带纳米帆布CONVERSE低帮休闲鞋★Q728黑色','/Product_1686295.htm','001/686/PD_1686295S.jpg',118.00);">〓形色中国〓韩版个性系带纳米帆布<span style="color: #CC0033;">CONVERSE</span>低帮休闲鞋★Q728黑色</a>
+                        </p>
+                        <p>详细信息：<span>货号：Q728、Q727颜色：黑色（如图）白色品牌：CONVERSE尺码：38、39、40、41、42、43材质：纳米帆布跟高：2cm</span></p>
+                        <p>更新时间：2008-04-18 20:33:00</p>
+
+					</div>
+					<div class="goodsbuy">
+						<p class="fBlack01">商城价：<span class="price">78.00-118.00元</span></p>
+                        <p><img src="images/mall_buybtn02_ws.gif" style="cursor: pointer;" alt="购买按钮" title="立即购买" onclick="AddProductToCart(1686295,?)" />
+                        </p>
+                        <p><span class="goodsfav"><a href=""><img src="images/mall_myf02_ws.gif" alt="收藏夹图标" title="收藏"></a></span>
+                            <a href="">收藏</a>
+                        </p>
+					</div>
+				</div>
+				<div style="clear: both;"></div>
+				<div class="goods">
+					<div class="goodscheckbox">
+						<input type="checkbox" class="" />
+					</div>
+					<div class="goodsimage">
+				    	<img src="images/products/secondlistimages/PD_2002580_S.jpg" width="85" height="63" />															
+					</div>
+					<div class="goodsinfo">
+						<p>商品名称：<a target="_blank" href="" onclick="javascript:BrowseredProduct.addProduct('1686295','〓形色中国〓韩版个性系带纳米帆布CONVERSE低帮休闲鞋★Q728黑色','/Product_1686295.htm','001/686/PD_1686295S.jpg',118.00);">  〓形色中国〓韩版个性系带纳米帆布<span style="color: #CC0033;">CONVERSE</span>低帮休闲鞋★Q727白色</a>
+                        </p>
+                        <p>详细信息：<span>货号：Q727、Q728颜色：白色（如图）黑色品牌：CONVERSE尺码：38、39、40、41、42、43材质：纳米帆布跟高：2cm</span></p>
+                        <p>更新时间：2008-04-18 20:33:00</p>
+
+					</div>
+					<div class="goodsbuy">
+						<p class="fBlack01">商城价：<span class="price">78.00-118.00元</span></p>
+                        <p><img src="images/mall_buybtn02_ws.gif" style="cursor: pointer;" alt="购买按钮" title="立即购买" onclick="AddProductToCart(1686295,?)" />
+                        </p>
+                        <p><span class="goodsfav"><a href=""><img src="images/mall_myf02_ws.gif" alt="收藏夹图标" title="收藏"></a></span>
+                            <a href="">收藏</a>
+                        </p>
+					</div>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<!--CSS Green style pagination-->
+			<div id="paginatebar" class="scott">
+				<script type="text/javascript" language="javascript">
+					writepaginatebar();
+				</script>
+			</div>
+			<div><img src="images/keywords_down7.jpg" width="700" height="4" /></div>
+			</div>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+<div style="clear: both;"></div>
+<div id="footer">
+	<script type="text/javascript" language="javascript">writefooter();</script>
+</div>
+</body>
+</html>

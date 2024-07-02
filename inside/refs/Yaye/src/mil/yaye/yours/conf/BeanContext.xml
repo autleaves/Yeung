@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beanContext>
+	<!-- Hibernate DAO -->
+	<bean id="AddressDAO" class="mil.yaye.yours.model.impls.AddressDAOImpl" />
+	<bean id="UsersDAO" class="mil.yaye.yours.model.impls.UsersDAOImpl" />
+	<bean id="CategoryDAO" class="mil.yaye.yours.model.impls.CategoryDAOImpl" />
+	<bean id="ProductDAO" class="mil.yaye.yours.model.impls.ProductDAOImpl" />
+	<bean id="OrdersDAO" class="mil.yaye.yours.model.impls.OrdersDAOImpl" />
+	<bean id="OrderitemsDAO" class="mil.yaye.yours.model.impls.OrderitemsDAOImpl" />
+	<bean id="BonuspointDAO" class="mil.yaye.yours.model.impls.BonuspointDAOImpl" />
+	<bean id="WishlistDAO" class="mil.yaye.yours.model.impls.WishlistDAOImpl" />
+	<bean id="ProductcommentDAO" class="mil.yaye.yours.model.impls.ProductcommentDAOImpl" />
+	<!-- Provide JDBC connection -->
+	<!-- 这个不能运用Listener来初使化,因为它的初使化会用到context.lookup('proxool_oracle9i')这个数据源,
+		而数据源的建立并不是和Tomcat的启动时建立的,所以就会寻找不到这个JNDI名称 -->
+	<!-- <bean id="ProxoolJDBCconnection" class="mil.yaye.yours.model.jdbcDAO.ProxoolJDBCconnection" /> -->
+	<!-- JDBC DAO -->
+	<bean id="UsersJDBCDAO" class="mil.yaye.yours.model.jdbcDAO.UsersJDBCDAO"/>
+	
+	<!-- Service -->
+	<bean id="InitService" class="mil.yaye.yours.service.impls.InitServiceImpl" />
+	<bean id="GuideService" class="mil.yaye.yours.service.impls.GuideServiceImpl" />
+	<bean id="PersonnelService" class="mil.yaye.yours.service.impls.PersonnelServiceImpl" />
+	<bean id="TradeService" class="mil.yaye.yours.service.impls.TradeServiceImpl" />
+	<bean id="OthersService" class="mil.yaye.yours.service.impls.OthersServiceImpl" />
+</beanContext>

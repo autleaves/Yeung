@@ -1,0 +1,243 @@
+/*#regist_main_wrapper {
+	height: 800px;
+	width: 800px;
+	border: 1px solid #333333;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-left: auto;
+}*/
+
+/****注册页面regist.html及regist.jsp页面的CSS****/
+#regnav {
+	margin-left: 600px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}#regnav .rnav a {
+	color: #535353;
+}#regnav a:hover {
+	text-decoration:underline;
+}#regnav .rnav {
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #000000;
+	padding-right: 10px;
+}#regnav #rnlast {
+	border-right-width: 0px;
+}
+
+
+#regist_main {
+	width: 750px;
+	margin-right: auto;
+	margin-left: auto;
+	border: 8px solid #EBEBEB;
+}#regist_main .hrs {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #D8D8D8;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}#regist_main .re_left {
+	float: left;
+	width: 435px;
+	margin-top: 5px;
+}#regist_main .re_right {
+	float: right;
+	width: 300px;
+	background-color: #F6F6F6;
+	text-align: justify;
+	vertical-align: middle;
+	padding-right: 5px;
+	padding-left: 7px;		
+}#regist_main .re_vip {
+	color: #FF0000;
+}#regist_main .re_li_wr {
+	display: block;
+}#regist_main .re_lab_heading {
+	padding-left: 25px;
+	display: block;
+	padding-bottom: 5px;
+}#regist_main .dilis {
+	
+}#regist_main a {
+	color: #7C7C7C;
+}#regist_main a:hover {
+	text-decoration:underline;
+}
+
+
+#re_realnamespa #re_li_wr_re, #re_birthdayspa #re_li_wr_bi, #re_mobilespa #re_li_wr_mob, #re_telspa  #re_li_wr_tel, #re_zipcodespa #re_li_wr_zipc, #re_emailspa #re_li_wr_email {
+	padding-left: 63px;
+}#re_addrspa #re_li_wr_addr {
+	padding-left: 30px;
+}
+
+
+#regist_main #re_heading_wrapper {
+	margin-top: 15px;
+	margin-left: 10px;
+	background-image: url(../images/mcenter_arrow.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	text-indent: 15px;
+}#re_heading_wrapper #re_heading {
+	font-size: 14px;
+	line-height: 14px;
+}#re_heading_wrapper #restep {
+	font-size: 14px;
+	font-weight: bold;
+	color: #868686;
+	margin-left: 340px;
+}#re_heading_wrapper #restep_now {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FF0000;
+}
+
+
+#regist_main #re_logonspa {
+	/*height: 100px;*/
+}#re_logonspa .re_left #checklogonid {
+	margin-left: 230px;
+	margin-top: 7px;
+}#re_logonspa .re_left #re_li_wr_ni {
+	padding-left: 75px;
+}#re_logonspa #re_right_logonid {
+	height: 70px;
+	padding-top: 20px;
+}
+
+
+
+#re_passwdspa #re_li_wr_pw1, #re_passwdspa #re_li_wr_pw2, #re_passwdspa #re_li_wr_pw3 {
+	padding-top: 5px;
+	padding-left: 40px;
+}#re_passwdspa .passwd_hrs {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #EBEBEB;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}#re_passwdspa #re_right_password {
+	height: 80px;
+	padding-top: 40px;
+}
+
+
+#re_realnamespa #re_right_realname {
+	height: 40px;
+	padding-top: 20px;
+}
+
+
+#re_birthdayspa #re_right_birthday {
+	height: 26px;
+	padding-top: 10px;
+}
+
+
+#re_mobilespa #re_right_mobile {
+	height: 30px;
+	padding-top: 20px;
+}
+
+
+#re_telspa #re_right_tel {
+	height: 30px;
+	padding-top: 20px;
+}
+
+
+#re_idcardspa #re_li_wr_idc {
+	padding-left: 50px;
+}#re_idcardspa #re_right_idcard {
+	height: 26px;
+	padding-top: 10px;
+}
+
+
+#regist_main #re_addrspa {
+	margin-bottom: 10px;
+	margin-top: 5px;
+}#re_addrspa #re_li_wr_bi {
+	line-height: 24px;
+	height: 24px;
+}
+
+
+#re_zipcodespa #re_right_zipcode {
+	height: 26px;
+	padding-top: 10px;
+}
+
+
+#re_emailspa #re_right_email {
+	height: 26px;
+	padding-top: 10px;
+}
+
+
+#regist_main #re_validatecodespa {
+	margin-top: 10px;
+}#re_validatecodespa #re_li_wr_valc {
+	/*margin-bottom: 25px;*/
+}#re_validatecodespa #re_li_wr_valc, #regist_main #re_protocolspa {
+	padding-left: 25px;
+	margin-bottom: 25px;
+}
+
+
+#regist_main #re_submitButtonspa {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#regist_main .chk_error {
+	color: #FF0000;
+}
+
+#footer {
+	margin-top: 50px;
+	margin-bottom: 7px;
+}
+
+/****注册成功页面regist_succeed.html的CSS****/
+
+#res_info_succeed_spa {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 150px;
+	text-align: center;
+}
+#res_info_succeed_spa #info_succeed{
+	font-size: 26px;
+	font-weight: bold;
+	color: #FF0000;
+	margin-bottom: 20px;
+}
+#res_info_succeed_spa #res_redrose {
+	padding-left: 170px;
+	margin-bottom: 120px;
+	color: #FF0000;
+	font-weight: bold;
+}
+#res_info_succeed_spa h3 {
+	font-size: 22px;
+	font-weight: bold;
+	margin-bottom: 30px;
+	margin-left: 400px;
+}
+#res_info_succeed_spa h3 a {
+	color: #000000;
+	font-weight: bold;
+}
+#res_info_succeed_spa h3 a:hover, #res_info_succeed_spa h3 a:hover span {
+	color: #FF0000;
+	font-weight: bold;
+}
+#res_info_succeed_spa h3 a span{
+	font-size: 24px;
+	font-weight: bold;
+}

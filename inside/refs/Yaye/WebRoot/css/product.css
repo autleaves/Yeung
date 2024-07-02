@@ -1,0 +1,107 @@
+#curr_location {
+	line-height: 24px;
+	background-color: #F3F3F3;
+	height: 24px;
+	border: 1px solid #E3E3E3;
+	padding-left: 100px;
+	margin-top: 10px;
+}#curr_location a {
+	text-decoration: underline;
+}#curr_location a:hover {
+	color: #FF0000;
+}#curr_location #product_name_loc {
+	color: #A86500;
+}
+
+#product_info {
+	margin-top: 25px;
+	margin-left: 30px;	
+}.prod_thr {
+	float: left;
+}
+
+#product_info #prod_thr_le {
+	width: 190px;
+	margin-top: 25px;
+}#prod_thr_le li {
+	text-align: center;
+}
+#prod_thr_le #zoom_bt {
+	margin-top: 7px;
+}
+#prod_thr_le #product_image {
+	border: 3px solid #F0F0F0;
+}
+
+#product_info #prod_thr_ce {
+	width: 470px;
+	margin-left: 50px;
+}#product_name {
+	font-size: 16px;
+	font-weight: bold;
+	padding-bottom: 30px;
+}.prod_span_toblock{
+	display: block;
+	margin-top: 10px;
+	padding-bottom: 10px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #EEEEEE;
+}#product_market_price {
+	color: #DF6602;
+	font-family: Arial, Helvetica, sans-serif;
+}#price {
+	color: #DF6602;
+	font-size: 14px;
+}#product_our_price {
+	color: #F13D07;
+	font-size: 24px;
+	font-weight: bold;
+}#product_comment {
+	line-height: 20px;
+	height: 20px;
+}#product_comment #buy_a {
+	margin-left: 100px;
+}#product_description {
+	text-align: justify;
+	margin-left: 24px;
+	width: 370px;
+}
+
+#prod_thr_ri {
+	border-top-width: 1px;
+	border-right-width: 2px;
+	border-bottom-width: 1px;
+	border-left-width: 2px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #E0E0E0;
+	border-right-color: #E0E0E0;
+	border-bottom-color: #E0E0E0;
+	border-left-color: #E0E0E0;
+	height: 210px;
+	width: 190px;
+	text-align: center;
+	margin-left: 50px;
+}#prod_thr_ri li {
+	margin-top: 10px;	
+}#prod_thr_ri #thr_ri_hea {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FF0000;
+	margin-top: 5px;
+	display: block;
+}#prod_thr_ri #thr_ri_hea_2{
+	color: #A85C09;
+	display: block;
+	margin-top: 5px;
+	text-align: center;
+}
+
+#footer {
+	margin-top: 70px;
+}
+
+

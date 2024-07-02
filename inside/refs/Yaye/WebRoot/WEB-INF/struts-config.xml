@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <!-- ========== Form Bean Definitions =================================== -->
+  <form-beans >
+   <!-- %%%%%personnel form bean%%%%%% -->
+   
+  </form-beans>
+
+  <global-exceptions />
+  
+  <!-- ========== Global Forward Definitions ============================== -->
+  
+  <global-forwards>
+  	<forward name="index" path="/index.html" />
+  	<forward name="index$" path="/index.jsp" />
+  </global-forwards>
+  
+  <!-- ========== Action Mapping Definitions ============================== -->
+  
+  <action-mappings >
+   <!-- %%%%%%Token%%%%%% -->
+  			
+   <!-- %%%%%%personnel manager Action%%%%%% -->
+  	<!-- Login Action -->
+  	
+    <!-- Regist Action -->
+   <!-- %%%%%Utils Action%%%%% -->
+    <!-- Validatecode Action -->
+    <action
+      input="/valcode.do"
+      parameter="ValidateCode"
+      path="/valcode"
+      type="mil.yaye.yours.control.action.UtilsAction" />
+    
+    <!-- view product info -->
+    
+      
+
+  </action-mappings>
+
+  <controller
+  		contentType="text/html;charset=utf-8"
+  		locale="false"
+  		nocache="true"
+   />
+
+  <!-- =================== Message Resources Definitions ===================== -->
+
+  <message-resources parameter="mil.yaye.yours.conf.ApplicationResources" />
+  
+  <!-- =================== Plug Ins Configuration ============================ -->
+  <!-- struts-menu Plug-In -->
+  <!-- <plug-in className="net.sf.navigator.menu.MenuPlugIn">
+  	<set-property property="menuConfig" value="/WEB-INF/menu-config.xml"/>
+  </plug-in> -->
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+  	<set-property property="pathnames" value="/WEB-INF/validator-rules.xml,
+  											  /WEB-INF/validation.xml" />
+  </plug-in>
+</struts-config>
+

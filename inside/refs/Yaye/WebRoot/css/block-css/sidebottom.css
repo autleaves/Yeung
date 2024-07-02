@@ -1,0 +1,17 @@
+#content #friend_link {
+	border: 1px solid #B4CBED;
+	margin-top: 10px;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+}
+#friend_link h2 {
+	text-align: center;
+}
+#friend_link h2 span {
+	font-weight: bold;
+}
+#friend_link a {
+	text-align: center;
+	padding-right: 9px;
+}

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN" "validator_1_0.dtd" >
+<form-validation>
+	<global><!-- 配置全局常量表达式 -->
+		<constant>
+			<constant-name>phone</constant-name>
+			<constant-value></constant-value>
+		</constant>
+	</global>
+	<formset>
+		<form name="/logon">
+			<field property="logonid" depends="required">
+				<arg0 key="required.loginid"/>
+			</field>
+			<field property="password" depends="required">
+				<arg0 key="required.password"/>
+			</field>
+			<!-- 
+			<field property="validatecode" depends="required">
+				<msg name="required" key="${var:null}" resource="false"/>
+				<var>
+					<var-name>null</var-name>
+					<var-value>×验证码不能为空！</var-value>
+				</var>
+			</field> -->
+		</form>
+		<form name="/valcLogon">
+			<field property="logonid" depends="required">
+				<arg0 key="required.loginid"/>
+			</field>
+			<field property="password" depends="required">
+				<arg0 key="required.password"/>
+			</field>
+			<field property="validatecode" depends="required">
+				<arg0 key="required.validatecode"/>
+			</field>
+			<!-- 
+			<field property="validatecode" depends="required">
+				<msg name="vcRequired" key="${var:null}" resource="false"/>
+				<var>
+					<var-name>null</var-name>
+					<var-value>×验证码不能为空！</var-value>
+				</var>
+			</field> -->
+		</form>
+		<form name="/regist">
+			<field property="logonid" depends="required,minlength,maxlength"><!-- 登陆id -->
+				<arg0 key="regist.logonid"/>
+				<arg1 name="minlength" key="${var:minlength}" resource="false"/>
+					<var>
+						<var-name>minlength</var-name>
+						<var-value>4</var-value>
+					</var>
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+					<var>
+						<var-name>maxlength</var-name>
+						<var-value>16</var-value>
+					</var>
+			</field>
+			<field property="password" depends="required,minlength,maxlength"><!-- 密码 -->
+				<arg0 key="regist.password"/>
+				<arg1 name="minlength" key="${var:minlength}" resource="false"/>
+					<var>
+						<var-name>minlength</var-name>
+						<var-value>6</var-value>
+					</var>
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+					<var>
+						<var-name>maxlength</var-name>
+						<var-value>16</var-value>
+					</var>
+			</field>
+			<field property="repasswd" depends="required"><!-- 重复密码 -->
+				<arg0 key="regist.repasswd"/>
+			</field>
+			<field property="realname" depends="required"><!-- 真实姓名 -->
+				<arg0 key="regist.realname"/>
+			</field>
+			<field property="birthday" depends="required"><!-- 出生日期 -->
+				<arg0 key="regist.birthday"/>
+			</field>
+			<field property="mobile" depends="required"><!-- 移动电话 -->
+				<arg0 key="regist.mobile"/>
+			</field>
+			<field property="tel" depends="required"><!-- 固定电话 -->
+				<arg0 key="regist.tel"/>
+			</field>
+			<field property="idcard" depends="required"><!-- 证件号码 -->
+				<arg0 key="regist.idcard"/>
+			</field>
+			<field property="country" depends="required"><!-- 国家 -->
+				<arg0 key="regist.idcard"/>
+			</field>
+			<field property="province" depends="required"><!-- 省份 -->
+				<arg0 key="regist.province"/>
+			</field>
+			<field property="city" depends="required"><!-- 城市 -->
+				<arg0 key="regist.city"/>
+			</field>
+			<field property="selfaddress" depends="required"><!-- 自己的详细地址 -->
+				<arg0 key="regist.selfaddress"/>
+			</field>
+			<field property="safemail" depends="required"><!-- 安全邮箱 -->
+				<arg0 key="regist.safemail"/>
+			</field>
+			<field property="zipcode" depends="required"><!-- 邮政编码 -->
+				<arg0 key="regist.zipcode"/>
+			</field>
+			<field property="validatecode" depends="required"><!-- 验证码 -->
+				<arg0 key="regist.validatecode"/>
+			</field>
+		</form>
+	</formset>
+</form-validation>

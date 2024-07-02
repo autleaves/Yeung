@@ -1,0 +1,36 @@
+html {
+	overflow: hidden;
+}
+/*body {
+	position: absolute;
+	margin: 0px;
+	padding: 0px;
+	background: #111;
+	width: 500px;
+	height: 500px;
+}*/
+#screen {
+	position: absolute;
+	left: 5%;
+	top: 15%;
+	width: 450px;
+	height: 370px;
+	background: #000;
+}#screen img {
+	position: absolute;
+	cursor: pointer;
+	visibility: hidden;
+	width: 0px;
+	height: 0px;
+}#screen .tvover {
+	border: solid #876;
+	opacity: 1;
+	filter: alpha(opacity=100);
+}#screen .tvout {
+	border: solid #fff;
+	opacity: 0.7;
+}
+#bankImages {
+	display: none;
+}
+

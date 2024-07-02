@@ -1,0 +1,12 @@
+<%@ page language="java" session="true" pageEncoding="utf-8" import="java.util.*"%>
+<%@ page import="mil.yaye.yours.common.Constants"%>
+
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
+<%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib uri="http://java.sun.com/jsf/core" prefix="c"%>
+
+<%
+String SERVER = Constants.SERVER;
+%>

@@ -1,0 +1,32 @@
+<%@ page language="java" session="false" pageEncoding="utf-8" import="java.util.*"%>
+<%@ page import="mil.yaye.yours.common.Constants"%>
+
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
+<%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib uri="http://java.sun.com/jsf/core" prefix="c"%>
+
+<%
+String SERVER = Constants.SERVER;
+//String path = request.getContextPath();
+//String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+//HttpSession session = request.getSession(false);
+//if(session == null || session.getAttribute("USER_INFO") == null){
+//	out.print("<div style='height: 170px;'></div><center><h2>对不起,你还没有登陆,并没有和服务器开启一个会话,请你先登陆.....</h2></center><br /><br />");
+//	out.print("<center><h2>到达登陆页面&gt;&gt;&nbsp;...&gt;&gt;&nbsp;<a href='"+ GlobalNames.SERVER +"/logon.html'>登..陆</a></h2></center>");
+//	out.flush();
+//	out.close();
+//	return; 
+//	//虽然我在这里return了,以后的代码就不会再执行了,但是finally块里的代码是一定要执行的,它就还是会抛出一个java.io.IOException: Stream closed
+//}
+//UserVO userInfo = (UserVO) session.getAttribute("USER_BASE_INFO");
+//Cookie LOGONID = new Cookie("LOGONID", userInfo.getLogonid());
+//LOGONID.setMaxAge(-1);
+//response.addCookie(LOGONID);
+//因为已经有了一个名为'JSESSIONID'的Cookie,所以不用我再次发送一个这样的Cookie,即使我这里再生成一个同名的Cookie,也不会进行覆盖
+//Cookie cookie = new Cookie("JSESSIONID",session.getId());
+//cookie.setMaxAge(-1);
+//cookie.setComment("你已经开启一个会话...");
+//response.addCookie(cookie);
+%>

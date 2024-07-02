@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources-config>
+	<datasource name="">
+		<description></description>
+		<property name="driver" value="com.mysql.jdbc.Driver"/>  
+		<property name="url" value="jdbc:mysql://localhost/test"/>  
+		<property name="username" value="user"/>  
+		<property name="password" value="user"/>  
+	</datasource>
+	<datasource name="">
+		
+	</datasource>
+	<datasource name="">
+		
+	</datasource>
+	<datasource name="demo" connection="jdbc_connection">  
+		<description>数据源2</description>  
+		<connection name="jndi_connection" type="jndi">  
+			<description>JNDI 方式</description>  
+			<property name="driver" value="weblogic.jndi.WLInitialContextFactory"/>  
+			<property name="server" value="t3://127.0.0.1:7010"/>  
+			<property name="jndiname" value="jndi/name"/>  
+		</connection> 
+
+		<connection name="jdbc_connection" type="jdbc">  
+			<description>JDBC 方式</description>  
+			<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>  
+			<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:SidName"/>  
+			<property name="username" value="username"/>  
+			<property name="password" value="password"/>  
+		</connection>  
+ 
+		<connection name="pooled_jdbc" type="jdbc">  
+			<description>带连接池的 JDBC 方式</description>  
+			<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>  
+			<property name="url" value="jdbc:oracle:thin:@172.16.168.85:1521:ora9i01"/>  
+			<property name="username" value="username"/>  
+			<property name="password" value="password"/>  
+			<property name="usepool" value="true"/>  
+			<property name="poolsize" value="2"/>  
+		</connection>  
+	</datasource>  
+	
+</datasources-config>

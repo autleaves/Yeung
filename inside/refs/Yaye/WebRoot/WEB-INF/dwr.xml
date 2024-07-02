@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN" "dwr10.dtd" >
+<dwr>
+  <allow>
+    <create creator="new" javascript="RemoteBean" scope="application">
+      <param name="class" value="mil.yaye.yours.ajax.RemoteBean" />
+    </create>
+    <!-- 通过DWR把Java对象轮换成等价的JavaScrip对象 -->
+    <convert match="mil.yaye.yours.ajax.xxBean" converter="bean">
+    	<!-- 白名单include 黑名单exclude; value属性用来标明JavaBean中的可被客户端的javascrip 访问的属性-->
+      <param name="include" value=""/>
+    </convert>
+  </allow>
+</dwr>

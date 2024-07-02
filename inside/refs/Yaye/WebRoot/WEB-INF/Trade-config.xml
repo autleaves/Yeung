@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <!-- ========== Form Bean Definitions =================================== -->
+  <form-beans >
+    <form-bean name="addressForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="addr" type="java.lang.String" />
+      <form-property name="consignee" type="java.lang.String" /><!-- 收货人 -->
+      <form-property name="country" type="java.lang.String" />
+      <form-property name="province" type="java.lang.String" />
+      <form-property name="city" type="java.lang.String" />
+      <form-property name="selfaddr" type="java.lang.String" />
+      <form-property name="zipcode" type="java.lang.String" />
+      <form-property name="tel" type="java.lang.String" />
+      <form-property name="mobile" type="java.lang.String" />
+    </form-bean>
+   <!-- %%%%% %%%%%% -->
+   
+  </form-beans>
+
+  <global-exceptions />
+  
+  <!-- ========== Global Forward Definitions ============================== -->
+  
+  <global-forwards>
+  	<forward name="shopcartlist$" path="/shopcartlist.jsp" />
+  	<forward name="confirmAddr$" path="/confirmAddr.jsp" />
+  	<forward name="orderlist$" path="/orderlist.jsp" />
+  </global-forwards>
+  
+  <!-- ========== Action Mapping Definitions ============================== -->
+  
+  <action-mappings >
+   <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%购物所需的所有方法%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+  	<!-- 查看购物车  -->
+  	<action
+      parameter="viewshopcart"
+      path="/buy/myshopcart"
+      type="mil.yaye.yours.control.action.TradeAction" />		
+  	<!-- 返回用户地址列表,以供用户选择  -->
+  	<action
+      parameter="backAddrs"
+      path="/buy/backaddrs"
+      type="mil.yaye.yours.control.action.TradeAction" />		
+  	<!-- 确认收货人地址  -->
+  	<action
+      name="addressForm"
+  	  attribute="addressForm"
+      parameter="confirmAddr"
+      path="/buy/confirmaddr"
+      type="mil.yaye.yours.control.action.TradeAction" />	
+  	<!--  最后确认订单信息 -->
+  	<action
+      parameter="endConfirm"
+      path="/buy/endconfirm"
+      type="mil.yaye.yours.control.action.TradeAction" />		
+  	<!-- 购买  -->
+  	<action
+      parameter="endBuy"
+      path="/buy/end"
+      type="mil.yaye.yours.control.action.TradeAction">
+      <forward name="buy_succeed" path="/buy_succeed.html" />
+      <forward name="buy_fail" path="/buy_fail.html" />
+    </action>
+    <!-- 立即购买方法  -->
+  	<action
+      parameter="immedBuy"
+      path="/buy/immedbuy"
+      type="mil.yaye.yours.control.action.TradeAction" />	
+    <!-- 增加一件商品到购物车 -->
+  	<action
+      parameter="add_product"
+      path="/buy/add"
+      type="mil.yaye.yours.control.action.TradeAction" />	
+    <!-- 修改订购的商品数量 -->
+  	<action
+      parameter="buystep_modify"
+      path="/buy/modify"
+      type="mil.yaye.yours.control.action.TradeAction" />
+    <!-- 退订已选商品  -->
+  	<action
+      parameter="buystep_delete"
+      path="/buy/delete"
+      type="mil.yaye.yours.control.action.TradeAction" />
+   <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+   <!-- %%%%%% %%%%%% -->
+  	<!--  -->
+  	<action
+      input="/collect.do"
+      parameter="collect"
+      path="/collect"
+      type="mil.yaye.yours.control.action.TradeAction" />
+    <!--  -->
+    <!--  -->
+    <!-- view product info -->
+
+  </action-mappings>
+
+  <!-- =================== Message Resources Definitions ===================== -->
+
+  <!-- <message-resources parameter="mil.yaye.yours.conf.ApplicationResources" /> -->
+  
+  <!-- =================== Plug Ins Configuration ============================ -->
+</struts-config>
+

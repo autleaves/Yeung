@@ -1,0 +1,89 @@
+#index_main #ind_left {
+	float: left;
+	margin-top: 10px;
+	width: 270px;
+}#ind_left .inl_spa {
+	margin-bottom: 10px;
+}#ind_left .inl_spa_un {
+	background-color: #FFF1E1;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFC57D;
+}#ind_left .spa_cont {
+	float: left;
+}#ind_left .spa_cont_spe {
+	float: right;
+}#inl_hot_spa #sp_uh {
+	height: 245px;
+}#inl_new_spa #sp_un {
+	height: 230px;
+}#inl_help_spa #sp_up {
+	height: 165px;
+	width: 210px;
+}
+
+#ind_left ul {
+	padding-left: 25px;
+}#ind_left .spa_cont li {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}#ind_left .spa_cont_name {
+	float: left;
+	width: 150px;
+}#ind_left .spa_cont_price {
+	float: right;
+	margin-right: 7px;
+}#ind_left .spa_cont_name a {
+	color: #FB5C06;
+}#ind_left .spa_cont_name a:hover {
+	text-decoration: underline;
+	color: #0645FF;
+}#ind_left ._spa_span {
+	font-weight: bold;
+	color: #FF0000;
+	padding-left: 40px;
+}#ind_left #inl_help_spa table {
+	border: 1px dotted #D9D9D9;
+	margin-right: auto;
+	margin-left: auto;
+	width: 204px;
+}
+
+#ind_left #inl_hot_spa {
+	
+}
+#ind_right #inr_navs {
+	
+}
+#index_main #ind_right {
+	width: 700px;
+}
+#inr_navs #keywords_con {
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #E6E6E6;
+	border-left-color: #E6E6E6;
+	height: 200px;
+	width: 698px;
+}
+
+
+
+
+
+#ind_right {
+	float: right;
+}
+
+
+#footer {
+	margin-top: 50px;
+}
+
+#ind_keywords_spa {
+	background-image: url(../images/k_over.jpg);
+	background-repeat: repeat-y;
+	background-position: center;
+}

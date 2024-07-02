@@ -1,0 +1,79 @@
+#buystep1_main {
+	width: 950px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #FBF8F4;
+}#buystep1_main #buysteps_top {
+	height: 38px;
+}#buystep1_main #buysteps_bottom {
+	height: 7px;
+}#buystep1_main #buystep1_content {
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #DEB58A;
+	border-left-color: #DEB58A;
+	/*height: 300px;*/
+	text-align: center;
+}
+#buystep1_content #buysts_tips {
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #FEEFD8;
+	width: 940px;
+	height: auto;
+	border: 1px solid #FCCE89;
+	line-height: 18px;
+	padding-top: 5px;
+	padding-bottom: 3px;
+	text-align: left;
+	margin-bottom: 10px;
+}
+#buystep1_content #buy_totalmoney {
+	border: 1px solid #FFDCB9;
+	width: 800px;
+	height: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	background-color: #FFFFFF;
+}
+#buy_totalmoney span {
+	font-weight: bold;
+	color: #FF8102;
+	line-height: 20px;
+}#buystep1_content #buy_productslist {
+	/*height: 150px;*/
+	width: 932px;
+	margin-right: auto;
+	margin-left: auto;
+	/*border: 1px solid #B7B7B7;*/
+}#buy_productslist tr {
+	/*border-top-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-top-color: #B7B7B7;
+	border-left-color: #B7B7B7;*/
+}#buy_productslist table {
+	/*border-top-color: #B7B7B7;
+	border-right-color: #B7B7B7;
+	border-bottom-color: #B7B7B7;
+	border-left-color: #B7B7B7;*/	
+}#buy_productslist table tbody tr td {
+	/*border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #B7B7B7;*/
+	text-align: center;
+}#buy_productslist .buy_tab_td .text-amount {
+	width: 30px;
+}#buy_productslist .buy_tab_td {
+	background-color: #E6F7FF;
+	/*line-height: 20px;*/
+}#buy_productslist .buy_tab_td img {
+	float: left;
+}
+
+

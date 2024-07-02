@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+	<!-- maxElementsInMemory 缓存对象的最大数目  -->
+	<!-- eternal 是否永不过期,true为不过期 -->
+	<!-- timeToIdleSeconds 对象处于空闲状态的最多秒数 -->
+	<!-- timeToLiveSeconds 对象处于缓存状态的最多秒数 -->
+	<!-- overflowToDisk 内存溢出时是否将溢出对象写入硬盘 -->
+	
+	<diskStore path="D:\\ehcacheTemp" />
+	<defaultCache
+		maxElementsInMemory="10000"
+		eternal="false"
+		diskPersistent="false"
+		timeToIdleSeconds="300"
+		timeToLiveSeconds="600"
+		overflowToDisk="true"
+		diskExpiryThreadIntervalSeconds="120" />
+</ehcache>

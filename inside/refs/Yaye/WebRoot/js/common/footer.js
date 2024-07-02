@@ -1,0 +1,30 @@
+﻿function writefooter(){
+	document.getElementById("footer").innerHTML=
+		"<div id='aboout_mall'>"
+			+"<span class='ab'><a href='#'>常见问题</a></span>"
+			+"<span class='ab'><a href='#'>优惠/礼券</a></span>"
+			+"<span class='ab'><a href='#'>订单查询</a></span>"
+			+"<span class='ab'><a href='#'>联系我们</a></span>"
+			+"<span class='ab'><a href='#'>先行赔付</a></span>"
+			+"<span class='ab'><a href='#'>合作伙伴</a></span>"
+			+"<span class='ab' id='ablast'><a href='#'>帮助中心</a></span>"
+		+"</div>"
+		+"<div id='about_redRose'>"
+			+"<div class='rose_smalllogo'>"
+				+"<img src='http://localhost:8077/Yaye/images/smalllogo.jpg' alt='smalllogo' width='158' height='40' /></div>"
+			+"<div id='rose_text'>"
+				+"<span class='rose'><a href='#'>RedRose简介</a></span>"
+				+"<span class='rose'><a href='#'>About RedRose</a></span>"
+				+"<span class='rose'><a href='#'>广告服务</a></span>"
+				+"<span class='rose'><a href='#'>网站律师</a></span>"
+				+"<span class='rose' id='rolast'><a href='#'>产品答疑</a></span>"
+				+"<p id='contact'>客服电话:027-88888888  传真:020-xxxxxxxx</p>"
+				+"<p>Copyright(c) 2009 - 2019 RedRose Inc. All Rights Reserved </p>"
+		  	+"</div>"
+			+"<div class='trust_logo'>"
+				
+			+"</div>"
+			+"<div style='clear:both;'></div>"
+		+"</div>"
+	+"</div>";
+}

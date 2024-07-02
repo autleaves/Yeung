@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/buy/myshopcart.do" location="50,1350" dimension="292,84" />
+  <StrutsActivity path="/buy/backaddrs.do" location="50,550" dimension="292,84" />
+  <StrutsActivity path="/buy/confirmaddr.do" location="650,450" dimension="292,84" />
+  <StrutsActivity path="/buy/endconfirm.do" location="50,750" dimension="292,84" />
+  <StrutsActivity path="/buy/end.do" location="50,950" dimension="292,84" />
+  <StrutsActivity path="/buy/immedbuy.do" location="650,950" dimension="292,84" />
+  <StrutsActivity path="/buy/add.do" location="50,1150" dimension="292,84" />
+  <StrutsActivity path="/buy/modify.do" location="650,1150" dimension="292,84" />
+  <StrutsActivity path="/buy/delete.do" location="950,750" dimension="292,84" />
+  <StrutsActivity path="/collect.do" location="50,250" dimension="292,84" />
+  <StrutsActivity path="shopcartlist$;6" location="650,150" dimension="124,72" />
+  <StrutsActivity path="confirmAddr$;6" location="650,1350" dimension="118,72" />
+  <StrutsActivity path="orderlist$;6" location="950,1350" dimension="106,72" />
+  <StrutsActivity path="/buy_succeed" location="50,1550" dimension="112,48" />
+  <StrutsActivity path="/shopcartlist.jsp" location="350,150" dimension="142,48" />
+  <StrutsActivity path="/confirmAddr.jsp" location="650,350" dimension="136,48" />
+  <StrutsActivity path="/orderlist.jsp" location="650,850" dimension="124,48" />
+  <StrutsActivity path="/filter/buy" location="950,50" dimension="292,84" />
+  <StrutsActivity path="/form/buy.jsp" location="50,450" dimension="118,48" />
+  <StrutsActivity path="" location="950,250" dimension="40,48" />
+  <StrutsActivity path="/filter/" location="350,450" dimension="88,48" />
+  <StrutsActivity path="/filter/buy." location="650,750" dimension="112,48" />
+  <StrutsActivity path="/" location="650,650" dimension="46,48" />
+  <StrutsActivity path="/confirmAddr" location="950,650" dimension="112,48" />
+  <StrutsActivity path="/buy_fail.html" location="1250,450" dimension="124,48" />
+  <StrutsActivity path="/buy_succeed.html" />
+  <StrutsTransition id="/buy/end.do,buy_succeed,/buy_succeed.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="196,992" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/buy/end.do,buy_fail,/buy_succeed,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="196,992" />
+      <AbsolutePoint location="106,1574" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/buy/end.do,buy_fail,/buy_fail.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="196,1034" />
+      <AbsolutePoint location="196,1079" />
+      <AbsolutePoint location="1312,1079" />
+      <AbsolutePoint location="1312,498" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="confirmAddr$;6,null,/confirmAddr.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,1386" />
+      <AbsolutePoint location="627,1386" />
+      <AbsolutePoint location="627,374" />
+      <AbsolutePoint location="650,374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="orderlist$;6,null,/orderlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1003,1350" />
+      <AbsolutePoint location="1003,874" />
+      <AbsolutePoint location="774,874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="shopcartlist$;6,null,/shopcartlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,183" />
+      <AbsolutePoint location="492,183" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/buy/end.do,buy_succeed,/buy_succeed,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,992" />
+      <AbsolutePoint location="-25,992" />
+      <AbsolutePoint location="-25,1574" />
+      <AbsolutePoint location="50,1574" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/collect.do,null,/collect.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="196,250" />
+      <AbsolutePoint location="196,-25" />
+      <AbsolutePoint location="567,-25" />
+      <AbsolutePoint location="567,283" />
+      <AbsolutePoint location="342,283" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

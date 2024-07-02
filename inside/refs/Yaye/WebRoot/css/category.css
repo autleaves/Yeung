@@ -1,0 +1,13 @@
+#search_statistic_result {
+	line-height: 30px;
+	background-color: #F3F3F3;
+	height: 30px;
+	/*border: 1px solid #E3E3E3;*/
+	padding-left: 30px;
+	margin-top: 10px;
+}#search_statistic_result #product_name_loc {
+	
+}#search_statistic_result .ser_sta_result {
+	color: #E85404;
+	font-weight: bold;
+}

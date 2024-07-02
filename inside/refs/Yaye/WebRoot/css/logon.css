@@ -1,0 +1,125 @@
+#logon_navHead {
+	margin-left: 740px;
+	margin-top: 7px;
+	margin-bottom: 5px;
+}#logon_navHead .rnav a {
+	color: #7F7F7F;
+}#logon_navHead a:hover {
+	text-decoration:underline;
+}#logon_navHead .rnav {
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #000000;
+	padding-right: 10px;
+	padding-left: 10px;
+}#logon_navHead #rnlast {
+	border-right-width: 0px;
+}
+
+#back_index {
+	margin-left: 900px;
+	margin-top: 35px;
+	margin-bottom: 3px;
+}#back_index a {
+	font-size: 14px;
+	font-weight: bold;
+	color: #00406A;
+}#back_index a:hover {
+	color: #733900;
+}
+#hrf_1{
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-top-color: #d2e5ef;
+	margin-bottom: 65px;
+}
+
+
+
+#logon_main #lo_left {
+	float: left;
+	margin-left: 100px;
+}#logon_main #lo_right {
+	float: right;
+	/*margin-left: 50px;*/
+	width: 400px;
+}
+
+
+#logon_main #loginfield {
+	width: 310px;
+	height: 230px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #d2e5ef;
+	border-left-color: #d2e5ef;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+}#loginfield input {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;	
+}#loginfield a:hover {
+	text-decoration: underline;
+}
+
+
+#loginfield #lo_heading {
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 30px;
+	margin-left: 40px;	/*text-align: center;*/
+}#lo_heading #lo_heading_oth {
+	margin-left: 10px;	
+}
+
+
+#logonform .textinput {
+	border:#6c9ed1 1px solid;
+	height:16px;
+	line-height:16px;
+	font-size:12px;
+	width:160px;
+}#logonform .to_block {
+	display: block;
+}
+#logonform #lo_show_err {
+	margin-left: 83px;
+	color: #FF0000;
+	height: 18px;
+	line-height: 18px;
+}
+
+
+#logonform #lo_logonid, #logonform #lo_passwd, #logonform #lo_remfor {
+	margin-left: 35px;
+	margin-bottom: 15px;
+}#logonform #lo_remfor {
+	margin-left: 57px;
+	margin-bottom: 15px;
+}#logonform #lo_remfor #remember {
+	margin-right: 30px;	
+}
+
+#logonform #lo_logreg {
+	margin-left: 47px;
+	margin-bottom: 15px;
+}#lo_logreg #registhref {
+	margin-left: 45px;
+	line-height: 25px;
+	height: 25px;
+	vertical-align: top;
+}#lo_logreg #registhref a {
+	text-decoration: underline;
+}#lo_logreg #registhref a:hover {
+	text-decoration: underline;
+	color: #6c9ed1;
+}
+
+
+#footer {
+	margin-top: 130px;
+}

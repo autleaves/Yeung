@@ -1,0 +1,16 @@
+#floatadv {
+	height: 136px;
+	width: 136px;
+	position: absolute;
+	z-index: 1;
+	left: 5px;
+	top: 610px;
+}
+#closeButton {
+	height: 14px;
+	width: 100px;
+	position: absolute;
+	z-index: 2;
+	left: 41px;
+	top: 600px;
+}

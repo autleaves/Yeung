@@ -1,0 +1,36 @@
+#buystep_succeed_main, #buystep_fail_main {
+	margin-top: 20px;
+	margin-left: 70px;
+	/*border: 2px solid #FFF2DF;*/
+	padding: 10px;
+	width: 850px;
+	height: 290px;
+}#buystep_succeed_main #bysd_wrp, #buystep_fail_main #byfl_wrp {
+	width: 500px;
+	margin-top: 70px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#buystep_succeed_main #bysd_p1, #buystep_fail_main #byfl_p1{
+	font-size: 14px;
+	/*font-weight: bold;*/
+}#buystep_succeed_main #res_redrose, #buystep_fail_main #res_redrose {
+	margin-left: 270px;
+	margin-top: 10px;
+	color: #FF0000;
+}#buystep_succeed_main #bysd_p3, #buystep_fail_main #byfl_p3 {
+	margin-left: 200px;
+	margin-top: 70px;
+	font-size: 20px;
+	font-weight: bold;
+}#buystep_succeed_main #bysd_p3 a:hover span, #buystep_fail_main #byfl_p3 a:hover span {
+	color: #ff0000;
+}#buystep_succeed_main #bysd_p3 span, #buystep_fail_main #byfl_p3 span{
+	font-size: 14px;
+	color: #563325;
+	font-weight: bold;
+	text-decoration: underline;
+}
+#footer {
+	/*margin-top: 200px;*/
+}
