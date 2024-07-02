@@ -26,8 +26,8 @@ public class CookieFilter implements Filter {
 		this.filterConfig = null;
 	}
 	/**
-	 * //ÎÒ»¹¿ÉÒÔÔÙ½øĞĞÒ»´ÎÅĞ¶Ï,ÎªÁË·ÀÖ¹ÔÚÃ»ÓĞ×¢Òâµ½µÄµØ·½½¨Á¢ÁËsession,
-	 * ÕâÑùÕâÀïsession²»Îª¿ÕÁË,ËùÒÔÎÒ»¹Ó¦¸ÃÅĞ¶ÏÈç¹ûsession²»Îª¿Õ,ÄÇÃ´ËüÀïÃæÊÇ·ñÓĞÒ»¸öisLogon=trueµÄÊôĞÔ
+	 * //æˆ‘è¿˜å¯ä»¥å†è¿›è¡Œä¸€æ¬¡åˆ¤æ–­,ä¸ºäº†é˜²æ­¢åœ¨æ²¡æœ‰æ³¨æ„åˆ°çš„åœ°æ–¹å»ºç«‹äº†session,
+	 * è¿™æ ·è¿™é‡Œsessionä¸ä¸ºç©ºäº†,æ‰€ä»¥æˆ‘è¿˜åº”è¯¥åˆ¤æ–­å¦‚æœsessionä¸ä¸ºç©º,é‚£ä¹ˆå®ƒé‡Œé¢æ˜¯å¦æœ‰ä¸€ä¸ªisLogon=trueçš„å±æ€§
 	 */
 	public void doFilter(ServletRequest arg0, ServletResponse arg1,
 			FilterChain chain) throws IOException, ServletException {
@@ -36,7 +36,7 @@ public class CookieFilter implements Filter {
 		Cookie[] cookies = request.getCookies();
 		HttpSession session = request.getSession(false);
 		boolean flag = false;
-		logger.info("¿ªÊ¼½øĞĞCookieFilter¹ıÂË.......");
+		logger.info("å¼€å§‹è¿›è¡ŒCookieFilterè¿‡æ»¤.......");
 		if(cookies != null && session != null){
 			for(int i = 0; i < cookies.length; i++){
 				if(cookies[i].getName().equals("JSESSIONID")){
@@ -48,10 +48,10 @@ public class CookieFilter implements Filter {
 		}
 		if(flag == true){
 			chain.doFilter(arg0, arg1);
-			logger.info("Õâ¸öÇëÇó±»CookieFilter½øĞĞÁË¹ıÂË,¾­ÅĞ¶ÏÎªºÏ·¨ÇëÇó.....ÓèÒÔ¼ÌĞøÖ´ĞĞ....");
+			logger.info("è¿™ä¸ªè¯·æ±‚è¢«CookieFilterè¿›è¡Œäº†è¿‡æ»¤,ç»åˆ¤æ–­ä¸ºåˆæ³•è¯·æ±‚.....äºˆä»¥ç»§ç»­æ‰§è¡Œ....");
 		} else {
 			response.sendRedirect(error_page);
-			logger.info("Õâ¸öÇëÇó±»CookieFilter½øĞĞÁË¹ıÂË,²¢ÇÒÎª·Ç·¨ÇëÇó");
+			logger.info("è¿™ä¸ªè¯·æ±‚è¢«CookieFilterè¿›è¡Œäº†è¿‡æ»¤,å¹¶ä¸”ä¸ºéæ³•è¯·æ±‚");
 		}
 	}
 

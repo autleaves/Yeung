@@ -27,7 +27,7 @@ public class SetDAOforServiceListener implements ServletContextListener {
 		((PersonnelService)beanFactory.getBean("PersonnelService")).setDAO(beanFactory);
 		((TradeService)beanFactory.getBean("TradeService")).setDAO(beanFactory);
 		
-		logger.info("SetDAOforServiceListener.......为每个service设定好自己的DAO...TradeService....Over");
+		logger.info("SetDAOforServiceListener.......涓烘瘡涓猻ervice璁惧畾濂借嚜宸辩殑DAO...TradeService....Over");
 	}
 
 }

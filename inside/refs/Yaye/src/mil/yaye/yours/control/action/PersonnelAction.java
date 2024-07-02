@@ -45,7 +45,7 @@ import org.apache.struts.validator.DynaValidatorForm;
  */
 public class PersonnelAction extends BaseAction {
 	
-			/**********ÕâÀïÏàµ±ÓÚÈËÊÂ²¿<Personnel>**********/
+			/**********è¿™é‡Œç›¸å½“äºäººäº‹éƒ¨<Personnel>**********/
 	
 	// Fields
 	private static Logger logger = Logger.getLogger(PersonnelAction.class.getName());
@@ -58,7 +58,7 @@ public class PersonnelAction extends BaseAction {
 
 	/** 
 	 * Method regist
-	 * ×¢²áÊ±Ê¹ÓÃActionµÄÁîÅÆ»úÖÆ½øĞĞÔ¤´¦Àí
+	 * æ³¨å†Œæ—¶ä½¿ç”¨Actionçš„ä»¤ç‰Œæœºåˆ¶è¿›è¡Œé¢„å¤„ç†
 	 * @param mapping
 	 * @param form
 	 * @param request
@@ -67,21 +67,21 @@ public class PersonnelAction extends BaseAction {
 	 */
 	public ActionForward regist(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		logger.info("×ßµ½ÕâÀïÀ´ÁË.........1......");
-		if(isCancelled(request)){ //Èç¹ûµã»÷'È¡Ïû'
+		logger.info("èµ°åˆ°è¿™é‡Œæ¥äº†.........1......");
+		if(isCancelled(request)){ //å¦‚æœç‚¹å‡»'å–æ¶ˆ'
 			return mapping.findForward("index");
 		}else{
 			ActionMessages registErrors = new ActionMessages();
 			Enumeration<?> attrs = request.getSession(false).getAttributeNames();
 			while(attrs.hasMoreElements()){
 				Object attr = attrs.nextElement();
-				logger.info("ÔÚregist.do·½·¨Ê±TokenÁîÅÆÎª:" + request.getSession(false).getAttribute((String)attr));
+				logger.info("åœ¨regist.doæ–¹æ³•æ—¶Tokenä»¤ç‰Œä¸º:" + request.getSession(false).getAttribute((String)attr));
 			}
 //			if(!isTokenValid(request)){ //If Anew
 			if(isTokenValid(request)){ //If Anew
 				//Put an New Token
 				saveToken(request);
-				logger.info("×ßµ½ÕâÀïÀ´ÁË.........3......");
+				logger.info("èµ°åˆ°è¿™é‡Œæ¥äº†.........3......");
 				registErrors.add("tokenerrors",new ActionMessage("login.token"));
 				saveMessages(request, registErrors);
 				return mapping.findForward("regist$");
@@ -96,18 +96,18 @@ public class PersonnelAction extends BaseAction {
 				}
 				validateCode = (String) request.getSession(false).getAttribute("validatecode");
 				if(validateCode == null ){
-					logger.info("validateCodeÎª¿Õ............");
+					logger.info("validateCodeä¸ºç©º............");
 				}else{
-					logger.info("validateCodeÎª:" + validateCode);
+					logger.info("validateCodeä¸º:" + validateCode);
 				}
-				//Çå³ıµ±Ç°Session
-				request.getSession(false).invalidate(); //¼°Ê±Çå³ıÕâ¸ösession,Í¬ÑùÒ²»á´¥·¢DestorySessionListenerÕâ¸öListener,µ«²»»áÔÙÖ´ĞĞÊ²Ã´²Ù×÷.
+				//æ¸…é™¤å½“å‰Session
+				request.getSession(false).invalidate(); //åŠæ—¶æ¸…é™¤è¿™ä¸ªsession,åŒæ ·ä¹Ÿä¼šè§¦å‘DestorySessionListenerè¿™ä¸ªListener,ä½†ä¸ä¼šå†æ‰§è¡Œä»€ä¹ˆæ“ä½œ.
 //				isvc = validateCode.equals(registForm.get("validatecode"));
 				isvc = validateCode.equalsIgnoreCase(registForm.getString("validatecode"));
-				logger.info("µ±Ç°µÄÑéÖ¤ÂëÎª:"+ validateCode);
+				logger.info("å½“å‰çš„éªŒè¯ç ä¸º:"+ validateCode);
 				if(!isvc){
 					ActionMessages errors = new ActionMessages();
-					errors.add("MY_RESPONSE_ERROR", new ActionMessage("¡ÁÑéÖ¤Âë´íÎó£¡"));
+					errors.add("MY_RESPONSE_ERROR", new ActionMessage("Ã—éªŒè¯ç é”™è¯¯ï¼"));
 					saveMessages(request, errors);
 					return mapping.findForward("regist$");
 				}
@@ -130,9 +130,9 @@ public class PersonnelAction extends BaseAction {
 	}
 
 	/** 
-	 * Method µ¥µãµÇÂ½·½·¨
+	 * Method å•ç‚¹ç™»é™†æ–¹æ³•
 	 * 
-	 * Ö»ÔÊĞíµ¥µãµÇÂ½
+	 * åªå…è®¸å•ç‚¹ç™»é™†
 	 * @param mapping
 	 * @param form
 	 * @param request
@@ -146,7 +146,7 @@ public class PersonnelAction extends BaseAction {
 		PersonnelService service = (PersonnelService) beanFactory.getBean("PersonnelService");
 		if(request.getSession(false) != null){
 			if(request.getSession(false).getAttribute("IS_LOGON") != null && (((Boolean)request.getSession(false).getAttribute("IS_LOGON")) == true)){
-				request.setAttribute("MY_RESPONSE_ERROR", "¡Á¶Ô²»Æğ,ÒÑ´æÔÚÒ»¸öÕâÑùµÄÕÊ»§µÇÂ½!");
+				request.setAttribute("MY_RESPONSE_ERROR", "Ã—å¯¹ä¸èµ·,å·²å­˜åœ¨ä¸€ä¸ªè¿™æ ·çš„å¸æˆ·ç™»é™†!");
 				return mapping.findForward("logon$");
 			}else {
 				request.getSession(false).invalidate();
@@ -161,20 +161,20 @@ public class PersonnelAction extends BaseAction {
 		if(passTocheck) {
 			switch (service.loginCheck(logonDTO))
 			{
-				case 0 :	//ÎÒ×Ô¼ºÉè¶¨µÄ×´Ì¬Âë,µ±²»ÓÃvalidator¿ò¼ÜÊ±¾Í¿ÉÒÔÓÃµ½´Ë¹¦ÄÜ,´Ë´ú±í"ÓÃ»§Ãû»òÃÜÂë´íÎó",ÔÚ¿Í»§¶ËÓÃjs¸ù¾İÕâ¸ö×´Ì¬ÂëÀ´ÏÔÊ¾´íÎóĞÅÏ¢
-					request.setAttribute("MY_RESPONSE_ERROR", "¡ÁÓÃ»§Ãû»òÃÜÂë´íÎó£¡");
+				case 0 :	//æˆ‘è‡ªå·±è®¾å®šçš„çŠ¶æ€ç ,å½“ä¸ç”¨validatoræ¡†æ¶æ—¶å°±å¯ä»¥ç”¨åˆ°æ­¤åŠŸèƒ½,æ­¤ä»£è¡¨"ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯",åœ¨å®¢æˆ·ç«¯ç”¨jsæ ¹æ®è¿™ä¸ªçŠ¶æ€ç æ¥æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
+					request.setAttribute("MY_RESPONSE_ERROR", "Ã—ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼");
 					break;
 				case 4 :
-					logger.info("ÊÇ²»ÊÇ×ßµ½ÕâÀïÀ´ÁË...........");
-					request.setAttribute("MY_RESPONSE_ERROR", "¡ÁÓÃ»§Ãû»òÃÜÂë´íÎó£¡");
+					logger.info("æ˜¯ä¸æ˜¯èµ°åˆ°è¿™é‡Œæ¥äº†...........");
+					request.setAttribute("MY_RESPONSE_ERROR", "Ã—ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼");
 					break;
-				case 11 : //ÎÒ×Ô¼ºÉè¶¨µÄ×´Ì¬Âë,´Ë´ú±í"ÒÑ¾­´æÔÚÒ»¸öÕâÑùµÄÕÊ»§µÇÂ½",ÔÚ¿Í»§¶ËÓÃjs¸ù¾İÕâ¸ö×´Ì¬ÂëÀ´ÏÔÊ¾´íÎóĞÅÏ¢
+				case 11 : //æˆ‘è‡ªå·±è®¾å®šçš„çŠ¶æ€ç ,æ­¤ä»£è¡¨"å·²ç»å­˜åœ¨ä¸€ä¸ªè¿™æ ·çš„å¸æˆ·ç™»é™†",åœ¨å®¢æˆ·ç«¯ç”¨jsæ ¹æ®è¿™ä¸ªçŠ¶æ€ç æ¥æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
 //					request.setAttribute("MY_RESPONSE_CODE", "157011");
-					request.setAttribute("MY_RESPONSE_ERROR", "¡Á¶Ô²»Æğ,ÒÑ´æÔÚÒ»¸öÕâÑùµÄÕÊ»§µÇÂ½!");
+					request.setAttribute("MY_RESPONSE_ERROR", "Ã—å¯¹ä¸èµ·,å·²å­˜åœ¨ä¸€ä¸ªè¿™æ ·çš„å¸æˆ·ç™»é™†!");
 					break;
-				case 7 : //¼ì²éÕı³£,³É¹¦µÇÂ½
+				case 7 : //æ£€æŸ¥æ­£å¸¸,æˆåŠŸç™»é™†
 					if(request.getSession(false) != null){	request.getSession(false).invalidate();	}
-					logger.info("ÒÑ¾­ÔÚÕâÀï¿ªÆôÒ»¸ö»á»°ÁË.......");
+					logger.info("å·²ç»åœ¨è¿™é‡Œå¼€å¯ä¸€ä¸ªä¼šè¯äº†.......");
 					HttpSession session = request.getSession();
 					session.setAttribute("IS_LOGON", true);
 					UserVO userInfo = service.getInfo(logonDTO.getLogonid(), session.getId());
@@ -183,38 +183,38 @@ public class PersonnelAction extends BaseAction {
 					
 					LOGONID.setMaxAge(-1);
 					response.addCookie(LOGONID);
-					forward = mapping.findForward("index"); //forwardµ½index.htmlÒ³Ãæ
+					forward = mapping.findForward("index"); //forwardåˆ°index.htmlé¡µé¢
 					break;
-				default : ;//ÕâÒ»Ìõ¼ş³ı·ÇÊÇservice²ãÓĞÒì³£,·ñÔò¾Í²»¿ÉÄÜµ½´ï,ÒòÎªµ÷ÓÃserviceµÄÕâ¸ö·½·¨,ÓĞÒ»¸öÄ¬ÈÏµÄÖµ:0
+				default : ;//è¿™ä¸€æ¡ä»¶é™¤éæ˜¯serviceå±‚æœ‰å¼‚å¸¸,å¦åˆ™å°±ä¸å¯èƒ½åˆ°è¾¾,å› ä¸ºè°ƒç”¨serviceçš„è¿™ä¸ªæ–¹æ³•,æœ‰ä¸€ä¸ªé»˜è®¤çš„å€¼:0
 			}
 		}
-		//±êÇ©µÄÊ¹ÓÃ
+		//æ ‡ç­¾çš„ä½¿ç”¨
 		/*check : switch (service.loginCheck(loginVO))
 		{
-			case 0 :	//ÎÒ×Ô¼ºÉè¶¨µÄ×´Ì¬Âë,´Ë´ú±í"ÓÃ»§Ãû»òÃÜÂë´íÎó",ÔÚ¿Í»§¶ËÓÃjs¸ù¾İÕâ¸ö×´Ì¬ÂëÀ´ÏÔÊ¾´íÎóĞÅÏ¢
+			case 0 :	//æˆ‘è‡ªå·±è®¾å®šçš„çŠ¶æ€ç ,æ­¤ä»£è¡¨"ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯",åœ¨å®¢æˆ·ç«¯ç”¨jsæ ¹æ®è¿™ä¸ªçŠ¶æ€ç æ¥æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
 				request.setAttribute("MY_RESPONSE_CODE", "157000");
 				break;
 			case 4 :
 				request.setAttribute("MY_RESPONSE_CODE", "157004");
 				break;
-			case 11 : //ÎÒ×Ô¼ºÉè¶¨µÄ×´Ì¬Âë,´Ë´ú±í"ÓÃ»§Ãû»òÃÜÂë´íÎó",ÔÚ¿Í»§¶ËÓÃjs¸ù¾İÕâ¸ö×´Ì¬ÂëÀ´ÏÔÊ¾´íÎóĞÅÏ¢
+			case 11 : //æˆ‘è‡ªå·±è®¾å®šçš„çŠ¶æ€ç ,æ­¤ä»£è¡¨"ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯",åœ¨å®¢æˆ·ç«¯ç”¨jsæ ¹æ®è¿™ä¸ªçŠ¶æ€ç æ¥æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
 				request.setAttribute("MY_RESPONSE_CODE", "157011");
 				//forward = mapping.findForward("ValidateCode.do");
 				break;
-			case 7 : //¼ì²éÕı³£,³É¹¦µÇÂ½
-				forward = mapping.findForward("index_"); //forwardµ½index.jspÒ³Ãæ
+			case 7 : //æ£€æŸ¥æ­£å¸¸,æˆåŠŸç™»é™†
+				forward = mapping.findForward("index_"); //forwardåˆ°index.jspé¡µé¢
 				break;
 			default :
-				forward = mapping.findForward("logon"); //forwardµ½
+				forward = mapping.findForward("logon"); //forwardåˆ°
 		}*/
 		return forward;
 	}
 	/**
-	 * Method µ¥µãµÇÂ½·½·¨
+	 * Method å•ç‚¹ç™»é™†æ–¹æ³•
 	 * 
-	 * Ö»ÔÊĞíµ¥µãµÇÂ½
+	 * åªå…è®¸å•ç‚¹ç™»é™†
 	 * 
-	 * Õâ¸öµÇÂ½·½·¨ĞèÒª½øĞĞÑéÖ¤ÂëÑéÖ¤
+	 * è¿™ä¸ªç™»é™†æ–¹æ³•éœ€è¦è¿›è¡ŒéªŒè¯ç éªŒè¯
 	 * 
 	 * @param mapping
 	 * @param form
@@ -232,41 +232,41 @@ public class PersonnelAction extends BaseAction {
 		ActionForward forward = mapping.findForward("logon$"); //
 		LogonDTO valcLogonDTO = new LogonDTO();
 		BeanUtils.copyProperties(valcLogonDTO, valcLogonForm);
-		logger.info("±íµ¥Ìá½»µÄÑéÖ¤ÂëÎª:..."+valcLogonDTO.getValidatecode());
+		logger.info("è¡¨å•æäº¤çš„éªŒè¯ç ä¸º:..."+valcLogonDTO.getValidatecode());
 		if(request.getSession(false) != null){
 			validateCode = (String) request.getSession(false).getAttribute("validatecode");
-			request.getSession(false).invalidate(); //¼°Ê±Çå³ıÕâ¸ösession,Í¬ÑùÒ²»á´¥·¢DestorySessionListenerÕâ¸öListener,µ«²»»áÔÙÖ´ĞĞÊ²Ã´²Ù×÷.
+			request.getSession(false).invalidate(); //åŠæ—¶æ¸…é™¤è¿™ä¸ªsession,åŒæ ·ä¹Ÿä¼šè§¦å‘DestorySessionListenerè¿™ä¸ªListener,ä½†ä¸ä¼šå†æ‰§è¡Œä»€ä¹ˆæ“ä½œ.
 			isvc = validateCode.equalsIgnoreCase(valcLogonDTO.getValidatecode());
-			logger.info("µ±Ç°µÄÑéÖ¤ÂëÎª:"+ validateCode);
+			logger.info("å½“å‰çš„éªŒè¯ç ä¸º:"+ validateCode);
 		}
 		boolean passTocheck = true;
-		if(isvc == false){	//ÎÒ×Ô¼ºÉè¶¨µÄ×´Ì¬Âë,´Ë´ú±í"ÑéÖ¤ÂëÃÜÂë",ÔÚ¿Í»§¶ËÓÃjs¸ù¾İÕâ¸ö×´Ì¬ÂëÀ´ÏÔÊ¾´íÎóĞÅÏ¢
+		if(isvc == false){	//æˆ‘è‡ªå·±è®¾å®šçš„çŠ¶æ€ç ,æ­¤ä»£è¡¨"éªŒè¯ç å¯†ç ",åœ¨å®¢æˆ·ç«¯ç”¨jsæ ¹æ®è¿™ä¸ªçŠ¶æ€ç æ¥æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
 			passTocheck = false;
 //			request.setAttribute("MY_RESPONSE_CODE", "157003");
-			request.setAttribute("MY_RESPONSE_ERROR", "¡ÁÑéÖ¤Âë´íÎó£¡");
+			request.setAttribute("MY_RESPONSE_ERROR", "Ã—éªŒè¯ç é”™è¯¯ï¼");
 		}
 		if(passTocheck) {
-			logger.info("ÑéÖ¤ÂëÒÑ¾­¼ì²éÏàÍ¬,ÒÑÕıÈ·.......");
+			logger.info("éªŒè¯ç å·²ç»æ£€æŸ¥ç›¸åŒ,å·²æ­£ç¡®.......");
 			switch (service.loginCheck(valcLogonDTO))
 			{
-				case 0 :	//ÎÒ×Ô¼ºÉè¶¨µÄ×´Ì¬Âë,´Ë´ú±í"ÓÃ»§Ãû»òÃÜÂë´íÎó",ÔÚ¿Í»§¶ËÓÃjs¸ù¾İÕâ¸ö×´Ì¬ÂëÀ´ÏÔÊ¾´íÎóĞÅÏ¢
+				case 0 :	//æˆ‘è‡ªå·±è®¾å®šçš„çŠ¶æ€ç ,æ­¤ä»£è¡¨"ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯",åœ¨å®¢æˆ·ç«¯ç”¨jsæ ¹æ®è¿™ä¸ªçŠ¶æ€ç æ¥æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
 	//				request.setAttribute("MY_RESPONSE_CODE", "157000");
-					request.setAttribute("MY_RESPONSE_ERROR", "¡ÁÓÃ»§Ãû»òÃÜÂë´íÎó£¡");
+					request.setAttribute("MY_RESPONSE_ERROR", "Ã—ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼");
 					break;
 				case 4 :
 	//				request.setAttribute("MY_RESPONSE_CODE", "157004");
-					logger.info("ÊÇ²»ÊÇ×ßµ½ÕâÀïÀ´ÁË...........");
-					request.setAttribute("MY_RESPONSE_ERROR", "¡ÁÓÃ»§Ãû»òÃÜÂë´íÎó£¡");
+					logger.info("æ˜¯ä¸æ˜¯èµ°åˆ°è¿™é‡Œæ¥äº†...........");
+					request.setAttribute("MY_RESPONSE_ERROR", "Ã—ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼");
 					break;
-				case 11 : //ÎÒ×Ô¼ºÉè¶¨µÄ×´Ì¬Âë,´Ë´ú±í"ÒÑ¾­´æÔÚÒ»¸öÕâÑùµÄÕÊ»§µÇÂ½",ÔÚ¿Í»§¶ËÓÃjs¸ù¾İÕâ¸ö×´Ì¬ÂëÀ´ÏÔÊ¾´íÎóĞÅÏ¢
+				case 11 : //æˆ‘è‡ªå·±è®¾å®šçš„çŠ¶æ€ç ,æ­¤ä»£è¡¨"å·²ç»å­˜åœ¨ä¸€ä¸ªè¿™æ ·çš„å¸æˆ·ç™»é™†",åœ¨å®¢æˆ·ç«¯ç”¨jsæ ¹æ®è¿™ä¸ªçŠ¶æ€ç æ¥æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
 	//				request.setAttribute("MY_RESPONSE_CODE", "157011");
-					request.setAttribute("MY_RESPONSE_ERROR", "¡Á¶Ô²»Æğ,ÒÑ´æÔÚÒ»¸öÕâÑùµÄÕÊ»§µÇÂ½!");
+					request.setAttribute("MY_RESPONSE_ERROR", "Ã—å¯¹ä¸èµ·,å·²å­˜åœ¨ä¸€ä¸ªè¿™æ ·çš„å¸æˆ·ç™»é™†!");
 					//forward = mapping.findForward("ValidateCode.do");
 	//				forward = mapping.findForward("logon$");
 					break;
-				case 7 : //¼ì²éÕı³£,³É¹¦µÇÂ½
+				case 7 : //æ£€æŸ¥æ­£å¸¸,æˆåŠŸç™»é™†
 					if(request.getSession(false) != null){	request.getSession(false).invalidate();	}
-					logger.info("ÒÑ¾­ÔÚÕâÀï¿ªÆôÒ»¸ö»á»°ÁË.......");
+					logger.info("å·²ç»åœ¨è¿™é‡Œå¼€å¯ä¸€ä¸ªä¼šè¯äº†.......");
 					HttpSession session = request.getSession(true);
 					session.setAttribute("IS_LOGON", true);
 					UserVO userInfo = service.getInfo(valcLogonDTO.getLogonid(), session.getId());
@@ -274,20 +274,20 @@ public class PersonnelAction extends BaseAction {
 					Cookie LOGONID = new Cookie("LOGONID", userInfo.getLogonid());
 					LOGONID.setMaxAge(-1);
 					response.addCookie(LOGONID);
-					forward = mapping.findForward("index"); //forwardµ½index.htmlÒ³Ãæ
+					forward = mapping.findForward("index"); //forwardåˆ°index.htmlé¡µé¢
 					break;
-				default : ;//ÕâÒ»Ìõ¼ş³ı·ÇÊÇservice²ãÓĞÒì³£,·ñÔò¾Í²»¿ÉÄÜµ½´ï,ÒòÎªµ÷ÓÃserviceµÄÕâ¸ö·½·¨,ÓĞÒ»¸öÄ¬ÈÏµÄÖµ:0
+				default : ;//è¿™ä¸€æ¡ä»¶é™¤éæ˜¯serviceå±‚æœ‰å¼‚å¸¸,å¦åˆ™å°±ä¸å¯èƒ½åˆ°è¾¾,å› ä¸ºè°ƒç”¨serviceçš„è¿™ä¸ªæ–¹æ³•,æœ‰ä¸€ä¸ªé»˜è®¤çš„å€¼:0
 			}
 		}
 		return forward;
 	}
 	
 	/**
-	 * °²È«ÍË³ö logon off
+	 * å®‰å…¨é€€å‡º logon off
 	 * 
-	 * 1.²»½öÇå³ı·şÎñÆ÷¶ËµÄsession
-	 * 2.¶øÇÒÒ²Çå³ı¿Í»§¶ËµÄCookie
-	 * 3.»¹ĞèÒªĞŞ¸ÄÊı¾İ¿âÖĞµÄµÇÂ½±êÊ¶×Ö¶Î
+	 * 1.ä¸ä»…æ¸…é™¤æœåŠ¡å™¨ç«¯çš„session
+	 * 2.è€Œä¸”ä¹Ÿæ¸…é™¤å®¢æˆ·ç«¯çš„Cookie
+	 * 3.è¿˜éœ€è¦ä¿®æ”¹æ•°æ®åº“ä¸­çš„ç™»é™†æ ‡è¯†å­—æ®µ
 	 * @param mapping
 	 * @param form
 	 * @param request
@@ -299,16 +299,16 @@ public class PersonnelAction extends BaseAction {
 		String logonid = null;
 		try {
 			logonid = new String(request.getParameter("id").getBytes(), "utf-8");
-			logger.info("»ñÈ¡µÄlogonidÎª:......" + logonid);
+			logger.info("è·å–çš„logonidä¸º:......" + logonid);
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-//		logger.info("URL²ÎÊı±àÂë·½Ê½Îª:.." + request.getCharacterEncoding());
-		request.getSession(false).invalidate(); //1.Çå³ı·şÎñÆ÷¶ËµÄsession
-		//»¹ĞèÒªĞŞ¸ÄÊı¾İ¿âÖĞµÄµÇÂ½±êÊ¶×Ö¶Î
+//		logger.info("URLå‚æ•°ç¼–ç æ–¹å¼ä¸º:.." + request.getCharacterEncoding());
+		request.getSession(false).invalidate(); //1.æ¸…é™¤æœåŠ¡å™¨ç«¯çš„session
+		//è¿˜éœ€è¦ä¿®æ”¹æ•°æ®åº“ä¸­çš„ç™»é™†æ ‡è¯†å­—æ®µ
 		PersonnelService service = (PersonnelService) beanFactory.getBean("PersonnelService");
 		
-		Cookie[] cookies = request.getCookies(); //2.Çå³ı¿Í»§¶ËµÄCookie,ÒÔ´ïµ½¿Í»§¶Ë²»ÓÃµÈµ½¹Ø±Õä¯ÀÀÆ÷¾ÍÄÜÇå³ıCookieÁË
+		Cookie[] cookies = request.getCookies(); //2.æ¸…é™¤å®¢æˆ·ç«¯çš„Cookie,ä»¥è¾¾åˆ°å®¢æˆ·ç«¯ä¸ç”¨ç­‰åˆ°å…³é—­æµè§ˆå™¨å°±èƒ½æ¸…é™¤Cookieäº†
 		if(cookies != null){
 			for(int i = 0; i < cookies.length; i++){
 				Cookie cookie = new Cookie(cookies[i].getName(),"");
@@ -316,24 +316,24 @@ public class PersonnelAction extends BaseAction {
 				response.addCookie(cookie);
 			}
 		}
-		logger.info("¿ªÊ¼Ö´ĞĞexit·½·¨........");
+		logger.info("å¼€å§‹æ‰§è¡Œexitæ–¹æ³•........");
 //		service.exit(logonid);
 		service.exitByJDBC(logonid);
-		logger.info("Ö´ĞĞ½áÊøexit·½·¨........");
-//		service.exitByJDBC(1);	//3.ĞŞ¸ÄÊı¾İ¿âÖĞµÄµÇÂ½±êÊ¶×Ö¶ÎÎª'off'
+		logger.info("æ‰§è¡Œç»“æŸexitæ–¹æ³•........");
+//		service.exitByJDBC(1);	//3.ä¿®æ”¹æ•°æ®åº“ä¸­çš„ç™»é™†æ ‡è¯†å­—æ®µä¸º'off'
 		return mapping.findForward("index");
 	}
 	public ActionForward exitByListener(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response){
 		
 		if(request.getSession(false) != null){
-			request.getSession(false).invalidate(); //1.Çå³ı·şÎñÆ÷¶ËµÄsession, »á´¥·¢Ò»¸ösessionListener¼àÌıÆ÷
+			request.getSession(false).invalidate(); //1.æ¸…é™¤æœåŠ¡å™¨ç«¯çš„session, ä¼šè§¦å‘ä¸€ä¸ªsessionListenerç›‘å¬å™¨
 		}
-		Cookie[] cookies = request.getCookies(); //2.Çå³ı¿Í»§¶ËµÄCookie,ÒÔ´ïµ½¿Í»§¶Ë²»ÓÃµÈµ½¹Ø±Õä¯ÀÀÆ÷¾ÍÄÜÇå³ıCookieÁË
+		Cookie[] cookies = request.getCookies(); //2.æ¸…é™¤å®¢æˆ·ç«¯çš„Cookie,ä»¥è¾¾åˆ°å®¢æˆ·ç«¯ä¸ç”¨ç­‰åˆ°å…³é—­æµè§ˆå™¨å°±èƒ½æ¸…é™¤Cookieäº†
 		if(cookies != null){
 			for(int i = 0; i < cookies.length; i++){
 				Cookie cookie = cookies[i];
-				logger.info("ËùÓĞµÄCookieÎª:..." + cookies[i].getName());
+				logger.info("æ‰€æœ‰çš„Cookieä¸º:..." + cookies[i].getName());
 				cookie.setMaxAge(0);
 				response.addCookie(cookie);
 			}
@@ -341,7 +341,7 @@ public class PersonnelAction extends BaseAction {
 		return mapping.findForward("index");
 	}
 	/**
-	 * Ôö¼ÓÒ»¸öµØÖ·,¹©ÓÃ»§¹ºÂòÉÌÆ·Ê±Ñ¡ÔñÆäÖĞµÄµØÖ·
+	 * å¢åŠ ä¸€ä¸ªåœ°å€,ä¾›ç”¨æˆ·è´­ä¹°å•†å“æ—¶é€‰æ‹©å…¶ä¸­çš„åœ°å€
 	 * @param mapping
 	 * @param form
 	 * @param request
@@ -364,11 +364,11 @@ public class PersonnelAction extends BaseAction {
 		
 		PersonnelService personnel_service = (PersonnelService) beanFactory.getBean("PersonnelService");
 		Integer addrId = personnel_service.addOneAddr(addrDTO, ((UserVO)request.getSession(false).getAttribute("USER_BASE_INFO")).getUserId());
-		//*´ËÎªÍ¾¾¶Ò»:<ÔÙÒ»´Î²éÑ¯Êı¾İ¿â>
+		//*æ­¤ä¸ºé€”å¾„ä¸€:<å†ä¸€æ¬¡æŸ¥è¯¢æ•°æ®åº“>
 		Map<String, AddressVO> addrMap = personnel_service.getAddrs(((UserVO)request.getSession(false).getAttribute("USER_BASE_INFO")).getUserId());
 		request.getSession(false).setAttribute("ADDR_MAP", addrMap);
 		
-		/*//*´ËÎªÍ¾¾¶¶ş:<Î´ÔÙ²éÑ¯Êı¾İ¿â>
+		/*//*æ­¤ä¸ºé€”å¾„äºŒ:<æœªå†æŸ¥è¯¢æ•°æ®åº“>
 		Map<String, AddressVO> addrMap = new HashMap<String, AddressVO>();
 		AddressVO addrVO = new AddressVO();
 		try {
@@ -386,7 +386,7 @@ public class PersonnelAction extends BaseAction {
 		return mapping.findForward("endConfirm$");
 	}
 	/**
-	 * ²é¿´¸öÈËÕÊ»§ĞÅÏ¢
+	 * æŸ¥çœ‹ä¸ªäººå¸æˆ·ä¿¡æ¯
 	 * 
 	 * @param mapping
 	 * @param form
@@ -397,8 +397,8 @@ public class PersonnelAction extends BaseAction {
 	public ActionForward myAccout(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response){
 		ActionForward forward = null;
-		/*if(request.getSession(false) == null){ //Õâ¸ö¾Í²»ÓÃÔÚÕâÀïÅĞ¶ÏÁË,ÒòÎªÎÒÒÑ¾­ÓÃ¹ıÂËÆ÷¹ıÂËÁË
-			request.setAttribute("MY_RESPONSE_ERROR", "¡Á¶Ô²»Æğ,Äú»¹Ã»ÓĞµÇÂ½!ÇëÏÈµÇÂ½!");
+		/*if(request.getSession(false) == null){ //è¿™ä¸ªå°±ä¸ç”¨åœ¨è¿™é‡Œåˆ¤æ–­äº†,å› ä¸ºæˆ‘å·²ç»ç”¨è¿‡æ»¤å™¨è¿‡æ»¤äº†
+			request.setAttribute("MY_RESPONSE_ERROR", "Ã—å¯¹ä¸èµ·,æ‚¨è¿˜æ²¡æœ‰ç™»é™†!è¯·å…ˆç™»é™†!");
 			return mapping.findForward("logon");
 		}*/
 		String logonid = ((UserVO) request.getSession(false).getAttribute("USER_BASE_INFO")).getLogonid();

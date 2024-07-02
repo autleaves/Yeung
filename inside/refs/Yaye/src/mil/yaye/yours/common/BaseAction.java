@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 import org.apache.struts.actions.MappingDispatchAction;
 
 public class BaseAction extends MappingDispatchAction {
-	// Ó¦¸ÃÉèÎª(default)¸üºÏÊÊ,ÕâÑùÑÏ¸ñÒ»Ğ©
+	// åº”è¯¥è®¾ä¸º(default)æ›´åˆé€‚,è¿™æ ·ä¸¥æ ¼ä¸€äº›
 //	protected static Logger logger = Logger.getLogger(BaseAction.class.getName());
 	public static Logger logger = Logger.getLogger(BaseAction.class.getName());
 	

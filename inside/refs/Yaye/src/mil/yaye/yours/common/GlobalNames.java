@@ -12,17 +12,17 @@ public class GlobalNames {
 	public static String DOC_URL_PATH = "";
 	
 	/*
-	 * ÉÏ´«ÎÄ¼şÄ¬ÈÏ´óĞ¡
+	 * ä¸Šä¼ æ–‡ä»¶é»˜è®¤å¤§å°
 	 */
 	public static int UPLOAD_FILE_SIZE = 2*1024*1024;
 	
 	/*
-	 * Ä¬ÈÏÉÏ´«ÎÄ¼şÂ·¾¶
+	 * é»˜è®¤ä¸Šä¼ æ–‡ä»¶è·¯å¾„
 	 */
 	public static String UPLOAD_PATH = "";
 	
 	/**
-	 * »áÔ±Í·Ïñ±£´æÂ·¾¶
+	 * ä¼šå‘˜å¤´åƒä¿å­˜è·¯å¾„
 	 */
 	public static String MEMBER_PIC_UPLOAD_PATH = "";
 	public static String MEMBER_PIC_URL_PATH = URL_PATH+"member/pic/";
@@ -35,7 +35,7 @@ public class GlobalNames {
 	public static final String LOGIN_PAGE = "login.jsp";
 	
 	/*
-	 * Ê×Ò³ÊôĞÔ±äÁ¿
+	 * é¦–é¡µå±æ€§å˜é‡
 	 */
 	public static final String NEW_HOT_BLOCK ="new_hot_list";
 	

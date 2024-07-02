@@ -49,9 +49,9 @@ public class TradeAction extends MappingDispatchAction {
 	 * Generated Methods
 	 */
 
-//==================================¹ºÂòÉÌÆ·Ê±ËùÓÃµ½µÄ·½·¨=====Begin==============================================
+//==================================è´­ä¹°å•†å“æ—¶æ‰€ç”¨åˆ°çš„æ–¹æ³•=====Begin==============================================
 	/**
-	 * µ±ÓÃ»§µã»÷header²¿·ÖµÄ'¹ºÎï³µ'Á´½ÓÊ±ÇëÇóÕâ¸ö·½·¨.
+	 * å½“ç”¨æˆ·ç‚¹å‡»headeréƒ¨åˆ†çš„'è´­ç‰©è½¦'é“¾æ¥æ—¶è¯·æ±‚è¿™ä¸ªæ–¹æ³•.
 	 */
 	@SuppressWarnings("unchecked")
 	public ActionForward viewshopcart(ActionMapping mapping, ActionForm form,
@@ -59,8 +59,8 @@ public class TradeAction extends MappingDispatchAction {
 		BeanFactory beanFactory = BeanFactory.getInstance(null);
 		
 		ActionForward forward = mapping.findForward("shopcartlist$");
-		if(request.getSession().getAttribute("SHOPCART_SIMPLE_INFO") == null){//µ±ÎªµÚÒ»´ÎÑ¡ÔñÒ»¸öÉÌÆ·
-			Map<Integer, Integer> shopcart_simple_info = new HashMap<Integer, Integer>(); //Ò»¸öÎªÉÌÆ·id,Ò»¸öÎª¹ºÂòÊıÁ¿
+		if(request.getSession().getAttribute("SHOPCART_SIMPLE_INFO") == null){//å½“ä¸ºç¬¬ä¸€æ¬¡é€‰æ‹©ä¸€ä¸ªå•†å“
+			Map<Integer, Integer> shopcart_simple_info = new HashMap<Integer, Integer>(); //ä¸€ä¸ªä¸ºå•†å“id,ä¸€ä¸ªä¸ºè´­ä¹°æ•°é‡
 			request.getSession(false).setAttribute("SHOPCART_SIMPLE_INFO", shopcart_simple_info);
 			return forward;
 		}
@@ -69,10 +69,10 @@ public class TradeAction extends MappingDispatchAction {
 			request.getSession().setAttribute("SHOPCART_PARTICULAR", shopcart_particularVO);
 		}
 		if(request.getSession(false).getAttribute("SHOPCART_MAP") == null){
-			Map<String, Object> shopcart_map = new HashMap<String, Object>(); //´æ·ÅÒ»Ğ©»ù±¾µÄÊôĞÔ
-			//**********ÉèÖÃshopcart_mapÖĞµÄËùÓĞÊôĞÔµÄÄ¬ÈÏÖµ
-			shopcart_map.put("IS_USE_BONUSPOINT", false); //Ä¬ÈÏ²»Ê¹ÓÃ»ı·Ö
-//			shopcart_map.put("ADDR_KEY", "");	//Ê¹ÓÃÄÄÒ»¸öµØÖ·
+			Map<String, Object> shopcart_map = new HashMap<String, Object>(); //å­˜æ”¾ä¸€äº›åŸºæœ¬çš„å±æ€§
+			//**********è®¾ç½®shopcart_mapä¸­çš„æ‰€æœ‰å±æ€§çš„é»˜è®¤å€¼
+			shopcart_map.put("IS_USE_BONUSPOINT", false); //é»˜è®¤ä¸ä½¿ç”¨ç§¯åˆ†
+//			shopcart_map.put("ADDR_KEY", "");	//ä½¿ç”¨å“ªä¸€ä¸ªåœ°å€
 			shopcart_map.put("USER_ID", ((UserVO)request.getSession(false).getAttribute("USER_BASE_INFO")).getUserId());
 			request.getSession(false).setAttribute("SHOPCART_MAP", shopcart_map);
 		}
@@ -85,13 +85,13 @@ public class TradeAction extends MappingDispatchAction {
 		Set<Integer> idkeyset = shopcart_simple_info.keySet();
 		Iterator<ProductVO> iter_prods = shopcart_particular.iterator();
 		if(shopcart_particular.size() > 0){
-			while(iter_prods.hasNext()){ //ÏÈ¼ì²é´æÔÚÓÚList - shopcart_particularÖĞµÄÊôĞÔÊÇ·ñÔÚshopcart_simple_infoÖĞÓĞ¶ÔÓ¦Ïî
+			while(iter_prods.hasNext()){ //å…ˆæ£€æŸ¥å­˜åœ¨äºList - shopcart_particularä¸­çš„å±æ€§æ˜¯å¦åœ¨shopcart_simple_infoä¸­æœ‰å¯¹åº”é¡¹
 				Integer id = iter_prods.next().getProductId();
 				if(!idkeyset.contains(id)){
 					iter_prods.remove(); 
-					//IteratorÖĞÓĞÈı¸öint±äÁ¿:cursor-ÏÂÒ»´Înext()µ÷ÓÃÊ±ÔªËØµÄÎ»ÖÃ,lastRet-¼ÇÂ¼ÉÏÒ»´ÎÓÎ±êËùÔÚÎ»ÖÃ£¬Òò´ËËü×ÜÊÇ±ÈcursorÉÙ1,
-					//AbstractList°üº¬Ò»¸ö modCount±äÁ¿£¬ËüµÄ³õÊ¼ÖµÊÇ0£¬µ±¼¯ºÏÃ¿±»ĞŞ¸ÄÒ»´ÎÊ±£¨µ÷ÓÃadd£¬removeµÈ·½·¨£©£¬modCount¼Ó1¡£Òò´Ë£¬modCountÈç¹û²»±ä£¬±íÊ¾¼¯ºÏÄÚÈİÎ´±»ĞŞ¸Ä
-					//int expectedModCount = modCount  expectedModCount±íÊ¾ÆÚ´ıµÄmodCountÖµ£¬ÓÃÀ´ÅĞ¶ÏÔÚ±éÀú¹ı³ÌÖĞ¼¯ºÏÊÇ·ñ±»ĞŞ¸Ä¹ı
+					//Iteratorä¸­æœ‰ä¸‰ä¸ªintå˜é‡:cursor-ä¸‹ä¸€æ¬¡next()è°ƒç”¨æ—¶å…ƒç´ çš„ä½ç½®,lastRet-è®°å½•ä¸Šä¸€æ¬¡æ¸¸æ ‡æ‰€åœ¨ä½ç½®ï¼Œå› æ­¤å®ƒæ€»æ˜¯æ¯”cursorå°‘1,
+					//AbstractListåŒ…å«ä¸€ä¸ª modCountå˜é‡ï¼Œå®ƒçš„åˆå§‹å€¼æ˜¯0ï¼Œå½“é›†åˆæ¯è¢«ä¿®æ”¹ä¸€æ¬¡æ—¶ï¼ˆè°ƒç”¨addï¼Œremoveç­‰æ–¹æ³•ï¼‰ï¼ŒmodCountåŠ 1ã€‚å› æ­¤ï¼ŒmodCountå¦‚æœä¸å˜ï¼Œè¡¨ç¤ºé›†åˆå†…å®¹æœªè¢«ä¿®æ”¹
+					//int expectedModCount = modCount  expectedModCountè¡¨ç¤ºæœŸå¾…çš„modCountå€¼ï¼Œç”¨æ¥åˆ¤æ–­åœ¨éå†è¿‡ç¨‹ä¸­é›†åˆæ˜¯å¦è¢«ä¿®æ”¹è¿‡
 				}
 			}
 		}
@@ -113,7 +113,7 @@ public class TradeAction extends MappingDispatchAction {
 			}
 			if(!flag)
 			{
-				ProductVO productVO = guide_service.productDetailGuide(id); //ÔÚÕâÀï²éÑ¯µÃµ½¸Ã¼şÉÌÆ·µÄËùÓĞĞÅÏ¢
+				ProductVO productVO = guide_service.productDetailGuide(id); //åœ¨è¿™é‡ŒæŸ¥è¯¢å¾—åˆ°è¯¥ä»¶å•†å“çš„æ‰€æœ‰ä¿¡æ¯
 				shopcart_particular.add(productVO);
 			}
 			iter_prods = shopcart_particular.iterator();
@@ -123,7 +123,7 @@ public class TradeAction extends MappingDispatchAction {
 	}
 	
 	/**
-	 * ·µ»ØËùÓĞ¸ÃÓÃ»§ÒÔÇ°ËùÓÃ¹ıµÄµØÖ·,¹©ÓÃ»§½øĞĞÑ¡Ôñ
+	 * è¿”å›æ‰€æœ‰è¯¥ç”¨æˆ·ä»¥å‰æ‰€ç”¨è¿‡çš„åœ°å€,ä¾›ç”¨æˆ·è¿›è¡Œé€‰æ‹©
 	 * @param mapping
 	 * @param form
 	 * @param request
@@ -138,26 +138,26 @@ public class TradeAction extends MappingDispatchAction {
 		Map<String, AddressVO> addrMap = personnel_service.getAddrs(userInfo.getUserId());
 		Set<String> idset = addrMap.keySet();
 		for(String id : idset){
-			logger.info("addrMapÖĞµÄidÎª:" + id + "#######");
-			logger.info("ÏàÓ¦addrMapÖĞµÄAddressVOÖĞµÄrealnameÎª:" + ((AddressVO)addrMap.get(id)).getRealname() + "#######");
+			logger.info("addrMapä¸­çš„idä¸º:" + id + "#######");
+			logger.info("ç›¸åº”addrMapä¸­çš„AddressVOä¸­çš„realnameä¸º:" + ((AddressVO)addrMap.get(id)).getRealname() + "#######");
 		}
 		
 		request.getSession(false).setAttribute("ADDR_MAP", addrMap);
 		
-		return mapping.findForward("confirmAddr$");//µ½´ïÌîĞ´µØÖ·Ò³Ãæ,¸ÃÒ³ÃæÏÔÊ¾ËùÓĞ¸ÃÓÃ»§ÒÔÇ°ËùÓÃ¹ıµÄµØÖ·,¹©ÓÃ»§½øĞĞÑ¡Ôñ,Í¬Ê±¸ÃÒ³Ãæ»¹ÓĞÒ»ÕÅµØÖ·±íµ¥,Èç¹ûÓÃ»§ĞèÒªĞÂÌîĞ´Ò»¸öµØÖ·.
+		return mapping.findForward("confirmAddr$");//åˆ°è¾¾å¡«å†™åœ°å€é¡µé¢,è¯¥é¡µé¢æ˜¾ç¤ºæ‰€æœ‰è¯¥ç”¨æˆ·ä»¥å‰æ‰€ç”¨è¿‡çš„åœ°å€,ä¾›ç”¨æˆ·è¿›è¡Œé€‰æ‹©,åŒæ—¶è¯¥é¡µé¢è¿˜æœ‰ä¸€å¼ åœ°å€è¡¨å•,å¦‚æœç”¨æˆ·éœ€è¦æ–°å¡«å†™ä¸€ä¸ªåœ°å€.
 	}
 	@SuppressWarnings("unchecked")
 	public ActionForward confirmAddr(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response){
 		BeanFactory beanFactory = BeanFactory.getInstance(null);
-		String addr_selected = request.getParameter("addr"); //Ò³ÃæÉÏÓĞÒ»×énameÏàÍ¬µÄradio,Ã¿¸öµÄvalueÖµÊÇÔÚrebackAddrs.doÕâ¸ö·½·¨ÖĞÉú³ÉµÄ<Ä£Ê½Îª:ADDR + getAddressId>
+		String addr_selected = request.getParameter("addr"); //é¡µé¢ä¸Šæœ‰ä¸€ç»„nameç›¸åŒçš„radio,æ¯ä¸ªçš„valueå€¼æ˜¯åœ¨rebackAddrs.doè¿™ä¸ªæ–¹æ³•ä¸­ç”Ÿæˆçš„<æ¨¡å¼ä¸º:ADDR + getAddressId>
 		if(addr_selected == null){
-			logger.info("addr_selectedÎªnull............!!!!!!!!!........");
+			logger.info("addr_selectedä¸ºnull............!!!!!!!!!........");
 		}
-		logger.info("addr_selectedÎª:" + addr_selected + "##############");
-		if(addr_selected.equals("ADDR_NEW")){//µ±ÓÃ»§Ñ¡ÔñÊÇĞÂÌîĞ´Ò»¸öÊÕ»õÈËµØÖ·Ê±,
-			//return new ActionForward("/addOneAddr.do"); //´ËÎª·½°¸Ò»
-			//****ÏÂÎª·½°¸¶ş:
+		logger.info("addr_selectedä¸º:" + addr_selected + "##############");
+		if(addr_selected.equals("ADDR_NEW")){//å½“ç”¨æˆ·é€‰æ‹©æ˜¯æ–°å¡«å†™ä¸€ä¸ªæ”¶è´§äººåœ°å€æ—¶,
+			//return new ActionForward("/addOneAddr.do"); //æ­¤ä¸ºæ–¹æ¡ˆä¸€
+			//****ä¸‹ä¸ºæ–¹æ¡ˆäºŒ:
 			DynaValidatorForm receiveAddrForm = (DynaValidatorForm) form;
 			AddressDTO addrDTO = new AddressDTO();
 			addrDTO.setAddrname("Addr");
@@ -172,10 +172,10 @@ public class TradeAction extends MappingDispatchAction {
 			
 			PersonnelService personnel_service = (PersonnelService) beanFactory.getBean("PersonnelService");
 			Integer addrId = personnel_service.addOneAddr(addrDTO, ((UserVO)request.getSession(false).getAttribute("USER_BASE_INFO")).getUserId());
-			/*´ËÎªÍ¾¾¶Ò»:<ÔÙÒ»´Î²éÑ¯Êı¾İ¿â>
+			/*æ­¤ä¸ºé€”å¾„ä¸€:<å†ä¸€æ¬¡æŸ¥è¯¢æ•°æ®åº“>
 			Map<String, AddressVO> addrMap = personnel_service.getAddrs(((UserVO)request.getSession(false).getAttribute("USER_BASE_INFO")).getUserId());
 			request.getSession(false).setAttribute("ADDR_MAP", addrMap);*/
-			//*´ËÎªÍ¾¾¶¶ş:<Î´ÔÙ²éÑ¯Êı¾İ¿â>
+			//*æ­¤ä¸ºé€”å¾„äºŒ:<æœªå†æŸ¥è¯¢æ•°æ®åº“>
 			Map<String, AddressVO> addrMap = new HashMap<String, AddressVO>();
 			AddressVO addrVO = new AddressVO();
 			try {
@@ -198,23 +198,23 @@ public class TradeAction extends MappingDispatchAction {
 			for(String key : addrKeyset){
 				if(key.equals(addr_selected)){
 					addrkey = key;
-					logger.info("addrkeysetÖĞµÄkeyÎª:" + key);
+					logger.info("addrkeysetä¸­çš„keyä¸º:" + key);
 					break;
 				}
 			}
-			logger.info("addrkeyÎª:" + addrkey + "###########");
+			logger.info("addrkeyä¸º:" + addrkey + "###########");
 			((Map<String, Object>)request.getSession(false).getAttribute("SHOPCART_MAP")).put("ADDR_KEY", addrkey);
 		}
 		return new ActionForward("/buy/endconfirm.do");
 	}
 	/**
-	 * Éú³ÉËùÓĞ¹ºÂòĞèĞÅÏ¢
+	 * ç”Ÿæˆæ‰€æœ‰è´­ä¹°éœ€ä¿¡æ¯
 	 */
 	@SuppressWarnings("unchecked")
 	public ActionForward endConfirm(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response){
 		BeanFactory beanFactory = BeanFactory.getInstance(null);
-		//ÔÚÕâÀï°Ñ´æ·ÅÔÚsessionÖĞµÄËùÓĞ¹ºÂòĞèĞÅÏ¢È«²¿·µ»Ø¸øÓÃ»§,Éú³ÉÒ»¸öÇåµ¥,¹©ÓÃ»§È·ÈÏ
+		//åœ¨è¿™é‡ŒæŠŠå­˜æ”¾åœ¨sessionä¸­çš„æ‰€æœ‰è´­ä¹°éœ€ä¿¡æ¯å…¨éƒ¨è¿”å›ç»™ç”¨æˆ·,ç”Ÿæˆä¸€ä¸ªæ¸…å•,ä¾›ç”¨æˆ·ç¡®è®¤
 		ActionForward forward = mapping.findForward("orderlist$");
 		TradeService trade_service = (TradeService) beanFactory.getBean("TradeService");
 		Map<Integer, Integer> shopcart_simple_info = (Map<Integer, Integer>) request.getSession(false).getAttribute("SHOPCART_SIMPLE_INFO");
@@ -227,8 +227,8 @@ public class TradeAction extends MappingDispatchAction {
 	}
 	
 	/**
-	 * µ±ÓÃ»§È·ÈÏ¹ºÂòÇåµ¥ÎŞÎóÊ±,µã»÷Ò³ÃæµÄÈ·¶¨°´Å¥Ê±¾Í·ÃÎÊÕâ¸ö·½·¨,ÕâÊ±²ÅÊÇÕæÕıµÄ¹ºÂò,ÍùÊı¾İ¿âÖĞĞ´ÈëÊı¾İ.
-	 * ¹ºÂòÁ÷³ÌÖÁ´Ë½áÊø
+	 * å½“ç”¨æˆ·ç¡®è®¤è´­ä¹°æ¸…å•æ— è¯¯æ—¶,ç‚¹å‡»é¡µé¢çš„ç¡®å®šæŒ‰é’®æ—¶å°±è®¿é—®è¿™ä¸ªæ–¹æ³•,è¿™æ—¶æ‰æ˜¯çœŸæ­£çš„è´­ä¹°,å¾€æ•°æ®åº“ä¸­å†™å…¥æ•°æ®.
+	 * è´­ä¹°æµç¨‹è‡³æ­¤ç»“æŸ
 	 * @param mapping
 	 * @param form
 	 * @param request
@@ -249,7 +249,7 @@ public class TradeAction extends MappingDispatchAction {
 			List<ProductVO> shopcart_particular = (List<ProductVO>) request.getSession(false).getAttribute("SHOPCART_PARTICULAR");
 			Map<String, String> chargeList = (Map<String, String>) request.getSession(false).getAttribute("CHARGE_LIST");
 			Map<String, AddressVO> addrMap = (Map<String, AddressVO>) request.getSession(false).getAttribute("ADDR_MAP");
-			//¸ù¾İÒÔÉÏ´æ·ÅÔÚsessionÖĞµÄÊôĞÔ±äÁ¿,Éú³ÉÒ»¸öBuyDTO,°ÑÕâ¸öbuyDTO´«µİ¸øservice²ã
+			//æ ¹æ®ä»¥ä¸Šå­˜æ”¾åœ¨sessionä¸­çš„å±æ€§å˜é‡,ç”Ÿæˆä¸€ä¸ªBuyDTO,æŠŠè¿™ä¸ªbuyDTOä¼ é€’ç»™serviceå±‚
 			
 			BuyDTO buyDTO = new BuyDTO();
 			buyDTO.setConfiguration(shopcart_map);
@@ -261,9 +261,9 @@ public class TradeAction extends MappingDispatchAction {
 			flag = trade_service.buy(buyDTO);
 		}
 		if(!flag){
-			return mapping.findForward("buy_fail");//·µ»Ø¸øÓÃ»§¹ºÂòÊ§°ÜµÄÌáÊ¾ĞÅÏ¢
+			return mapping.findForward("buy_fail");//è¿”å›ç»™ç”¨æˆ·è´­ä¹°å¤±è´¥çš„æç¤ºä¿¡æ¯
 		}else{
-			//ÕâÊ±ÒªÇåÀí¹ºÎï³µÁË,ÒÔ±ã¸ÃÓÃ»§»¹Òª¼ÌĞø¹ºÎïµÄ»°,ÄÇÃ´¾Í¹ºÎï³µÀï¾Í»¹ÓĞÉÏ´Î¹ºÎïÑ¡ÔñµÄÉÌÆ·
+			//è¿™æ—¶è¦æ¸…ç†è´­ç‰©è½¦äº†,ä»¥ä¾¿è¯¥ç”¨æˆ·è¿˜è¦ç»§ç»­è´­ç‰©çš„è¯,é‚£ä¹ˆå°±è´­ç‰©è½¦é‡Œå°±è¿˜æœ‰ä¸Šæ¬¡è´­ç‰©é€‰æ‹©çš„å•†å“
 			Map<Integer, Integer> shopcart_simple_info = (Map<Integer, Integer>) request.getSession(false).getAttribute("SHOPCART_SIMPLE_INFO");
 			List<ProductVO> shopcart_particular = (List<ProductVO>) request.getSession(false).getAttribute("SHOPCART_PARTICULAR");
 			Map<String, String> chargeList = (Map<String, String>) request.getSession(false).getAttribute("CHARGE_LIST");
@@ -273,10 +273,10 @@ public class TradeAction extends MappingDispatchAction {
 			chargeList.clear();
 		}
 		
-		return mapping.findForward("buy_succeed"); //·µ»Ø¸øÓÃ»§¹ºÂò³É¹¦µÄÌáÊ¾ĞÅÏ¢
+		return mapping.findForward("buy_succeed"); //è¿”å›ç»™ç”¨æˆ·è´­ä¹°æˆåŠŸçš„æç¤ºä¿¡æ¯
 	}
 	/**
-	 * Á¢¼´¹ºÂò·½·¨
+	 * ç«‹å³è´­ä¹°æ–¹æ³•
 	 * @param mapping
 	 * @param form
 	 * @param request
@@ -287,11 +287,11 @@ public class TradeAction extends MappingDispatchAction {
 	public ActionForward immedBuy(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response){
 		Integer productid = Integer.parseInt(request.getParameter("productid"));
-		Integer num = 1; //Ä¬ÈÏµÚÒ»´ÎÖ»Ñ¡Ò»¸ö
+		Integer num = 1; //é»˜è®¤ç¬¬ä¸€æ¬¡åªé€‰ä¸€ä¸ª
 		
 		HttpSession session = request.getSession();
 		if(session.getAttribute("SHOPCART_SIMPLE_INFO") == null){
-			Map<Integer, Integer> shopcart = new HashMap<Integer, Integer>(); //Ò»¸öÎªÉÌÆ·id,Ò»¸öÎª¹ºÂòÊıÁ¿
+			Map<Integer, Integer> shopcart = new HashMap<Integer, Integer>(); //ä¸€ä¸ªä¸ºå•†å“id,ä¸€ä¸ªä¸ºè´­ä¹°æ•°é‡
 			session.setAttribute("SHOPCART_SIMPLE_INFO", shopcart);
 			/*List<ProductVO> shopcart_particular = new ArrayList<ProductVO>();
 			session.setAttribute("SHOPCART_PARTICULAR", shopcart_particular);*/
@@ -300,34 +300,34 @@ public class TradeAction extends MappingDispatchAction {
 		Set<Integer> idset = shopcart_simple_info.keySet();
 		if(!idset.contains(productid)){
 			shopcart_simple_info.put(productid, num);
-		}else{}//Èç¹ûÓÃ»§ÒÑ¾­°Ñ¸Ã¼şÉÌÆ·Ìí¼Óµ½¹ºÎï³µÁË,ÄÇÃ´¾ÍÊ²Ã´Ò²²»×öĞŞ¸Ä
+		}else{}//å¦‚æœç”¨æˆ·å·²ç»æŠŠè¯¥ä»¶å•†å“æ·»åŠ åˆ°è´­ç‰©è½¦äº†,é‚£ä¹ˆå°±ä»€ä¹ˆä¹Ÿä¸åšä¿®æ”¹
 		
-		return new ActionForward("/buy/myshopcart.do"); //×ªµ½viewshopcart·½·¨,ÔÚÄÇ¸ö·½·¨Ê±»áµ½Êı¾İ¿âÖĞ²éÑ¯²úÆ·µÄÏêÏ¸ĞÅÏ¢,ÔÙ×ªµ½Ò³Ãæ½øĞĞÏÔÊ¾
+		return new ActionForward("/buy/myshopcart.do"); //è½¬åˆ°viewshopcartæ–¹æ³•,åœ¨é‚£ä¸ªæ–¹æ³•æ—¶ä¼šåˆ°æ•°æ®åº“ä¸­æŸ¥è¯¢äº§å“çš„è¯¦ç»†ä¿¡æ¯,å†è½¬åˆ°é¡µé¢è¿›è¡Œæ˜¾ç¤º
 	}
 	/** 
 	 * Method buy
-	 * Ìí¼ÓÒ»¸öÉÌÆ·µ½¹ºÎï³µ step1 Èç¹û¹ºÎï³µ»¹Î´¼¤»î,Ôò»á¼¤»î¹ºÎï³µ
-	 * ÎÒ»¹Ó¦¸ÃĞ´Ò»¸öÅúÁ¿Ñ¡ÔñÉÌÆ··ÅÈë¹ºÎï³µµÄ·½·¨,ÄÇÃ´
+	 * æ·»åŠ ä¸€ä¸ªå•†å“åˆ°è´­ç‰©è½¦ step1 å¦‚æœè´­ç‰©è½¦è¿˜æœªæ¿€æ´»,åˆ™ä¼šæ¿€æ´»è´­ç‰©è½¦
+	 * æˆ‘è¿˜åº”è¯¥å†™ä¸€ä¸ªæ‰¹é‡é€‰æ‹©å•†å“æ”¾å…¥è´­ç‰©è½¦çš„æ–¹æ³•,é‚£ä¹ˆ
 	 * @param mapping
 	 * @param form
 	 * @param request
 	 * @param response
 	 * @return ActionForward
 	 * 
-	 * Õâ¸ö·½·¨ÊÇ¹©ÓÃ»§Òì²½µ÷ÓÃµÄ
+	 * è¿™ä¸ªæ–¹æ³•æ˜¯ä¾›ç”¨æˆ·å¼‚æ­¥è°ƒç”¨çš„
 	 * 
-	 * ÎÒÓ¦¸Ã¶Ô¹ºÂòÉÌÆ·Õâ¸öÒµÎñÁ÷³Ì¼ÓÒ»¸öfilter,ÒÔÈ·±£µ±Ç°µÄ»á»°sessionÒòÎª³¬Ê±¶ø±»·şÎñÆ÷destoryµô,
-	 * ÕâÑù¾Í»ñÈ¡²»µ½session,´Ó¶ø»á³öÒì³£
+	 * æˆ‘åº”è¯¥å¯¹è´­ä¹°å•†å“è¿™ä¸ªä¸šåŠ¡æµç¨‹åŠ ä¸€ä¸ªfilter,ä»¥ç¡®ä¿å½“å‰çš„ä¼šè¯sessionå› ä¸ºè¶…æ—¶è€Œè¢«æœåŠ¡å™¨destoryæ‰,
+	 * è¿™æ ·å°±è·å–ä¸åˆ°session,ä»è€Œä¼šå‡ºå¼‚å¸¸
 	 */
 	@SuppressWarnings("unchecked")
 	public ActionForward add_product(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		Integer productid = Integer.parseInt(request.getParameter("productid"));
-		Integer num = 1; //Ä¬ÈÏÖ»Ñ¡Ò»¸ö
+		Integer num = 1; //é»˜è®¤åªé€‰ä¸€ä¸ª
 		
 		HttpSession session = request.getSession();
 		if(session.getAttribute("SHOPCART_SIMPLE_INFO") == null){
-			Map<Integer, Integer> shopcart = new HashMap<Integer, Integer>(); //Ò»¸öÎªÉÌÆ·id,Ò»¸öÎª¹ºÂòÊıÁ¿
+			Map<Integer, Integer> shopcart = new HashMap<Integer, Integer>(); //ä¸€ä¸ªä¸ºå•†å“id,ä¸€ä¸ªä¸ºè´­ä¹°æ•°é‡
 			session.setAttribute("SHOPCART_SIMPLE_INFO", shopcart);
 			List<ProductVO> shopcart_particular = new ArrayList<ProductVO>();
 			session.setAttribute("SHOPCART_PARTICULAR", shopcart_particular);
@@ -338,7 +338,7 @@ public class TradeAction extends MappingDispatchAction {
 		return null;
 	}
 	/**
-	 * Õâ¸ö·½·¨Ò²ÊÇ¹©ÓÃ»§Òì²½µ÷ÓÃµÄ,²»·µ»Ø¸øÓÃ»§½á¹û,ÓÃ»§½çÃæµÄ¸Ä±äÊÇÍ¨¹ıjsÊµÏÖ
+	 * è¿™ä¸ªæ–¹æ³•ä¹Ÿæ˜¯ä¾›ç”¨æˆ·å¼‚æ­¥è°ƒç”¨çš„,ä¸è¿”å›ç»™ç”¨æˆ·ç»“æœ,ç”¨æˆ·ç•Œé¢çš„æ”¹å˜æ˜¯é€šè¿‡jså®ç°
 	 * @param mapping
 	 * @param form
 	 * @param request
@@ -350,12 +350,12 @@ public class TradeAction extends MappingDispatchAction {
 			HttpServletRequest request, HttpServletResponse response) {
 		
 		Map<Integer, Integer> shopcart_simple_info = (Map<Integer, Integer>) request.getSession(false).getAttribute("SHOPCART");
-		shopcart_simple_info.put(Integer.parseInt(request.getParameter("productid")), Integer.parseInt(request.getParameter("num"))); //¸²¸ÇÔ­À´µÄÊıÁ¿
+		shopcart_simple_info.put(Integer.parseInt(request.getParameter("productid")), Integer.parseInt(request.getParameter("num"))); //è¦†ç›–åŸæ¥çš„æ•°é‡
 		
 		return null;
 	}
 	/**
-	 * Õâ¸ö·½·¨Ò²ÊÇ¹©ÓÃ»§Òì²½µ÷ÓÃµÄ,²»·µ»Ø¸øÓÃ»§½á¹û,ÓÃ»§½çÃæµÄ¸Ä±äÊÇÍ¨¹ıjsÊµÏÖ,
+	 * è¿™ä¸ªæ–¹æ³•ä¹Ÿæ˜¯ä¾›ç”¨æˆ·å¼‚æ­¥è°ƒç”¨çš„,ä¸è¿”å›ç»™ç”¨æˆ·ç»“æœ,ç”¨æˆ·ç•Œé¢çš„æ”¹å˜æ˜¯é€šè¿‡jså®ç°,
 	 * @param mapping
 	 * @param form
 	 * @param request
@@ -367,7 +367,7 @@ public class TradeAction extends MappingDispatchAction {
 			HttpServletRequest request, HttpServletResponse response) {
 		
 		Map<Integer, Integer> shopcart_simple_info = (Map<Integer, Integer>) request.getSession(false).getAttribute("SHOPCART");
-		shopcart_simple_info.remove(Integer.parseInt(request.getParameter("productid"))); //¶ÔÒıÓÃµÄĞŞ¸ÄÍ¬Ñù»áÊ¹Ô­À´±äÁ¿Ò²»áĞŞ¸Ä
+		shopcart_simple_info.remove(Integer.parseInt(request.getParameter("productid"))); //å¯¹å¼•ç”¨çš„ä¿®æ”¹åŒæ ·ä¼šä½¿åŸæ¥å˜é‡ä¹Ÿä¼šä¿®æ”¹
 		
 		return null;
 	}
@@ -396,13 +396,13 @@ public class TradeAction extends MappingDispatchAction {
 	/*public ActionForward endConfirm(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response){
 		BeanFactory beanFactory = BeanFactory.getInstance(null);
-		//ÔÚÕâÀï°Ñ´æ·ÅÔÚsessionÖĞµÄËùÓĞ¹ºÂòĞèĞÅÏ¢È«²¿·µ»Ø¸øÓÃ»§,Éú³ÉÒ»¸öÇåµ¥,¹©ÓÃ»§È·ÈÏ
+		//åœ¨è¿™é‡ŒæŠŠå­˜æ”¾åœ¨sessionä¸­çš„æ‰€æœ‰è´­ä¹°éœ€ä¿¡æ¯å…¨éƒ¨è¿”å›ç»™ç”¨æˆ·,ç”Ÿæˆä¸€ä¸ªæ¸…å•,ä¾›ç”¨æˆ·ç¡®è®¤
 		ActionForward forward = mapping.findForward("orderlist$");
 		String isUseBonouspoint = request.getParameter("isubp");
 		Integer usebonouspoint = 0;
 		if(isUseBonouspoint.equals("yes") && !request.getParameter("bp").equals("")){
 			((Map<String, Object>)request.getSession(false).getAttribute("SHOPCART_MAP")).put("IS_USE_BONUSPOINT", true);
-			usebonouspoint = Integer.parseInt(request.getParameter("bp")); //¿´ÓÃ»§ÊÇ·ñÓÃ»ı·Ö,Èç¹ûÓÃ»ı·Ö,ÓÃ¶àÉÙ»ı·Ö
+			usebonouspoint = Integer.parseInt(request.getParameter("bp")); //çœ‹ç”¨æˆ·æ˜¯å¦ç”¨ç§¯åˆ†,å¦‚æœç”¨ç§¯åˆ†,ç”¨å¤šå°‘ç§¯åˆ†
 		}else{
 			return forward;
 		}
@@ -424,7 +424,7 @@ public class TradeAction extends MappingDispatchAction {
 	}*/
 //============================End==============End=================End========================================
 	/**
-	 * ÊÕ²ØÉÌÆ·
+	 * æ”¶è—å•†å“
 	 * @param mapping
 	 * @param form
 	 * @param request
@@ -448,7 +448,7 @@ public class TradeAction extends MappingDispatchAction {
 		return forward;
 	}
 	/**
-	 * ÒâÔ¸Ò»Ğ©ÉÌÆ·
+	 * æ„æ„¿ä¸€äº›å•†å“
 	 * @param mapping
 	 * @param form
 	 * @param request

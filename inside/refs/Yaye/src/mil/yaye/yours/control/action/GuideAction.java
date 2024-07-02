@@ -60,7 +60,7 @@ public class GuideAction extends MappingDispatchAction {
 	public ActionForward viewproduct(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		String productid = request.getParameter("productid");
-		//<---µ÷ÓÃÏàÓ¦ÒµÎñÄ£ĞÍ begin
+		//<---è°ƒç”¨ç›¸åº”ä¸šåŠ¡æ¨¡å‹ begin
 		GuideService service = (GuideService)serviceFactory.getBean("GuideService");
 		ProductVO productVO = service.productGuide(Integer.parseInt(productid));
 		if(productVO == null){
@@ -68,9 +68,9 @@ public class GuideAction extends MappingDispatchAction {
 		}
 		Map<Integer, InitVO> locationMap = service.getLocations(productVO.getCategory().getCategoryId());//--End
 		
-		//<---¶ÁÈëÄ£°åÒ³Ãæ begin
-		/*Õâ¿ÉÒÔ²»ÓÃÔÚÕâÀïÔÙĞ´³öÁË,ÒòÎªÎÒÔÚstrutsµÄÅäÖÃÎÄ¼şÖĞÎªActionServlet<ÖĞÑë¿ØÖÆÆ÷>ÅäÖÃµÄÒ»¸ö<controller>ÔªËØÖĞÖ¸³öÁË
-		Á½¸öÊôĞÔµÄÖµ:contentTypeºÍnocache
+		//<---è¯»å…¥æ¨¡æ¿é¡µé¢ begin
+		/*è¿™å¯ä»¥ä¸ç”¨åœ¨è¿™é‡Œå†å†™å‡ºäº†,å› ä¸ºæˆ‘åœ¨strutsçš„é…ç½®æ–‡ä»¶ä¸­ä¸ºActionServlet<ä¸­å¤®æ§åˆ¶å™¨>é…ç½®çš„ä¸€ä¸ª<controller>å…ƒç´ ä¸­æŒ‡å‡ºäº†
+		ä¸¤ä¸ªå±æ€§çš„å€¼:contentTypeå’Œnocache
 		<controller
 		contentType="text/html;charset=utf-8"
 		locale="false"
@@ -96,26 +96,26 @@ public class GuideAction extends MappingDispatchAction {
 			e.printStackTrace();
 		}//End--->
 		
-		//<--¹¹Ôì¸ÃÉÌÆ·µÄn+1¸¸¼¶Ä¿Â¼µÄÃ¿¸öÄ¿Â¼µÄÁ´½Ó begin
+		//<--æ„é€ è¯¥å•†å“çš„n+1çˆ¶çº§ç›®å½•çš„æ¯ä¸ªç›®å½•çš„é“¾æ¥ begin
 		StringBuffer strBuff = new StringBuffer();
 		String snip_1 = "<a href='" + GlobalNames.SERVER + "/category.do?categoryid=";
 		String snip_2 = "'>";
 		String snip_3 = "</a>&nbsp;&gt;&nbsp;";
-//		logger.info("locationMapµÄ´óĞ¡Îª:" + locationMap.size());
+//		logger.info("locationMapçš„å¤§å°ä¸º:" + locationMap.size());
 		for(int i = locationMap.size() -1; i > 0; i--){
 			InitVO initVO = locationMap.get(i);
 			strBuff.append(snip_1 + initVO.getKey() + snip_2 + initVO.getValue() + snip_3);
-//			logger.info("¼¸¸öÄ¿Â¼Á´½Ó:" + snip_1 + initVO.getKey() + snip_2 + initVO.getValue() + snip_3);
-//			logger.info("Éú³ÉÁË¼¸¸ö<a></a>" + i);
+//			logger.info("å‡ ä¸ªç›®å½•é“¾æ¥:" + snip_1 + initVO.getKey() + snip_2 + initVO.getValue() + snip_3);
+//			logger.info("ç”Ÿæˆäº†å‡ ä¸ª<a></a>" + i);
 		}
 		strBuff.append(snip_1 + productVO.getCategory().getCategoryId() + snip_2 + productVO.getCategory().getCategoryname() + snip_3);
 		
 		//---End
 		
-		//<--¿ªÊ¼¶ÔÄ£°åÒ³ÉÏµÄÏà¹ØÄÚÈİ½øĞĞ×¼±¸ begin
-		String title = productVO.getProductname() + " -RedRoseÉÌ³Ç";
+		//<--å¼€å§‹å¯¹æ¨¡æ¿é¡µä¸Šçš„ç›¸å…³å†…å®¹è¿›è¡Œå‡†å¤‡ begin
+		String title = productVO.getProductname() + " -RedRoseå•†åŸ";
 		String image = "<img src='" + GlobalNames.SERVER + "/" +productVO.getThumbnail() + "' width='170' height='170' />";
-//		logger.info("Í¼ÏñµÄÂ·¾¶Îª:"+image);
+//		logger.info("å›¾åƒçš„è·¯å¾„ä¸º:"+image);
 		String productname = productVO.getProductname();
 		String market_price = "2980";
 		String our_price = productVO.getPrice().toString();
@@ -123,15 +123,15 @@ public class GuideAction extends MappingDispatchAction {
 		String locations = strBuff.toString(); //---End
 		/*for Test
 		 * String image = "<img src='" + GlobalNames.SERVER + "images/products/thirdviewimages/PD_2010729_M.jpg' width='170' height='170' />";
-		String productname = "¡¾ÈÕ±¾¡¤LIZ LISA¡¿ÌğÃÀ¹«Ö÷ĞäÅ®Ê¿ÕÖÉÀ£¨½ÛÉ«£©";
+		String productname = "ã€æ—¥æœ¬Â·LIZ LISAã€‘ç”œç¾å…¬ä¸»è¢–å¥³å£«ç½©è¡«ï¼ˆæ¡”è‰²ï¼‰";
 		String market_price = "2980";
 		String our_price = "2350.00";
-		String description = "³ßÂë:¾ùÂëÑÕÉ«:½ÛÉ«»¨É«:´¿É«·ç¸ñ:ÊçÅ®×Å×°·½°¸:±ê×¼ÊÊºÏ¼¾½Ú:´º|ÏÄ|Çï|¶¬ËØ²Ä£º¾Ûõ¥65% ÈËÔìÏËÎ¬30% ¾Û°±ÒÒõ¥5%¥¯¥ê©`¥Ë¥ó¥°£ºÊ¯ÓÍÏµ¥É¥é¥¤¥¯¥ê©`¥Ë¥ó¥°Ô­®b¹ú£ºÖĞ¹úÖÆ³ß´çĞØÎ§ÑüÎ§×ÜĞä³¤Éí³¤F84cmFree 75cm66cm";
-		String locate1 = "ÊıÂëÊÓÌı¡¢Ïà»ú¡¢ÉãÓ°ÉãÏñ";
+		String description = "å°ºç :å‡ç é¢œè‰²:æ¡”è‰²èŠ±è‰²:çº¯è‰²é£æ ¼:æ·‘å¥³ç€è£…æ–¹æ¡ˆ:æ ‡å‡†é€‚åˆå­£èŠ‚:æ˜¥|å¤|ç§‹|å†¬ç´ æï¼šèšé…¯65% äººé€ çº¤ç»´30% èšæ°¨ä¹™é…¯5%ã‚¯ãƒªãƒ¼ãƒ‹ãƒ³ã‚°ï¼šçŸ³æ²¹ç³»ãƒ‰ãƒ©ã‚¤ã‚¯ãƒªãƒ¼ãƒ‹ãƒ³ã‚°åŸç”£å›½ï¼šä¸­å›½åˆ¶å°ºå¯¸èƒ¸å›´è…°å›´æ€»è¢–é•¿èº«é•¿F84cmFree 75cm66cm";
+		String locate1 = "æ•°ç è§†å¬ã€ç›¸æœºã€æ‘„å½±æ‘„åƒ";
 		String locate2 = "MP4";
-		String locate3 = "ipodÆ»¹û";*/
+		String locate3 = "ipodè‹¹æœ";*/
 		
-		//<--¿ªÊ¼¶ÔÄ£°åÒ³ÉÏµÄÏà¹ØÄÚÈİ½øĞĞÌæ»» begin
+		//<--å¼€å§‹å¯¹æ¨¡æ¿é¡µä¸Šçš„ç›¸å…³å†…å®¹è¿›è¡Œæ›¿æ¢ begin
 		String output = templethtml.toString();
 		output = output.replace("%title%", title);
 		output = output.replaceAll("%SERVER%", GlobalNames.SERVER);
@@ -152,12 +152,12 @@ public class GuideAction extends MappingDispatchAction {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		logger.info("Íê³ÉÒ»´Î²éÑ¯...over...............!!!!!!!");
+		logger.info("å®Œæˆä¸€æ¬¡æŸ¥è¯¢...over...............!!!!!!!");
 //		logger.info(output);
 		return null;
 	}
 	/**
-	 * µÇÂ½ºó²é¿´ÉÌÆ·
+	 * ç™»é™†åæŸ¥çœ‹å•†å“
 	 * 
 	 * @param mapping
 	 * @param form
@@ -173,11 +173,11 @@ public class GuideAction extends MappingDispatchAction {
 		}
 		for(int i = 0; i < cookies.length; i++){
 			if(cookies[i].getName().equals("JSESSIONID")){
-				logger.info("µ±Ç°»á»°µÄsessionIDÎª:" + cookies[i].getValue());
+				logger.info("å½“å‰ä¼šè¯çš„sessionIDä¸º:" + cookies[i].getValue());
 			}
 		}*/
 		String productid = request.getParameter("productid");
-		//<---µ÷ÓÃÏàÓ¦ÒµÎñÄ£ĞÍ begin
+		//<---è°ƒç”¨ç›¸åº”ä¸šåŠ¡æ¨¡å‹ begin
 		GuideService service = (GuideService)serviceFactory.getBean("GuideService");
 		ProductVO productVO = service.productGuide(Integer.parseInt(productid));
 		if(productVO == null){
@@ -191,7 +191,7 @@ public class GuideAction extends MappingDispatchAction {
 		return mapping.findForward("product$");
 	}
 	/**
-	 * Õâ¸ö·½·¨½øĞĞ²éÑ¯Êı¾İ¿âµÄscott.emp±í
+	 * è¿™ä¸ªæ–¹æ³•è¿›è¡ŒæŸ¥è¯¢æ•°æ®åº“çš„scott.empè¡¨
 	 * @param mapping
 	 * @param form
 	 * @param request
@@ -200,7 +200,7 @@ public class GuideAction extends MappingDispatchAction {
 	 */
 	public ActionForward proxoolcheck(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response){
-		//<---µ÷ÓÃÏàÓ¦ÒµÎñÄ£ĞÍ begin
+		//<---è°ƒç”¨ç›¸åº”ä¸šåŠ¡æ¨¡å‹ begin
 		GuideService service = (GuideService)serviceFactory.getBean("GuideService");
 		service.proxoolcheck();
 		return null;

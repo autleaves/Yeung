@@ -16,8 +16,8 @@ public class InitLog4j extends HttpServlet {
 		PropertyConfigurator.configure(configFile);
 		System.out.println("%%%%%%%%%%Log4j start working!%%%%%%%%%%%");
 		
-		//ÔÚÕâÀïÈ¥ÅĞ¶ÏconfigFileÊÇ·ñÎª¿ÕÊÇÒ»¸ö´íÎóµÄÏë·¨,
-		//ÒòÎªÖ»ÒªÄãµÄweb.xmlÖĞÅäÖÃÁËÕâ¸ö²ÎÊı,ÄÇÃ´Õâ¸öconfigFile¾Íºã²»Îªnull,¶ø²»¹ÜÄãµÄÂ·¾¶ÊÇ·ñÕıÈ·
+		//åœ¨è¿™é‡Œå»åˆ¤æ–­configFileæ˜¯å¦ä¸ºç©ºæ˜¯ä¸€ä¸ªé”™è¯¯çš„æƒ³æ³•,
+		//å› ä¸ºåªè¦ä½ çš„web.xmlä¸­é…ç½®äº†è¿™ä¸ªå‚æ•°,é‚£ä¹ˆè¿™ä¸ªconfigFileå°±æ’ä¸ä¸ºnull,è€Œä¸ç®¡ä½ çš„è·¯å¾„æ˜¯å¦æ­£ç¡®
 		/*if(configFile != null){
 			BasicConfigurator.configure();
 			PropertyConfigurator.configure(configFile);

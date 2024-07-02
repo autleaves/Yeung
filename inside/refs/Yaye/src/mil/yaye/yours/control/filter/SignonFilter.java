@@ -36,17 +36,17 @@ public class SignonFilter implements Filter {
 		}
 		/*if(request.getSession(false) != null){
 			if(request.getSession(false).getAttribute("IS_LOGON") != null && (((Boolean)request.getSession(false).getAttribute("IS_LOGON")) == true)){
-				request.setAttribute("MY_RESPONSE_ERROR", "¡Á¶Ô²»Æğ,ÒÑ´æÔÚÒ»¸öÕâÑùµÄÕÊ»§µÇÂ½!");
+				request.setAttribute("MY_RESPONSE_ERROR", "Ã—å¯¹ä¸èµ·,å·²å­˜åœ¨ä¸€ä¸ªè¿™æ ·çš„å¸æˆ·ç™»é™†!");
 				response.sendRedirect(error_page_2);
 			}else {
 				request.getSession(false).invalidate();
 			}
 		}*/
 		if(isLogin == true){
-			logger.info("########Õâ¸öÇëÇóÊÇºÏ·¨µÄÁË.......");
+			logger.info("########è¿™ä¸ªè¯·æ±‚æ˜¯åˆæ³•çš„äº†.......");
 			chain.doFilter(arg0, arg1);
 		}else{
-			logger.info("###########Õâ¸öÇëÇó±»½Ø»ñÁË....");
+			logger.info("###########è¿™ä¸ªè¯·æ±‚è¢«æˆªè·äº†....");
 			response.sendRedirect(error_page_1);
 		}
 	}

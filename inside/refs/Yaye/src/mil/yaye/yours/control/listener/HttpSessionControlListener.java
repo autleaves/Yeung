@@ -18,30 +18,30 @@ public class HttpSessionControlListener implements HttpSessionListener,HttpSessi
 
 	public void sessionCreated(HttpSessionEvent arg0) {
 		
-		logger.info("´´½¨ÁËÒ»¸ö»á»°session,Çë×¢Òâ................");
+		logger.info("åˆ›å»ºäº†ä¸€ä¸ªä¼šè¯session,è¯·æ³¨æ„................");
 	}
 
 	public void sessionDestroyed(HttpSessionEvent arg0) {
-		//»¹ĞèÒªĞŞ¸ÄÊı¾İ¿âÖĞµÄµÇÂ½±êÊ¶×Ö¶Î
+		//è¿˜éœ€è¦ä¿®æ”¹æ•°æ®åº“ä¸­çš„ç™»é™†æ ‡è¯†å­—æ®µ
 		BeanFactory serviceFactory = BeanFactory.getInstance(null);
 		PersonnelService service = (PersonnelService) serviceFactory.getBean("PersonnelService");
-		//Õâ¸ösetDAO·½·¨ÆäÊµµ÷ÓÃÒ»´Î¾Í¿ÉÒÔÁË,ÒÔºó¾Í²»ÓÃÔÙµ÷ÓÃÁË,ÒòÎª"PersonnelService"ÊÇÔÚTomcatÆô¶¯Ê±³õÊ¹»¯µÄ.
-		//ÕâÀï¶¨ÒåµÄÕâ¸ö±äÁ¿serviceÊµ¼ÊÉÏ¾ÍÊÇÒ»¸öÒıÓÃ,¶ÔÒıÓÃµÄ²Ù×÷ÆäÊµÒ²¾Í¿ÉÒÔ¿´×÷ÊÇ¶Ô"PersonnelService"µÄ²Ù×÷,
-		//ËùÒÔÒÔºóÔÙ¶¨ÒåÒ»¸öÒıÓÃÈ¥ÒıÓÃ"PersonnelService",Êµ¼ÊÉÏËü¾ÍÒÑ¾­Ö´ĞĞ¹ısetDAO()·½·¨ÁË,Èç¹ûÄã»¹ÒªÔÙÖ´ĞĞÒ»´Î,
-		//ËüÒ²Ö»²»¹ıÊÇ¶ÔÔ­À´µÄsetDAO()·½·¨ÖĞµÄ±äÁ¿½øĞĞÓÖÒ»´Î¸³Öµ,µÈÓÚÓÖÖØĞÂ¸³ÁËÒ»´ÎÏàÍ¬µÄÖµ,Õâ¾ÍÃ»ÓĞÈÎºÎÒâÒåÁË,
-		//ÎÒÏëÎÒ¿ÉÒÔ°Ñ¶ÔÄÇĞ©xxxDAOµÄsetDAO()·½·¨ÔÚÒ»¸öµØ·½½øĞĞ¼¯ÖĞµ÷ÓÃ,ÒÔºó¾ÍÔÙÒ²²»ÓÃµ÷ÓÃsetDAO()·½·¨ÁË.
+		//è¿™ä¸ªsetDAOæ–¹æ³•å…¶å®è°ƒç”¨ä¸€æ¬¡å°±å¯ä»¥äº†,ä»¥åå°±ä¸ç”¨å†è°ƒç”¨äº†,å› ä¸º"PersonnelService"æ˜¯åœ¨Tomcatå¯åŠ¨æ—¶åˆä½¿åŒ–çš„.
+		//è¿™é‡Œå®šä¹‰çš„è¿™ä¸ªå˜é‡serviceå®é™…ä¸Šå°±æ˜¯ä¸€ä¸ªå¼•ç”¨,å¯¹å¼•ç”¨çš„æ“ä½œå…¶å®ä¹Ÿå°±å¯ä»¥çœ‹ä½œæ˜¯å¯¹"PersonnelService"çš„æ“ä½œ,
+		//æ‰€ä»¥ä»¥åå†å®šä¹‰ä¸€ä¸ªå¼•ç”¨å»å¼•ç”¨"PersonnelService",å®é™…ä¸Šå®ƒå°±å·²ç»æ‰§è¡Œè¿‡setDAO()æ–¹æ³•äº†,å¦‚æœä½ è¿˜è¦å†æ‰§è¡Œä¸€æ¬¡,
+		//å®ƒä¹Ÿåªä¸è¿‡æ˜¯å¯¹åŸæ¥çš„setDAO()æ–¹æ³•ä¸­çš„å˜é‡è¿›è¡Œåˆä¸€æ¬¡èµ‹å€¼,ç­‰äºåˆé‡æ–°èµ‹äº†ä¸€æ¬¡ç›¸åŒçš„å€¼,è¿™å°±æ²¡æœ‰ä»»ä½•æ„ä¹‰äº†,
+		//æˆ‘æƒ³æˆ‘å¯ä»¥æŠŠå¯¹é‚£äº›xxxDAOçš„setDAO()æ–¹æ³•åœ¨ä¸€ä¸ªåœ°æ–¹è¿›è¡Œé›†ä¸­è°ƒç”¨,ä»¥åå°±å†ä¹Ÿä¸ç”¨è°ƒç”¨setDAO()æ–¹æ³•äº†.
 //		service.setDAO(daoFactory);
-		logger.info("¿ªÊ¼Destoryµ±Ç°SessionÁË.................");
+		logger.info("å¼€å§‹Destoryå½“å‰Sessionäº†.................");
 		if(arg0.getSession().getAttribute("USER_BASE_INFO") == null){
 			return;
 		}
 		UserVO userInfo = (UserVO) arg0.getSession().getAttribute("USER_BASE_INFO");
-		logger.info("sessionListener....¿ªÊ¼Ö´ĞĞexit·½·¨........");
-//		service.exit(userInfo.getLogonid()); //Í¨¹ıhibernate
-		service.exitByJDBC(userInfo.getLogonid());	//3.ĞŞ¸ÄÊı¾İ¿âÖĞµÄsessionid±êÊ¶×Ö¶ÎÎª'$OFF$'
-		logger.info("sessionListener....Ö´ĞĞ½áÊøexit·½·¨........");
+		logger.info("sessionListener....å¼€å§‹æ‰§è¡Œexitæ–¹æ³•........");
+//		service.exit(userInfo.getLogonid()); //é€šè¿‡hibernate
+		service.exitByJDBC(userInfo.getLogonid());	//3.ä¿®æ”¹æ•°æ®åº“ä¸­çš„sessionidæ ‡è¯†å­—æ®µä¸º'$OFF$'
+		logger.info("sessionListener....æ‰§è¡Œç»“æŸexitæ–¹æ³•........");
 		
-		/*//ÊÖ¶¯Çå³ı´æ·ÅÔÚsessionµÄËùÓĞ±äÁ¿, ¾¡¿ìÊÍ·ÅÄÚ´æ×ÊÔ´
+		/*//æ‰‹åŠ¨æ¸…é™¤å­˜æ”¾åœ¨sessionçš„æ‰€æœ‰å˜é‡, å°½å¿«é‡Šæ”¾å†…å­˜èµ„æº
 		Enumeration<?> attrs = arg0.getSession().getAttributeNames();
 		while(attrs.hasMoreElements()){
 			arg0.getSession().removeAttribute((String)attrs.nextElement());
@@ -52,18 +52,18 @@ public class HttpSessionControlListener implements HttpSessionListener,HttpSessi
 
 	public void attributeAdded(HttpSessionBindingEvent arg0) {
 		if(arg0.getName().equals("USER_BASE_INFO")){
-			logger.info("×¥È¡µ½USER_BASE_INFOÕâ¸öÊôĞÔÁË........");
+			logger.info("æŠ“å–åˆ°USER_BASE_INFOè¿™ä¸ªå±æ€§äº†........");
 		}else if(arg0.getName().equals("SHOPCART")){
-			logger.info("×¥È¡µ½SHOPCARTÕâ¸öÊôĞÔÁË........");
+			logger.info("æŠ“å–åˆ°SHOPCARTè¿™ä¸ªå±æ€§äº†........");
 		}
 		else{
-			logger.info("µ±Ç°´´½¨µÄ²»ÊÇSHOPCART»òÕßUSER_INFOÕâ¸öÊôĞÔ........");
+			logger.info("å½“å‰åˆ›å»ºçš„ä¸æ˜¯SHOPCARTæˆ–è€…USER_INFOè¿™ä¸ªå±æ€§........");
 		}
 		
 	}
 
 	public void attributeRemoved(HttpSessionBindingEvent arg0) {
-		logger.info("¿ªÊ¼ÒÆ³ıµ±Ç°»á»°sessionÖĞµÄÊôĞÔ:" +arg0.getName());
+		logger.info("å¼€å§‹ç§»é™¤å½“å‰ä¼šè¯sessionä¸­çš„å±æ€§:" +arg0.getName());
 	}
 
 	public void attributeReplaced(HttpSessionBindingEvent arg0) {

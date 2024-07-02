@@ -40,16 +40,16 @@ public class PreprocessAction extends MappingDispatchAction {
 	public ActionForward registToken(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		if(request.getSession(false) == null){
-			logger.info("ÔÚ»¹Ã»ÓĞsaveTokenÇ°»¹Ã»ÓĞ¿ªÆô»á»°session.......");
+			logger.info("åœ¨è¿˜æ²¡æœ‰saveTokenå‰è¿˜æ²¡æœ‰å¼€å¯ä¼šè¯session.......");
 		}
 		saveToken(request);
 		if(request.getSession(false) != null){
-			logger.info("´ËÊ±sessionÒÑ²»ÎªnullÁË........");
+			logger.info("æ­¤æ—¶sessionå·²ä¸ä¸ºnulläº†........");
 		}
 		Enumeration attrs = request.getSession(false).getAttributeNames();
 		while(attrs.hasMoreElements()){
 			Object attr = attrs.nextElement();
-			logger.info("TokenÁîÅÆÎª:" + request.getSession(false).getAttribute((String)attr));
+			logger.info("Tokenä»¤ç‰Œä¸º:" + request.getSession(false).getAttribute((String)attr));
 		}
 		return new ActionForward("/regist.do");
 	}

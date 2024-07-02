@@ -16,7 +16,7 @@ public class InstanceBeanFactoryListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent arg0) {
 		String path = arg0.getServletContext().getRealPath("/WEB-INF/classes/mil/yaye/yours/conf");
 		BeanFactory.getInstance(path);
-		logger.info("InstanceBeanFactoryListener.......³õÊ¹»¯BeanFactory........Over!!!.......");
+		logger.info("InstanceBeanFactoryListener.......ÂÂ?ÂÂBeanFactory........Over!!!.......");
 	}
 
 }

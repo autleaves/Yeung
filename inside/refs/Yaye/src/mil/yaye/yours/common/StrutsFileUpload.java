@@ -17,13 +17,13 @@ public class StrutsFileUpload {
 	private String errorMessage = null;
 	
 	
-	private FormFile uploadFile = null;                       //ÉÏ´«µÄÎÄ¼ş¶ÔÏó;
-	private int fileSize = 0;                                 //ÎÄ¼ş´óĞ¡;
-	private String fileName = null;                           //ÎÄ¼şÃû£¬°üº¬À©Õ¹Ãû;
-	private String filenameExtension = null;                  //ÎÄ¼şÀ©Õ¹Ãû;
-	private String allowFileType = null;                      //ÔÊĞíÉÏ´«µÄÎÄ¼şÀàĞÍÀ©Õ¹Ãû£¬¶à¸öÒÔ¶ººÅ","·Ö¸ô;
-	private int maxSize = GlobalNames.UPLOAD_FILE_SIZE;       //ÔÊĞíÉÏ´«µÄÎÄ¼ş´óĞ¡×î´óÖµ£¬µ¥Î»byte;
-	private String fileSavePath = GlobalNames.UPLOAD_PATH;    //ÎÄ¼ş±£´æµÄÎÄ¼ş¼ĞÂ·¾¶£¬²»°üº¬ÎÄ¼şÃû
+	private FormFile uploadFile = null;                       //ä¸Šä¼ çš„æ–‡ä»¶å¯¹è±¡;
+	private int fileSize = 0;                                 //æ–‡ä»¶å¤§å°;
+	private String fileName = null;                           //æ–‡ä»¶åï¼ŒåŒ…å«æ‰©å±•å;
+	private String filenameExtension = null;                  //æ–‡ä»¶æ‰©å±•å;
+	private String allowFileType = null;                      //å…è®¸ä¸Šä¼ çš„æ–‡ä»¶ç±»å‹æ‰©å±•åï¼Œå¤šä¸ªä»¥é€—å·","åˆ†éš”;
+	private int maxSize = GlobalNames.UPLOAD_FILE_SIZE;       //å…è®¸ä¸Šä¼ çš„æ–‡ä»¶å¤§å°æœ€å¤§å€¼ï¼Œå•ä½byte;
+	private String fileSavePath = GlobalNames.UPLOAD_PATH;    //æ–‡ä»¶ä¿å­˜çš„æ–‡ä»¶å¤¹è·¯å¾„ï¼Œä¸åŒ…å«æ–‡ä»¶å
 	
 	public StrutsFileUpload(FormFile uploadFile) throws AppException {
 		super();
@@ -35,7 +35,7 @@ public class StrutsFileUpload {
 	}
 	
 	/**
-	 * ÉèÖÃÎÄ¼ş±£´æÔÚ·şÎñÆ÷ÉÏµÄ¾ø¶ÔÂ·¾¶,ÈôÉèÖÃÎªnullÔòÊ¹ÓÃÄ¬ÈÏÖµ£ºGlobalNames.UPLOAD_PATH;
+	 * è®¾ç½®æ–‡ä»¶ä¿å­˜åœ¨æœåŠ¡å™¨ä¸Šçš„ç»å¯¹è·¯å¾„,è‹¥è®¾ç½®ä¸ºnullåˆ™ä½¿ç”¨é»˜è®¤å€¼ï¼šGlobalNames.UPLOAD_PATH;
 	 * @param fileSavePath
 	 */
 	public void setFileSavePath(String fileSavePath) {
@@ -47,10 +47,10 @@ public class StrutsFileUpload {
 	
 	
 	/**
-	 * ÉèÖÃÔÊĞíÉÏ´«µÄÎÄ¼şÀàĞÍ£¬¶àÖÖÎÄ¼şÀàĞÍÓÃ¶ººÅ","·Ö¸ô;Èç£º
-	 * ÎÄ±¾ÎÄ¼ş£º".txt";   wordÎÄ¼ş: ".doc";
-	 * Í¼Æ¬ÎÄ¼ş£º".jpg,.jpeg,.gif,.png,.bmp";
-	 * .rarÎÄ¼ş£º".rar";
+	 * è®¾ç½®å…è®¸ä¸Šä¼ çš„æ–‡ä»¶ç±»å‹ï¼Œå¤šç§æ–‡ä»¶ç±»å‹ç”¨é€—å·","åˆ†éš”;å¦‚ï¼š
+	 * æ–‡æœ¬æ–‡ä»¶ï¼š".txt";   wordæ–‡ä»¶: ".doc";
+	 * å›¾ç‰‡æ–‡ä»¶ï¼š".jpg,.jpeg,.gif,.png,.bmp";
+	 * .raræ–‡ä»¶ï¼š".rar";
 	 * @param allowFileType
 	 */
 	public void setAllowFileType(String allowFileType) {
@@ -58,16 +58,16 @@ public class StrutsFileUpload {
 	}
 
 	/**
-	 * »ñÈ¡ÔÊĞíÉÏ´«ÎÄ¼şµÄ×î´óÖµ
-	 * @return int:µ¥Î»£ºbyte
+	 * è·å–å…è®¸ä¸Šä¼ æ–‡ä»¶çš„æœ€å¤§å€¼
+	 * @return int:å•ä½ï¼šbyte
 	 */
 	public int getMaxSize() {
 		return maxSize;
 	}
 
 	/**
-	 * ÉèÖÃÔÊĞíÉÏ´«ÎÄ¼şµÄ×î´óÖµ£¬µ¥Î»£ºbyte
-	 * ÈôĞ¡ÓÚµÈÓÚ0ÔòÓÃÄ¬ÈÏÖµ£ºGlobalNames.UPLOAD_FILE_SIZE;
+	 * è®¾ç½®å…è®¸ä¸Šä¼ æ–‡ä»¶çš„æœ€å¤§å€¼ï¼Œå•ä½ï¼šbyte
+	 * è‹¥å°äºç­‰äº0åˆ™ç”¨é»˜è®¤å€¼ï¼šGlobalNames.UPLOAD_FILE_SIZE;
 	 * @param maxSize
 	 */
 	public void setMaxSize(int maxSize) {
@@ -78,8 +78,8 @@ public class StrutsFileUpload {
 	}
 
 	/**
-	 * »ñÈ¡ÎÄ¼ş´óĞ¡
-	 * @return int:µ¥Î»£ºbyte
+	 * è·å–æ–‡ä»¶å¤§å°
+	 * @return int:å•ä½ï¼šbyte
 	 */
 	public int getFileSize() {
 		return fileSize;
@@ -102,17 +102,17 @@ public class StrutsFileUpload {
 		
 		if( uploadFile==null )
 		{
-			errorMessage = "ÉÏ´«ÎÄ¼şÊ§°Ü£¡Î´ÕÒµ½ÄúÒªÉÏ´«µÄÎÄ¼şÂ·¾¶£¡ÇëÕıÈ·Ñ¡ÔñÄúÒªÉÏ´«µÄÎÄ¼ş£¡";
+			errorMessage = "ä¸Šä¼ æ–‡ä»¶å¤±è´¥ï¼æœªæ‰¾åˆ°æ‚¨è¦ä¸Šä¼ çš„æ–‡ä»¶è·¯å¾„ï¼è¯·æ­£ç¡®é€‰æ‹©æ‚¨è¦ä¸Šä¼ çš„æ–‡ä»¶ï¼";
 			log.error(errorMessage);
 			throw new AppException( errorMessage );
 		}else if( fileSize>maxSize )
 		{
-			errorMessage = "ÉÏ´«ÎÄ¼şÊ§°Ü£¡ÄúÉÏ´«µÄÎÄ¼ş¹ı´ó£¡ÉÏ´«ÎÄ¼ş²»ÄÜ´óÓÚ£º" + (maxSize/1024) + "KB";
+			errorMessage = "ä¸Šä¼ æ–‡ä»¶å¤±è´¥ï¼æ‚¨ä¸Šä¼ çš„æ–‡ä»¶è¿‡å¤§ï¼ä¸Šä¼ æ–‡ä»¶ä¸èƒ½å¤§äºï¼š" + (maxSize/1024) + "KB";
 			log.info(errorMessage);
 			throw new AppException( errorMessage );
 		}else if( !this.validateFileType(allowFileType, filenameExtension) )
 		{
-			errorMessage = "ÉÏ´«ÎÄ¼şÊ§°Ü£¡ÄúÉÏ´«µÄÎÄ¼ş¸ñÊ½²»·ûºÏÒªÇó!";
+			errorMessage = "ä¸Šä¼ æ–‡ä»¶å¤±è´¥ï¼æ‚¨ä¸Šä¼ çš„æ–‡ä»¶æ ¼å¼ä¸ç¬¦åˆè¦æ±‚!";
 			log.info(errorMessage);
 			throw new AppException( errorMessage );
 		}else
@@ -129,11 +129,11 @@ public class StrutsFileUpload {
 				filePathReturn = fileName;
 				
 			} catch (FileNotFoundException e) {
-				errorMessage = "ÉÏ´«ÎÄ¼şÊ§°Ü£¡Î´ÕÒµ½ÎÄ¼ş±£´æÔÚ·şÎñÆ÷ÉÏµÄÂ·¾¶£¡ÇëÓëÏµÍ³¹ÜÀíÔ±ÁªÏµ£¡";
+				errorMessage = "ä¸Šä¼ æ–‡ä»¶å¤±è´¥ï¼æœªæ‰¾åˆ°æ–‡ä»¶ä¿å­˜åœ¨æœåŠ¡å™¨ä¸Šçš„è·¯å¾„ï¼è¯·ä¸ç³»ç»Ÿç®¡ç†å‘˜è”ç³»ï¼";
 				log.error(errorMessage, e);
 				throw new AppException( errorMessage );
 			} catch (IOException e) {
-				errorMessage = "ÉÏ´«ÎÄ¼şÊ§°Ü£¡ÄúÉÏ´«µÄÎÄ¼ş¸ñÊ½²»·ûºÏÒªÇó£¬»ò·şÎñÆ÷Ã¦£¡ÇëÉÔºóÔÙÊÔ£¡"+e.getMessage();
+				errorMessage = "ä¸Šä¼ æ–‡ä»¶å¤±è´¥ï¼æ‚¨ä¸Šä¼ çš„æ–‡ä»¶æ ¼å¼ä¸ç¬¦åˆè¦æ±‚ï¼Œæˆ–æœåŠ¡å™¨å¿™ï¼è¯·ç¨åå†è¯•ï¼"+e.getMessage();
 				log.error(errorMessage, e);
 				throw new AppException( errorMessage );
 			} finally{
@@ -145,7 +145,7 @@ public class StrutsFileUpload {
 						bOutStream.close();
 					}
 				} catch (IOException ie) {
-					throw new AppException( "¹Ø±ÕIOÁ÷³öÏÖ´íÎó£¡"+ie.getMessage() );
+					throw new AppException( "å…³é—­IOæµå‡ºç°é”™è¯¯ï¼"+ie.getMessage() );
 				}
 			}
 		}
@@ -155,9 +155,9 @@ public class StrutsFileUpload {
 	
 	
 	/**
-	 * »ñÈ¡ÎÄ¼şÀ©Õ¹Ãû£»Èç£º".jpg";
-	 * @param filename:ÎÄ¼şÃû£¬Èç£º"123.jpg";
-	 * @return String£º·µ»ØÎÄ¼şÀ©Õ¹Ãû£¬Èç£º".jpg"¡£
+	 * è·å–æ–‡ä»¶æ‰©å±•åï¼›å¦‚ï¼š".jpg";
+	 * @param filename:æ–‡ä»¶åï¼Œå¦‚ï¼š"123.jpg";
+	 * @return Stringï¼šè¿”å›æ–‡ä»¶æ‰©å±•åï¼Œå¦‚ï¼š".jpg"ã€‚
 	 * @throws AppException 
 	 */
 	public String getFilenameExtension(String filename) throws AppException
@@ -168,16 +168,16 @@ public class StrutsFileUpload {
 		if( index>=0 )
 			extensiveName = (filename.substring(index)).toLowerCase();
 		else{
-			throw new AppException("ÎÄ¼şÀàĞÍ´íÎó£¡¸ÃÎÄ¼şµÄÎÄ¼şÃûÎ´ÒÔÕıÈ·µÄÀ©Õ¹Ãû½áÊø");
+			throw new AppException("æ–‡ä»¶ç±»å‹é”™è¯¯ï¼è¯¥æ–‡ä»¶çš„æ–‡ä»¶åæœªä»¥æ­£ç¡®çš„æ‰©å±•åç»“æŸ");
 		}
 		return extensiveName;
 	}
 	
 	/**
-	 * ÑéÖ¤ÔÊĞíÉÏ´«µÄÎÄ¼şÀàĞÍ£»
-	 * @param allowFileType£ºÔÊĞíÉÏ´«µÄÎÄ¼şÀàĞÍ£»
-	 * @param fileType£ºµ±Ç°ÒªÉÏ´«µÄÎÄ¼şµÄÎÄ¼şÀàĞÍ£¬Èç£º".jpeg";
-	 * @return boolean: allowFileTypeÖĞº¬ÓĞfileType·µ»Øtrue,·ñÔò·µ»Øfalse.
+	 * éªŒè¯å…è®¸ä¸Šä¼ çš„æ–‡ä»¶ç±»å‹ï¼›
+	 * @param allowFileTypeï¼šå…è®¸ä¸Šä¼ çš„æ–‡ä»¶ç±»å‹ï¼›
+	 * @param fileTypeï¼šå½“å‰è¦ä¸Šä¼ çš„æ–‡ä»¶çš„æ–‡ä»¶ç±»å‹ï¼Œå¦‚ï¼š".jpeg";
+	 * @return boolean: allowFileTypeä¸­å«æœ‰fileTypeè¿”å›true,å¦åˆ™è¿”å›false.
 	 */
 	private boolean validateFileType(String allowFileType, String fileType)
 	{
@@ -199,10 +199,10 @@ public class StrutsFileUpload {
 	
 	
 	/*
-	 * ÉèÖÃÔÊĞíÉÏ´«µÄÎÄ¼şÀàĞÍ£¬¶àÖÖÎÄ¼şÀàĞÍÓÃ¶ººÅ","·Ö¸ô;
-	 * ÎÄ±¾ÎÄ¼ş£ºtext/plain; wordÎÄ¼ş: application/msword;
-	 * Í¼Æ¬ÎÄ¼ş£ºimage/pjpeg, image/gif, image/x-png, image/bmp;
-	 * .rarÎÄ¼ş£ºapplication/octet-stream;
+	 * è®¾ç½®å…è®¸ä¸Šä¼ çš„æ–‡ä»¶ç±»å‹ï¼Œå¤šç§æ–‡ä»¶ç±»å‹ç”¨é€—å·","åˆ†éš”;
+	 * æ–‡æœ¬æ–‡ä»¶ï¼štext/plain; wordæ–‡ä»¶: application/msword;
+	 * å›¾ç‰‡æ–‡ä»¶ï¼šimage/pjpeg, image/gif, image/x-png, image/bmp;
+	 * .raræ–‡ä»¶ï¼šapplication/octet-stream;
 	 * @param allowFileType
 	 */
 

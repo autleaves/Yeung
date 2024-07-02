@@ -39,7 +39,7 @@ public class UtilsAction extends MappingDispatchAction {
 	 */
 
 	/** 
-	 * ÓÃÀ´×¨ÃÅÉú³ÉÑéÖ¤Âë
+	 * ç”¨æ¥ä¸“é—¨ç”ŸæˆéªŒè¯ç 
 	 * Method ValidateCode
 	 * @param mapping
 	 * @param form
@@ -58,7 +58,7 @@ public class UtilsAction extends MappingDispatchAction {
 		Graphics grap = image.getGraphics();
 		grap.setColor(this.getRandColor(230,250));
 		grap.fillRect(rx0, ry0, rx1, ry1);
-		//¸ÉÈÅÏß
+		//å¹²æ‰°çº¿
 		Random rand = new Random();
 		for(int i = 0; i<200; i++) {
 			grap.setColor(this.getRandColor(150, 210));
@@ -71,27 +71,27 @@ public class UtilsAction extends MappingDispatchAction {
 		int amount = 4; 
 		grap.setFont(new Font("Times New Roman", Font.BOLD, 24));
 		StringBuffer code = new StringBuffer();
-		logger.info("¿ªÊ¼Éú³ÉÑéÖ¤ÂëÁË..........");
+		logger.info("å¼€å§‹ç”ŸæˆéªŒè¯ç äº†..........");
 		int total = 0;
 		for(int i = 0; i < amount; i++) {
 			grap.setColor(this.getRandColor(50, 150));
 			int num = getCode();
 			if(!(num > -1 && num < 10)){
 				grap.drawString((char) num + "", 22*i+6, 20+new Random().nextInt(5)); //Y:24
-//				logger.info("Õâ¸ö×Ö·ûĞÍµÄÑéÖ¤ÂëµÄintĞÍÎª:" + num);
-//				logger.info("Éú³ÉÒ»¸ö×Ö·ûĞÍµÄÑéÖ¤Âë,Îª:" + ((char) num));
+//				logger.info("è¿™ä¸ªå­—ç¬¦å‹çš„éªŒè¯ç çš„intå‹ä¸º:" + num);
+//				logger.info("ç”Ÿæˆä¸€ä¸ªå­—ç¬¦å‹çš„éªŒè¯ç ,ä¸º:" + ((char) num));
 				code.append((char) num);
 			}else {
-//				logger.info("Éú³ÉÒ»¸öintĞÍµÄÑéÖ¤Âë,Îª:" + num);
+//				logger.info("ç”Ÿæˆä¸€ä¸ªintå‹çš„éªŒè¯ç ,ä¸º:" + num);
 				grap.drawString(String.valueOf(num), 22*i+6, 20+new Random().nextInt(5)); //Y:24
 				code.append(num);
 			}
 			total++;
 		}
 		try {
-			//±£´æµ½µ±Ç°sessionÖĞ,ÕâÊ±¾Í²»µÃ²»´ò¿ªÒ»¸ösessionÁË
+			//ä¿å­˜åˆ°å½“å‰sessionä¸­,è¿™æ—¶å°±ä¸å¾—ä¸æ‰“å¼€ä¸€ä¸ªsessionäº†
 			request.getSession().setAttribute("validatecode", code.toString());
-			logger.info("UtilsAction ....sessionÖĞ´æ·ÅµÄÑéÖ¤Âë×Ö·û´®Îª:" + request.getSession(false).getAttribute("validatecode"));
+			logger.info("UtilsAction ....sessionä¸­å­˜æ”¾çš„éªŒè¯ç å­—ç¬¦ä¸²ä¸º:" + request.getSession(false).getAttribute("validatecode"));
 			ServletOutputStream out = response.getOutputStream();
 			ImageIO.write(image, "PNG", out);
 			out.close();

@@ -2,9 +2,9 @@ package mil.yaye.yours.common;
 
 public class Constants {
 
-	//·ÖÒ³Ïà¹ØµÄ¾²Ì¬³£Á¿
-	public static int PAGE_SIZE=10; //Ã¿Ò³ÏÔÊ¾µÄ¼ÇÂ¼Êı
-	public static int PAGINATE_BAR_SIZE = 7; //·ÖÒ³À¸ÓÃÓÚ¿ÉÑ¡µÄÒ³Âë¸öÊı
+	//åˆ†é¡µç›¸å…³çš„é™æ€å¸¸é‡
+	public static int PAGE_SIZE=10; //æ¯é¡µæ˜¾ç¤ºçš„è®°å½•æ•°
+	public static int PAGINATE_BAR_SIZE = 7; //åˆ†é¡µæ ç”¨äºå¯é€‰çš„é¡µç ä¸ªæ•°
 	public static String PAGINATE_HELPER="pageHelper";
 	
 	

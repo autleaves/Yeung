@@ -33,11 +33,11 @@ public class Init extends HttpServlet {
 		int flag = service.initDataSource();
 		PrintWriter out = response.getWriter();
 		if(flag == -1){
-			out.println("<div style='height: 170px;'></div><center><h2>Hibernate³õÊ¹»¯Ê§°Ü..Ê§°ÜÔ­Òò¿ÉÄÜÊÇÊı¾İ¿â·şÎñÆ÷µÄIPµØÖ·ÅäÖÃ²»ÕıÈ·...</h2></center><br /><br />");
+			out.println("<div style='height: 170px;'></div><center><h2>Hibernateåˆä½¿åŒ–å¤±è´¥..å¤±è´¥åŸå› å¯èƒ½æ˜¯æ•°æ®åº“æœåŠ¡å™¨çš„IPåœ°å€é…ç½®ä¸æ­£ç¡®...</h2></center><br /><br />");
 		}else if(flag == 7) {
-			out.println("<div style='height: 170px;'></div><center><h2>Hibernate³õÊ¹»¯Íê±Ï.....</h2></center><br /><br />");
-			out.println("<center><h2>µ½´ïÊ×Ò³&gt;&gt;&nbsp;...&gt;&gt;&nbsp;<a href='"+ GlobalNames.SERVER +"'>index.html</a></h2></center>");
-			logger.info(" ³õÊ¹»¯Hibernate,½¨Á¢sessionFactory,´Ó¶ø¹¹½¨Êı¾İ¿âÁ¬½Ó³Ø,½¨Á¢10¸öÊı¾İ¿âÁ¬½Ó.......Íê±Ï.......");
+			out.println("<div style='height: 170px;'></div><center><h2>Hibernateåˆä½¿åŒ–å®Œæ¯•.....</h2></center><br /><br />");
+			out.println("<center><h2>åˆ°è¾¾é¦–é¡µ&gt;&gt;&nbsp;...&gt;&gt;&nbsp;<a href='"+ GlobalNames.SERVER +"'>index.html</a></h2></center>");
+			logger.info(" åˆä½¿åŒ–Hibernate,å»ºç«‹sessionFactory,ä»è€Œæ„å»ºæ•°æ®åº“è¿æ¥æ± ,å»ºç«‹10ä¸ªæ•°æ®åº“è¿æ¥.......å®Œæ¯•.......");
 		}
 		out.flush();
 		out.close();

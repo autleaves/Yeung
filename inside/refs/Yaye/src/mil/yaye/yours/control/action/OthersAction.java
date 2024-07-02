@@ -25,7 +25,7 @@ public class OthersAction extends MappingDispatchAction {
 
 	/** 
 	 * Method viewcomment
-	 * 查看用户对商品的评论
+	 * 鏌ョ湅鐢ㄦ埛瀵瑰晢鍝佺殑璇勮
 	 * @param mapping
 	 * @param form
 	 * @param request
