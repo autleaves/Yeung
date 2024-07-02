@@ -2,7 +2,7 @@
 *.class
 
 # MacOS file
-.DS_Store
+*.DS_Store
 *#*#
 
 # Log file
