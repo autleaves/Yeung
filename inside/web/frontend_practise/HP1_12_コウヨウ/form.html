@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<TITLE>資料請求について</TITLE>
+<LINK rel="stylesheet" href="style.css" type="text/css">
+</HEAD>
+<BODY>
+<P>受験番号　名前</P>
+<TABLE border="0">
+  <TR>
+    <TD colspan="2" id="top">
+    <H1>大海ツーリスト</H1>
+    国内のツアーは当社をぜひご利用ください</TD>
+  </TR>
+  <TR>
+    <TD id="navi">
+    <UL>
+      <LI><A href="index.html">トップ</A>
+      <LI><A href="page.html">ツアー商品一覧</A>
+      <LI><A href="form.html">資料請求について</A>
+      <LI><A href="mailto:taikai@goukaku.ne.jp">お問い合わせ</A>
+    </UL>
+    </TD>
+    <TD><IMG src="pic4.jpg" width="640" height="200" border="0">
+    <H2>資料請求について</H2>
+    フォームから請求された方へ資料ダウンロード用URLを送信します
+    <H3>請求フォーム</H3>
+    <FORM method="post" action="form.php">
+    <TABLE border="1">
+      <TR>
+        <TD>旅行の種類</TD>
+        <TD>
+            <INPUT type="checkbox" name="ryo[]" value="1">日帰りツアー
+            <INPUT type="checkbox" name="ryo[]" value="2">宿泊観光ツアー
+        </TD>
+      </TR>
+      <TR>
+        <TD>メールアドレス</TD>
+        <TD><INPUT type="text" name="mail" size="50"></TD>
+      </TR>
+      <TR>
+        <TD><INPUT type="submit" value="送信する"></TD>
+        <TD><INPUT type="reset" value="クリア"></TD>
+      </TR>
+    </TABLE>
+    </FORM>
+    </TD>
+  </TR>
+</TABLE>
+</BODY>
+</HTML>

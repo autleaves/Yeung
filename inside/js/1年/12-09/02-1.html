@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-コウヨウ</title>
+</head>
+<body>
+    <div class="sample">１個目のクラス</div>
+    <div class="sample">２個目のクラス</div>
+    <div class="sample">３個目のクラス</div>
+    <!-- <script src="js/02-1.js"></script> -->
+    <script>
+        const elems = document.querySelectorAll('.sample');
+        const len = elems.length;
+        console.log("Length of elems:" + elems.length);
+        for (const elem of elems) {
+            console.log(elem);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>主な所蔵品</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/modal.css">
+</head>
+
+<body id="gallery">
+<header id="top">
+	<h1><a href="index.html"><img src="images/logo.jpg" alt="日本の書道美術館"></a></h1>
+</header>
+<nav>
+	<ul>
+		<li id="nav_introduction"><a href="introduction.html">日本書道概要</a></li>
+		<li id="nav_museum"><a href="museum.html">書道美術館紹介</a></li>
+		<li id="nav_gallery"><a href="gallery.html">主な所蔵品</a></li>
+		<li id="nav_service"><a href="service.html">ご利用案内</a></li>
+	</ul>
+</nav>
+<div id="topicpath">
+	<ol>
+		<li><a href="index.html">ホーム</a>&gt;</li>
+		<li>主な所蔵品</li>
+	</ol>
+</div>
+<div id="contents">
+	<div id="main">
+		<article>
+			<h1>主な所蔵品</h1>
+			<section class="sec_field" id="museum_naritasan">
+				<h2>成田山書道美術館</h2>
+				<div class="pic_field">
+					<div class="">
+						<figure>
+							<figcaption></figcaption>
+							<img src="images/collection/naritasan_1.png" alt="">
+						</figure>
+						<div>
+							<button class="btn_expand" data-src="images/collection/naritasan_1.png">拡大</button>
+							<!-- <input type="image" id="" alt="拡大" src="images/expand.jpg"> -->
+						</div>
+					</div>
+					<figure>
+						<figcaption></figcaption>
+						<img src="images/collection/naritasan_2.png" alt="">
+						<div class="">
+							<button class="btn_expand" data-src="images/collection/naritasan_2.png">拡大</button>
+						</div>
+					</figure>
+				</div>
+				<div class="pic_field">
+					<figure>
+						<figcaption></figcaption>
+						<img src="images/collection/naritasan_3.png" alt="">
+						<div class="">
+							<button class="btn_expand" data-src="images/collection/naritasan_3.png">拡大</button>
+						</div>
+					</figure>
+					<figure>
+						<img src="images/collection/naritasan_4.png" alt="">
+						<figcaption></figcaption>
+					</figure>
+				</div>
+			</section>
+			<section class="sec_field" id="museum_wakayama">
+				<h2>和歌山県書道資料館</h2>
+				<div class="pic_field">
+					<figure>
+						<img src="images/collection/wakayama_1.jpg" alt="">
+						<figcaption></figcaption>
+					</figure>
+					<figure>
+						<img src="images/collection/wakayama_2.jpg" alt="">
+						<figcaption></figcaption>
+					</figure>
+				</div>
+				<div class="pic_field">
+					<figure>
+						<img src="images/collection/wakayama_3.jpg" alt="">
+						<figcaption></figcaption>
+					</figure>
+					<figure>
+						<img src="images/collection/wakayama_4.jpg" alt="">
+						<figcaption></figcaption>
+					</figure>
+				</div>
+			</section>
+			<section class="sec_field" id="museum_taito">
+				<h2>台東区立書道博物館</h2>
+				<div class="pic_field">
+					<figure>
+						<img src="images/collection/taito_1.jpg" alt="">
+						<figcaption></figcaption>
+					</figure>
+					<figure>
+						<img src="images/collection/taito_2.jpg" alt="">
+						<figcaption></figcaption>
+					</figure>
+				</div>
+				<div class="pic_field">
+					<figure>
+						<img src="images/collection/taito_3.jpg" alt="">
+						<figcaption></figcaption>
+					</figure>
+					<figure>
+						<img src="images/collection/taito_4.jpg" alt="">
+						<figcaption></figcaption>
+					</figure>
+				</div>
+			</section>
+		</article>
+	</div>
+	<div id="sub">
+		<aside>
+			<div class="btn_field">
+				<a href="gallery.html">
+					<p><img src="images/btn_gallery.jpg" alt="主な所蔵品">主な所蔵品</p>
+				</a>
+			</div>
+			<div class="btn_field">
+				<a href="service.html">
+					<dl>
+						<dt><img src="images/btn_service.jpg" alt="ご利用案内">ご利用案内</dt>
+						<dd></dd>
+					</dl>
+				</a>
+			</div>
+		</aside>
+	</div>
+</div>
+<footer>
+	<p id="pagetop"><a href="#top">top</a></p>
+</footer>
+<template id="tpl_footer">
+	<div id="info_field">
+		<address></address>
+		<p id="copyright"><small></small></p>
+	</div>
+</template>
+<script src="js/template_footer.js"></script>
+<div class="modal" id="modal">
+	<div class="modal-backdrop"></div>
+	<div class="modal-body">
+		<button class="modal-close" id="close">close</button>
+		<h2>Wombat Newsletter</h2>
+		<div id="show_img"></div>
+	</div>
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+	let btns = document.querySelectorAll('.btn_expand');
+	let close = document.getElementById('close');
+	let modal = document.getElementById('modal');
+
+	for(let i = 0; i < btns.length; i++){
+		btn_addEventListener(btns[i]);
+	}
+	function btn_addEventListener(btn) {
+		btn.addEventListener('click', function (event) {
+			event.preventDefault();
+			modal.style.display = 'block';
+			document.querySelector('#show_img').innerHTML = `<img src="${btn.dataset.src}">`;
+		});
+	}
+	close.addEventListener('click', function (event) {
+		event.preventDefault();
+		modal.style.display = 'none';
+	});
+</script>
+<!-- `<footer>
+	<p id="pagetop"><a href="#top">ページの先頭へ戻る</a></p>
+	<div id="info_field">
+		<address>電話 0120-XXX-001 FAX 0120-XXX-002</address>
+		<p id="copyright"><small>Copyright 2024 日本の書道 All rights reserved.</small></p>
+	</div>
+</footer>` -->

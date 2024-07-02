@@ -1,0 +1,92 @@
+@charset "utf-8";
+@import url(base.css);
+
+/* header ---start */
+.site-brand {
+ color: white;
+ width: 100%;
+ background-color: rgb(2, 93, 93);
+}
+/* header ---end */
+
+/* nav-programme ---start */
+
+.site-nav {
+    color: black;
+}
+
+ul[class^="nav"] {
+  list-style-type: none;
+  padding: 0;
+}
+ul[class^="nav"] a{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+ul.nav-items {
+    justify-content: space-around;
+    align-items: center;
+}
+ul.nav-items li a {
+    width: 5em;
+    height: 5em;
+    font-size: 1.2em;
+    padding-top: 1.9em;
+    border-radius: 50%;
+    box-shadow: .4em .2em .1em .1em rgb(223, 219, 219);
+    background-color: rgb(251, 212, 212);
+}
+/* nav-programme ---end */
+
+.main {
+    /* border: 1px solid red; */
+}
+.center {
+    width: 692px;
+    margin: 0 auto;
+}
+
+table.schedule,
+table.schedule th,
+table.schedule td {
+    border: 2px solid grey;
+}
+
+table.schedule {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.schedule caption {
+    text-align: center;
+    /* font-size: 1.2em; */
+    /* padding: .5em 0; */
+}
+table.schedule th {
+    background-color: rgb(167, 167, 202);
+}
+table.schedule td {
+    text-align: left;
+}
+
+.figures {
+    text-align: left;
+    width: 100%;
+    margin-left: 0;
+    /* border: 1px solid blue; */
+}
+.figures figure {
+    margin: 0;
+    /* border: 1px solid green; */
+    padding-left: 1.5em;
+}
+
+footer {
+    margin-top: 2em;
+    color: #fff;
+    font-size: .8em;
+    background-color: rgb(2, 93, 93);
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}

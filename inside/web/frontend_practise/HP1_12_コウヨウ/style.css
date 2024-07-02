@@ -1,0 +1,38 @@
+BODY{
+  background-image : url(back1.png);
+  background-repeat : repeat-x;
+}
+#top{
+  background-image : url(back2.png);
+  background-repeat : no-repeat;
+  background-position : right bottom;
+}
+#navi{
+  vertical-align : top;
+  background-color : #cc9999;
+}
+H1{
+  font-size : 360%;
+  text-decoration : underline;
+  color : #990000;
+}
+H2{
+  color : #cc0033;
+  border-left-width : 15px;
+  border-left-style : solid;
+  border-left-color : #ff0033;
+}
+UL{
+  line-height : 2em;
+  background-color : #ffffff;
+}
+A:hover{
+  position : relative;
+  left : 2px;
+  top : 2px;
+}
+.cell{
+  font-weight : bold;
+  text-align : center;
+  background-color : #ccff99;
+}

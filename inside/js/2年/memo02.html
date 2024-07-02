@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>012-コウヨウ</title>
+</head>
+<body>
+    <input type="text" class="new-memo">
+    <button type="button" class="add-memo">メモ追加</button>
+    <ul class="memo-list"></ul>
+    <script>
+        const addMemoBtn = document.querySelector('.add-memo');
+        addMemoBtn.addEventListener('click', function(){
+            const newMemoInput = document.querySelector('.new-memo');
+            const newMemo = document.createElement('li');
+            newMemo.textContent = newMemoInput.value;
+            const memo_list = document.querySelector('.memo-list');
+            memo_list.append(newMemo);
+            newMemoInput.value = '';
+        });
+    </script>
+</body>
+</html>

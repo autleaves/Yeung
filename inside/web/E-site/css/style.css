@@ -1,0 +1,156 @@
+﻿@charset "utf-8";
+
+/* 基本レイアウト ここから↓ */
+@import url(common.css);
+body {
+	line-height: 150%;
+}
+header, nav, #topicpath, #contents, footer {
+	width: 840px;
+	margin-left: auto;
+	margin-right: auto;
+}
+nav {
+	margin-bottom: 15px;
+}
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 0;
+	overflow: hidden;
+}
+nav ul li {
+	width: 210px;
+	float: left;
+}
+nav ul li a {
+	display: block;
+	height: 0;
+	padding-top: 64px;
+}
+nav ul li#nav_introduction a {
+	background-image: url(../images/btn_navigation1.jpg);
+}
+nav ul li#nav_museum a {
+	background-image: url(../images/btn_navigation2.jpg);
+}
+nav ul li#nav_gallery a {
+	background-image: url(../images/btn_navigation3.jpg);
+}
+nav ul li#nav_service a {
+	background-image: url(../images/btn_navigation4.jpg);
+}
+#pickup_field img {
+	width: 840px;
+	height: 416px;
+}
+#main {
+	width: 610px;
+	margin-right: 30px;
+	float: left;
+}
+#sub {
+	width: 200px;
+	float: right;
+}
+#main h1 {
+	margin: 0 0 30px 0;
+	padding: 35px 20px 35px 20px;
+	background-image: url(../images/h1_top.png), url(../images/h1_bottom.png);
+	background-repeat: no-repeat, no-repeat;
+	background-position: center top, center bottom;
+	font-size: 175%;
+	text-align: center;
+}
+#introduction #nav_introduction a, 
+#museum #nav_museum a, 
+#gallery #nav_gallery a, 
+#service #nav_service a, 
+nav ul li a:hover {
+	background-position: 0 -64px;
+}
+#pickup_field #pickup1, 
+#pickup_field #pickup2, 
+#pickup_field #pickup3 {
+	width: 840px;
+}
+/* 基本レイアウト ここまで↑ */
+
+/* トップページ ここから↓ */
+#topics ul {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 0;
+}
+#topics ul li {
+	margin-top: 1.5em;
+	padding: 0 0 1.5em 9.3em;
+	border-bottom: 1px dotted #666666;
+	text-indent: -9.3em;
+}
+/* トップページ ここまで↑ */
+
+/* 「日本書道概要」ページ ここから↓ */
+.div_history {
+	/* padding-left: 1em; */
+}
+.div_history p {
+	text-indent: 1em;
+	margin: 0;
+	padding: 0;
+}
+.div_history ul {
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-left: 2em;
+}
+.sec_field h3 {
+	font-size: 1em;
+	/* margin-bottom: 0; */
+	padding: 0;
+}
+.pic_field figure {
+    width: 290px;
+    margin: 0 10px 0 0;
+    float: left;
+}
+.pic_field figure img {
+	width: 150px;
+	height: 300px;
+}
+
+/* 「日本書道概要」ページ ここまで↑ */
+
+/* 「書道美術館紹介」ページ ここから↓ */
+.museum_intro figure {
+	margin: 0;
+	padding-right: 2.5em;
+	float: left;
+}
+.museum_intro p {
+	line-height: 1.5em;
+}
+.enter_btns a {
+	display: inline-block;
+	/* border: 1px solid #0F0; */
+}
+.enter_btns {
+	width: inherit;
+	text-align: center;
+	/* border: 1px solid #F00; */
+}
+.enter_btns a img {
+	width: 100px;
+	border-radius: 8px;
+	/* border: 1px solid #00F; */
+}
+
+/* 「書道美術館紹介」ページ ここまで↑ */
+
+/* 「主な所蔵品」ページ ここから↓ */
+
+/* 「主な所蔵品」ページ ここまで↑ */
+
+/* 「ご利用案内」ページ ここから↓ */
+
+/* 「ご利用案内」ページ ここまで↑ */

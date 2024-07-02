@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="sample">class属性が sample １個目</div>
+    <div class="sample">class属性が sample ２個目</div>
+    <div class="sample">class属性が sample ３個目</div>
+    <script>
+        const elements = document.querySelectorAll('.sample');
+        for (const elem of elements) {
+            console.log(elem);
+        }
+    </script>
+</body>
+</html>

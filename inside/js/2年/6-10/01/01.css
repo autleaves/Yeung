@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+.display > p {
+    display: inline-block;
+}
+p.underline {
+    text-decoration: underline;
+}
+p.underline:hover {
+    cursor:pointer;
+}
+p.res {
+    padding-left: 1em;
+    padding-right: 1em;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03</title>
+</head>
+<body>
+    <script>
+        function getDay() {
+            const year = parseInt(prompt('西暦（年）を入力'));
+            const month = parseInt(prompt('月を入力')) - 1;
+            const day = parseInt(prompt('日を入力'));
+            const theDay = new Date(year, month, day);
+            const dayOfWeek = theDay.getDay();
+            var dayOfWeekStr = [ "日", "月", "火", "水", "木", "金", "土" ][dayOfWeek];
+            alert(`${dayOfWeekStr}曜日です`);
+        }
+        getDay();
+    </script>
+</body>
+</html>

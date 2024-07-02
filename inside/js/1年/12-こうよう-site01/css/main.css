@@ -1,0 +1,64 @@
+@charset "utf-8";
+@import url(base.css);
+
+
+.top-container {
+    text-align: center;
+}
+h1.site-brand {
+    font-size: 250%;
+    width: 400px;
+    text-align: center;
+    background-image: url(../resort/yashi.png);
+    background-repeat: repeat-y;
+    background-position: right top;
+    border-left: 15px solid #027249;
+    padding-right: 15px;
+    border-bottom: 3px dotted #17f9a6;
+}
+.site-nav ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+.site-nav ul li {
+    border-left: 1px solid #000;
+    width: 20%;
+}
+.site-nav ul li:last-child {
+    border-right: 1px solid #000;
+}
+.site-nav a {
+    display: block;
+    text-align: center;
+    /* font-size: 1rem; */
+    color: black;
+    background-color: rgb(138, 245, 136);
+    text-decoration: none;
+    line-height: 2.6em;
+}
+.site-nav a:hover {
+    background-color: rgb(251, 184, 103);
+}
+.main-image {
+    text-align: left;
+}
+.main-image img {
+    border-radius: 10px;
+}
+
+.contact-us table,
+.contact-us table th,
+.contact-us table td {
+    border: 2px solid grey;
+}
+.contact-us table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.contact-us table th {
+    width: 15%;
+}
+.contact-us table td {
+    text-align: left;
+}

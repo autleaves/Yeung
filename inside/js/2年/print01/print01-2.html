@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>012-コウヨウ</title>
+</head>
+<body>
+    <input type="text" class="text">
+    <button type="button" class="button">実行</button>
+    <p>結果表示</p>
+    <script>
+        const btn = document.querySelector('.button');
+        const txt = document.querySelector('.text');
+        const res = document.querySelector('p');
+        btn.addEventListener('click', function(){
+            res.textContent = txt.value;
+        });
+    </script>
+</body>
+</html>

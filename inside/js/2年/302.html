@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="scroll"></div>
+    <script>
+        const scrollContent = document.querySelector('.scroll');
+        for(let i=0; i < 1000; i++){
+            scrollContent.textContent += `テキスト ${i}`;
+        }
+        window.addEventListener('scroll', function(){
+            console.log(`スクロール量は${window.scrollY}pxです。`);
+        })
+    </script>
+</body>
+</html>

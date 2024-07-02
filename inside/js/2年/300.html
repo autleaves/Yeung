@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="271.css">
+    <title>Document</title>
+</head>
+<body>
+        <!-- <button type="button" onclick="myfun()">ボタン</button> -->
+    <!-- <input type="radio" name="radio" value="1" class="radio">1</input>
+    <input type="radio" name="radio" value="2" class="radio">2</input> -->
+    <input type="checkbox" name="checkbox" value="1" class="checkbox">1
+    <input type="checkbox" name="checkbox" value="2" class="checkbox">2
+    <select>
+        <optoin value="1">1</optoin>
+        <optoin value="2">2</optoin>
+    </select>
+    <script>
+        // const radios = document.querySelectorAll('.radio');
+        // for(let radio of radios) {
+        //     radio.addEventListener('input', function(event){
+        //         const value = event.currentTarget.value;
+        //         console.log(`${value}がチェックされました`);
+        //     });
+        // }
+        const checkboxs = document.querySelectorAll('.checkbox');
+        for(let checkbox of checkboxs) {
+            checkbox.addEventListener('input', function(event){
+                const value = event.currentTarget.value;
+                console.log(`${value}がチェックされました`);
+            });
+        }
+        
+    </script>
+</body>
+</html>

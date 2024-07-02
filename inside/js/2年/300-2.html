@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 200px; height: 100px; background: pink;">
+
+    </div>
+    <script>
+        const div = document.querySelector('div');
+        div.addEventListener('mousemove', function(event){
+            console.log(`Move : x = ${event.offsetX}, Y = ${event.offsetY}`);
+        });
+        div.addEventListener('mousedown', function(event){
+            console.log(`Down : x = ${event.offsetX}, Y = ${event.offsetY}`);
+        });
+        div.addEventListener('mouseup', function(event){
+            console.log(`Up : x = ${event.offsetX}, Y = ${event.offsetY}`);
+        });
+    </script>
+</body>
+</html>

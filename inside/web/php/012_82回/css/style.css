@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+body{
+    background-image: url(../images/back1.png);
+    background-repeat: repeat-y;
+}
+header,
+nav,
+main,
+footer{
+    width: 700px;
+}
+h1{
+    font-size: 350%;
+    color: #3366cc;
+}
+h2{
+    font-size: 160%;
+    border-top: 8px dotted #0099cc;
+    margin: 0 0 20 0;
+}
+ol{
+    font-weight: bold;
+}
+a{
+    font-size: 130%;
+    line-height: 2em;
+}
+a:hover{
+    text-decoration: none;
+    left: 2px;
+    top: 2px;
+}
+nav ul{
+    padding:0;
+    margin: 0;
+}
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+    text-align: center;
+    background-color: #ffcccc;
+    width: 170px;
+}
+table{
+    border-collapse:collapse ;
+    margin: 3px;
+}
+footer{
+    font-style: italic;
+    text-align: center;
+    background-image: url(../images/back2.jpg);
+}

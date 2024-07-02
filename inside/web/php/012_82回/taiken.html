@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体験レッスン</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>英会話のスカイ</h1>
+        始めるなら今！本物の英会話を学ぼう。<br>
+        <img src="images/pic1.jpg" alt="青空のイメージ">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">トップ</a></li>
+            <li><a href="page1.html">カリキュラム</a></li>
+            <li><a href="taiken.html">体験レッスン</a></li>
+            <li><a href="mailto:sky@goukaku.ne.jp">メール</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>体験レッスン</h2>
+        ご希望の方は以下のフォームよりお申し込みください。
+        <form action="check.php" method="post">
+            <table border="1">
+                <tr>
+                    <td>お名前</td>
+                    <td>
+                        <input type="text" name="name" width="50">
+                    </td>
+                </tr>
+                <tr>
+                    <td>電話番号</td>
+                    <td>
+                        <input type="text" name="tel" width="50">
+                    </td>
+                </tr>
+                <tr>
+                    <td>希望日時</td>
+                    <td>
+                        <input type="datetime-local" name="datetime">
+                    </td>
+                </tr>
+                <tr>
+                    <td>レッスン形式</td>
+                    <td>
+                        <input type="radio" name="le" value="0">来校
+                        <input type="radio" name="le" value="1">オンライン
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="送信する">
+                    </td>
+                    <td>
+                        <input type="reset" value="取り消す">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <h2>受講者の声</h2>
+        皆様からの声を紹介します。<br>
+        <a href="page2.html"><img src="images/pic3.png" alt="受講者のイラスト"></a>
+    </main>
+    <footer>
+        <a href="pam.pdf" target="_blank">パンフレット</a><br>
+        <a href="page3.html">資料請求</a>
+    </footer>
+</body>
+
+</html>
