@@ -46,10 +46,15 @@
       background-color: #eee;
       border-radius: 0.5em;
     }
-
+    .clearfix::before,
     .clearfix::after {
       display: block;
       content: " ";
+    }
+    .media:nth-child(odd) {
+      clear: left;
+    }
+    .clearfix::after {
       clear: both;
     }
   </style>
