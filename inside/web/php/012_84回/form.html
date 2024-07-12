@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お見積り</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>ミライ印刷</h1>
+        <p>高度な技術と最新の設備で多種多様な印刷物を作り上げるノウハウがあります。</p>
+        <img src="pic1.jpg" alt="カラーチャード" srcset="">
+    </header>
+    <main>
+        <div id="navi">
+            <ul>
+                <li><a href="index.html">トップ</a></li>
+                <li><a href="page1.html">事業内容</a></li>
+                <li><a href="form.html">お見積り</a></li>
+                <li><a href="mailto:mirai@goukaku.ne.jp">お問い合わせ</a></li>
+            </ul>
+        </div>
+        <div id="main">
+            <h2>お見積り</h2>
+            <img src="pic3.jpg" alt="作業風景">
+            <form method="post" action="check.php">
+                <table border="1">
+                    <tr>
+                        <th>種別</th>
+                        <td>
+                            <select name="shu">
+                                <option value="1">冊子</option>
+                                <option value="2">チラシ</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>お名前</th>
+                        <td>
+                            <input type="text" name="name" size="40">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>ご連絡先</th>
+                        <td>
+                            <input type="tel" name="tel" size="40">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>数量</th>
+                        <td>
+                            <input type="text" name="quantity" size="40">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="送信する">
+                        </td>
+                        <td>
+                            <input type="reset" value="クリア">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>
