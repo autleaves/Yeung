@@ -23,8 +23,18 @@
       width: 80%;
       max-width: 1000px;
       margin: 0 auto;
+      border: 1px solid red;
     }
-
+    .top-banner-inner::before {
+      display: block;
+      content: "\00D7\00D7\00D7\00D7\00D7";
+      border: 1px solid cyan;
+    }
+    .top-banner-inner::after {
+      display: block;
+      content: "\00D7\00D7\00D7\00D7\00D7";
+      border: 1px solid cyan;
+    }
     .modal {
       display: none;
     }
@@ -55,23 +65,27 @@
       right: 0;
       padding: 0.3em;
       font-size: 2em;
-      height: 1.5em;
-      width: 1.5em;
+      /* height: 1.5em; */
+      /* width: 1.5em; */
       cursor: pointer;
-      border: 0;
+      border: 1px solid red;
     }
     .modal-close::before {
       display: block;
       content: '\00D7';
+      border: 1px solid green;
     }
 
     .sr-only {
       position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
+      /* width: 1px;
+      height: 1px; */
+      /* padding: 0; */
+      top: 0;
+      right: 0;
+      border: 1px solid blue;
+      /* margin: -1px; */
+      /* overflow: hidden; */
     }
   </style>
 </head>

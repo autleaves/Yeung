@@ -5,9 +5,6 @@
       font-family: Helvetica, Arial, sans-serif;
       min-height: 200vh;
       margin: 0;
-      --z-loading-indicator: 100;
-      --z-modal-backdrop:400;
-      --z-modal-body: 410;
     }
 
     button {
@@ -39,7 +36,6 @@
       bottom: 0;
       left: 0;
       background-color: rgba(0, 0, 0, 0.5);
-      z-index: var(--z-modal-backdrop);
     }
 
     .modal-body {
@@ -51,11 +47,8 @@
       padding: 2em 3em;
       background-color: white;
       overflow: auto;
-      z-index: var(--z-modal-body);
     }
-    .test {
-      background-color: aqua;
-    }
+
     .modal-close {
       position: absolute;
       top: 0;
@@ -93,22 +86,9 @@
     }
 
     .dropdown-label {
-      padding: 0.5em 2em 0.5em 1.5em;
+      padding: 0.5em 1.5em;
       border: 1px solid #ccc;
       background-color: #eee;
-    }
-
-    .dropdown-label::after {
-      content: "";
-      position: absolute;
-      right: 1em;
-      top: 1em;
-      border: 0.3em solid;
-      border-color: black transparent transparent;
-    }
-    .dropdown:hover .dropdown-label::after {
-      top: 0.7em;
-      border-color: transparent transparent black;
     }
 
     .dropdown-menu {
@@ -136,7 +116,7 @@
 
     .submenu > li > a {
       display: block;
-      padding: .5em 1.5em;
+      padding: 0.5em 1.5em;
       background-color: #eee;
       color: #369;
       text-decoration: none;
@@ -191,9 +171,21 @@
           </ul>
         </div>
       </div>
+      <div class="dropdown">
+        <div class="dropdown-label">Main Menu</div>
+        <div class="dropdown-menu">
+          <ul class="submenu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/coffees">Coffees</a></li>
+            <li><a href="/brewers">Brewers</a></li>
+            <li><a href="/specials">Specials</a></li>
+            <li><a href="/about">About us</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
-    <h1 class="test">Wombat Coffee Roasters</h1>
+    <h1>Wombat Coffee Roasters</h1>
   </div>
 
   <script type="text/javascript">

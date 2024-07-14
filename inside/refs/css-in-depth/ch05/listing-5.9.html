@@ -36,7 +36,10 @@
     .site-nav > li {
       margin-top: 0;
     }
-
+    .nav-right {
+      /* order: -1; */
+      /* align-self: flex-end; */
+    }
     .site-nav > li > a {
       display: block;
       padding: .5em 1em;
@@ -79,6 +82,57 @@
 
     .column-sidebar > .tile {
       flex: 1;
+    }
+    .login-form h3 {
+      margin: 0;
+      font-size: .9em;
+      font-weight: bold;
+      text-align: right;
+      text-transform: uppercase;
+    }
+    .login-form input:not([type=checkbox]):not([type=radio]) {
+      display: block;
+      width: 100%;
+      margin-top: 0;
+    }
+    .login-form button {
+      margin-top: 1em;
+      border: 1px solid #cc6b5a;
+      background-color: white;
+      padding: .5em 1em;
+      cursor: pointer;
+    }
+
+    .centered {
+      text-align: center;
+    }
+    .cost {
+      display: flex;
+      justify-content: center;
+      align-items:  center;
+      line-height: .7;
+      /* border: 1px solid lightblue; */
+    }
+    .cost > span {
+      border: 1px solid lightblue;
+      margin-top: 0;
+    }
+    .cost-currency {
+      font-size: 2rem;
+    }
+    .cost-dollars {
+      font-size: 4rem;
+    }
+    .cost-cents {
+      font-size: 1.5rem;
+      align-self: flex-start;
+    }
+    .cta-button {
+      display: block;
+      background-color: #cc6b5a;
+      color: white;
+      padding: .5em 1em;
+      text-decoration: none;
     }
 
   </style>
