@@ -1,19 +1,53 @@
 @charset "utf-8";
 
-@media (min-width: 800px) {
+/* @media (min-width: 35em) {
   :root {
       font-size: 0.875em;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 50em) {
   :root {
       font-size: 1em;
   }
+} */
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+/* <uniquifier>: Use a unique and descriptive class name */
+.open-sans-regular {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 :root {
     box-sizing: border-box;
-    --page-width: 1280px;
-}
+    --backgroud-color: #fff;
+    --brand-green: hsl(162, 87%, 21%);
+    --dark-green: hsl(162, 88%, 30%);
+    --medium-green: hsl(162, 73%, 46%);
+    --text-color: hsl(210, 11%, 15%);
+    --gray: hsl(210, 7%, 56%);
+    --light-gray: hsl(210, 17%, 95%);
+    --extra-light-gray: hsl(210, 17%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --button-bg-color: #fff;
+    --button-bg-color-hover: rgb(202, 190, 190);
+    --red: hsl(342, 63%, 46%);
+  
+    box-sizing: border-box;
+    color: var(--text-color);
+    font-family: Helvetica, Arial, sans-serif;
+  }
 
 *,
 *::before,
@@ -22,24 +56,38 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #FFF;
-}
-
-/* body * + * {
-    margin-top: 1.5em;
-} */
-
-.top-container {
-    max-width: var(--page-width);
-    margin: 0 auto;
-}
-.flex {
-    display: flex;
+    margin: 0;
+    /* font-family: "Open Sans", sans-serif; */
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    background-color: var(--extra-light-gray);
   }
-.border {
-    border: 1px solid #9ce66b;
-}
-.margin-top-5 {
-    margin-top: 5em;
-}
+  .fonts-failed body {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  
+  /* h1, h2, h3, h4 {
+    font-family: Poppins, sans-serif;
+    letter-spacing: 0.03em;
+  } */
+  .fonts-failed h1,
+  .fonts-failed h2,
+  .fonts-failed h3,
+  .fonts-failed h4 {
+    font-family: Georgia, sans-serif;
+  }
+  
+  a {
+    color: var(--medium-green);
+  }
+  a:visited {
+    color: var(--brand-green);
+  }
+  a:hover {
+    color: var(--brand-green);
+  }
+  a:active {
+    color: var(--red);
+  }
+  
+

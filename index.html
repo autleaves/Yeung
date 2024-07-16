@@ -1,64 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet">
-    <title>Yeung's Repos</title>
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link href="css/style.csss" rel="stylesheet">
+    <title>Algorithms</title>
+
 </head>
+
 <body>
     <div class="top-container">
         <header>
 
         </header>
         <nav class="site-nav flex">
-            <div class="nav-brand flex">
-                <span class="circle"></span>
-                <span class="name">Yeung</span>
-                <span class="profession"></span>
-            </div>
-            <ul class="nav-menu flex">
-                <li><a href="/pages/resume.html">Resume</a></li>
-                <li><a href="/pages/exercises.html">Exercises</a></li>
-                <li><a href="/pages/contact.html">Contact</a></li>
-            </ul>
-            <ul class="nav-icons flex">
-                <li><a href="https://github.com/"><img src="images/github-mark.png" alt="GitHub"></a></li>
-                <li><a href="mailto:@gmail.com"><img src="images/email-mark.png" alt="Email"></a></li>
-            </ul>
+            
         </nav>
         <main class="main margin-top-5">
-            <div class="main-column column-l ">
-                <img src="images/heros/hero.jpg" alt="">
-            </div>
-            <div class="main-column column-r">
-                <h1>hello</h1>
-                <div class="profile">
-                    <h2>A Bit About Me</h2>
-                    <p>
-                        体に優しい自然食を提供する、WCB CAFE。無添加の食材を利用したメニューが特徴です。
-                        おいしいブレンドコーヒーとヘルシーなオーガニックフードで体の内側から癒やされてください。
-                        体に優しい自然食を提供する、WCB CAFE。無添加の食材を利用したメニューが特徴です。
-                        おいしいブレンドコーヒーとヘルシーなオーガニックフードで体の内側から癒やされてください。
-                    </p>
-                   
-                </div>
-                <div>
-                    <ul class="nav-buttons flex">
-                        <li><a class="nav-button-resume" href="">Resume</a></li>
-                        <li><a class="nav-button-exercises" href="">Exercises</a></li>
-                        <li><a class="nav-button-contact" href="">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
+            <h2>A Bit About Me</h2>
+            <h2 class="poppins-regular">A Bit About Me</h2>
+            <h2 class="poppins-medium">A Bit About Me</h2>
+            <p>
+                Implementing abstract data types. We implement ADTs with a Java class, putting the code in a
+                file with the same name as the class, followed by the .java extension. The first statements in
+                the file declare instance variables that define the data-type values. Following the instance
+                variables are the constructor and the instance methods that implement operations on data-type
+                values.
+                Instance variables. To define data-type values (the state of each object), we declare instance
+                variables in much the same way as we declare local variables. There are numerous values
+                corresponding to each instance variable (one for each object that is an instance of the data
+                type). Each declaration is qualified by a visibility modifier. In ADT implementations, we use
+                private, using a Java language mechanism to enforce the idea that the representation of an ADT
+                is to be hidden from the client, and also final, if the value is not to be changed once it is
+                initialized.
+                Constructors. The constructor establishes an object's identity and initializes the instance
+                variables. Constructors always share the same name as the class. We can overload the name and
+                have multiple constructors with different signatures, just as with methods. If no other
+                constructor is defined, a default no-argument constructor is implicit, has no arguments, and
+                initializes instance values to default values. The default values of instance variables are 0
+                for primitive numeric types, false for boolean, and null.
+                Instance methods. Instance methods specify the data-type operations. Each instance method has a
+                return type, a signature (which specifies its name and the types and names of its parameter
+                variables), and a body (which consists of a sequence of statements, including a return statement
+                that provides a value of the return type back to the client). When a client invokes a method,
+                the parameter values (if any) are initialized with client values, the statements are executed
+                until a return value is computed, and the value is returned to the client. Instance methods may
+                be public (specified in the API) or private (used to organize the computation and not available
+                to clients).
+            </p>
         </main>
         <footer class="margin-top-5">
-                <div class="copyright">
-                    <p>Created &amp; maintained by Yeung.</p>
-                </div>
+          
         </footer>
     </div>
+
 </body>
+
 </html>
