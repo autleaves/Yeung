@@ -77,54 +77,7 @@ a:active {
     margin: 0;
 }
 
-/*
-* Hero image
-*/
-.hero {
-    padding: 2em 1em;
-    text-align: center;
-    background-image: url(coffee-beans-small.jpg);
-    background-size: 100%;
-    color: #fff;
-    text-shadow: .1em .1em .3em #000;
-}
-@media (min-width: 35em) {
-    .hero {
-      padding: 5em 3em;
-      font-size: 1.2rem;
-      background-image: url(coffee-beans-medium.jpg);
-    }
-}
 
-@media (min-width: 50em) {
-    .hero {
-        padding: 7em 6em;
-        background-image: url(coffee-beans.jpg);
-    }
-}
-/*
-* Main section
-*/
-main {
-    padding: 1em;
-}
-
-@media (min-width:35em) {
-    main {
-        padding: 2em 1em;
-    }
-}
-@media (min-width: 50em) {
-    main {
-      padding: 2em 4em;
-    }
-}
-.subtitle {
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-    font-size: .875rem;
-    text-transform: uppercase;
-}
 /*
 * Menu
 */
@@ -215,21 +168,5 @@ main {
 @media (min-width: 50em) {
     .nav-menu {
       padding: 0 4em;
-    }
-}
-/**
-* Main columns
-*/
-@media (min-width: 35em) {
-    .row {
-        display: flex;
-        margin-left: -.75em;
-        margin-right: -.75em;
-    }
-
-    .column {
-        flex: 1;
-        margin-right: 0.75em;
-        margin-left: 0.75em;
     }
 }
