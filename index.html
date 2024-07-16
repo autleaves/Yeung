@@ -1,64 +1,92 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet">
-    <title>Yeung's Repos</title>
-    
-</head>
-<body>
-    <div class="top-container">
-        <header>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&family=Poppins&display=swap" rel="stylesheet">
+    <link href="css/style.csss" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <title>Algorithms</title>
 
-        </header>
-        <nav class="site-nav flex">
-            <div class="nav-brand flex">
-                <span class="circle"></span>
-                <span class="name">Yeung</span>
-                <span class="profession"></span>
-            </div>
-            <ul class="nav-menu flex">
-                <li><a href="/pages/resume.html">Resume</a></li>
-                <li><a href="/pages/exercises.html">Exercises</a></li>
-                <li><a href="/pages/contact.html">Contact</a></li>
+
+</head>
+
+<body>
+    <nav class="menu" id="main-menu">
+        <button class="menu-toggle" id="toggle-menu">toggle menu</button>
+        <div class="menu-dropdown">
+            <a class="home-link" href="/">Algorithms</a>
+            <ul class="nav-menu">
+                <li><a href="/Fundamentals">Fundamentals</a></li>
+                <li><a href="/Sortings">Sortings</a></li>
+                <li><a href="/Searching">Searching</a></li>
+                <li><a href="/Graphs">Graphs</a></li>
+                <li><a href="/Strings">Strings</a></li>
             </ul>
-            <ul class="nav-icons flex">
-                <li><a href="https://github.com/"><img src="images/github-mark.png" alt="GitHub"></a></li>
-                <li><a href="mailto:@gmail.com"><img src="images/email-mark.png" alt="Email"></a></li>
+        </div>
+      </nav>
+    <nav class="menu nav-container" id="main-menu">
+        <button class="menu-toggle" id="toggle-menu">toggle menu</button>
+        <div class="nav-container__inner">
+            <a class="home-link" href="/">Algorithms</a>
+            <ul class="top-nav">
+                <li><a href="/Fundamentals">Fundamentals</a></li>
+                <li><a href="/Sortings">Sortings</a></li>
+                <li><a href="/Searching">Searching</a></li>
+                <li><a href="/Graphs">Graphs</a></li>
+                <li><a href="/Strings">Strings</a></li>
+                <li><a class="home-link" href="/">Algorithms</a></li>
+                <li class=""><input type="text" size="40" name="query" id="query" placeholder="Searching..."></li>
+                <li class="top-nav__featured"><a href="/sign">Sign In</a></li>
             </ul>
-        </nav>
-        <main class="main margin-top-5">
-            <div class="main-column column-l ">
-                <img src="images/heros/hero.jpg" alt="">
-            </div>
-            <div class="main-column column-r">
-                <h1>hello</h1>
-                <div class="profile">
-                    <h2>A Bit About Me</h2>
-                    <p>
-                        体に優しい自然食を提供する、WCB CAFE。無添加の食材を利用したメニューが特徴です。
-                        おいしいブレンドコーヒーとヘルシーなオーガニックフードで体の内側から癒やされてください。
-                        体に優しい自然食を提供する、WCB CAFE。無添加の食材を利用したメニューが特徴です。
-                        おいしいブレンドコーヒーとヘルシーなオーガニックフードで体の内側から癒やされてください。
-                    </p>
-                   
-                </div>
-                <div>
-                    <ul class="nav-buttons flex">
-                        <li><a class="nav-button-resume" href="">Resume</a></li>
-                        <li><a class="nav-button-exercises" href="">Exercises</a></li>
-                        <li><a class="nav-button-contact" href="">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </main>
-        <footer class="margin-top-5">
-                <div class="copyright">
-                    <p>Created &amp; maintained by Yeung.</p>
-                </div>
-        </footer>
+        </div>
+    </nav>
+    <div class="search-panel">
+        <div class="hero__inner">
+            <h2>Team collaboration done right</h2>
+            <a href="/sign-up" class="button button--cta">Get started</a>
+        </div>
     </div>
+
+    <div class="container">
+    <div class="tile-row">
+        <div class="tile">
+        <h4>Work together, even if you're apart</h4>
+        <p>Organize your team conversations into threads. Collaborate together on documents in real-time. Use face-to-face <a href="/features/video-calling">video calls</a> when typing just won't do.</p>
+        <a href="/collaboration" class="button">Read more</a>
+        </div>
+
+        <div class="tile">
+        <h4>Take it with you</h4>
+        <p>Ink is available on a wide array of devices, so you can work from anywhere:</p>
+        <ul class="tag-list">
+            <li>Web</li>
+            <li>iOS</li>
+            <li>Android</li>
+            <li>Windows Phone</li>
+        </ul>
+        <a href="/supported-devices" class="button">Read more</a>
+        </div>
+
+        <div class="tile">
+        <h4>Priced right</h4>
+        <p>Whether you work on a team of three or a three hundred, you'll find our tiered pricing reasonable at every level.</p>
+        <a href="/pricing" class="button">Read more</a>
+        </div>
+    </div>
+    </div>
+
+    <footer class="page-footer">
+    <div class="page-footer__inner">
+        Copyright &copy; 2017 Ink, Inc.
+    </div>
+    </footer>
+
+
 </body>
+
 </html>
