@@ -14,11 +14,16 @@
 
 <body>
     <header class="page-header">
-    <div class="page-header__inner">
-        <div class="header-tile"><a class="home-link" href="/">Algorithms</a></div>
-        <div class="header-tile"><input type="text" class="query-input--small" size="10" 
-            name="query--top" id="query--top" placeholder="Searching..."></div>
-        <nav class="header-tile">
+    <div class="page-header__inner border-sg">
+        <a class="home-link border-sg" href="/">Algorithms</a>
+        <div class="search-container">
+            <form class="no-submit" method="GET">
+              <input class="no-submit" type="search" placeholder="Search...">
+            </form>
+        </div>
+        <input type="text" class="query--small border-sg"  
+            name="" id="" placeholder="Searching...">
+        <nav>
             <div class="nav-menu" id="main-menu">
                 <button class="nav-menu__toggle" id="toggle-menu">toggle menu</button>
                 <div class="nav-menu__dropdown">
@@ -39,7 +44,7 @@
         <div class="search-panel">
             <div class="panel__inner">
                 <h2>Hello, What Do You Want To Learn?</h2>
-                <input type="text" class="query-input--large" size="30" name="query--center" id="query--center" placeholder="Data Structure and Algorithm ">
+                <input type="text" class="query--large" size="30" name="" id="" placeholder="Data Structure and Algorithm ">
             </div>
         </div>
     
