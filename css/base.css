@@ -99,12 +99,15 @@ a:active {
 .page-header__inner {
   display: flex;
   justify-content: space-between;
-  /* align-items: flex-end; */
+  align-items: flex-end;
   margin: 0 auto;
   padding: 0.625em 0;
 }
+.header-tile {
+  flex: 1;
+}
 .home-link {
-  color: var(--medium-green);
+  color: var(--brand-green);
   font-size: 1.5rem;
   font-family: Georgia, serif;
   font-weight: bold;
@@ -132,6 +135,7 @@ a.home-link:hover{
 */
 .nav-menu {
     position: relative;
+    border: 1px solid red;
 }
 .nav-menu__toggle {
     position: absolute;
@@ -149,7 +153,7 @@ a.home-link:hover{
 }
 .nav-menu__toggle::after {
     position: absolute;
-    top: .2em;
+    top: .5em;
     left: .2em;
     display: block;
     content: "\2261";
@@ -225,3 +229,6 @@ main {
 
 
 
+.border-red {
+  border: 1px solid lightseagreen;
+}
