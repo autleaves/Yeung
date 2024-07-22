@@ -29,30 +29,44 @@
             </header>
             <main>
                 <div>
-                    <div>
-                        <img src="images/pic1.jpg" alt="生け花">
-                    </div>
-                    <p>初心者の方から免状の取得を目指す方まで、幅広く生け花を学べます。</p>
+                    <img src="images/pic3.jpg" alt="花の写真">
                 </div>
                 
-                <h2>おけいこ</h2>
+                <h2>体験申し込み</h2>
+                <p>実際に花に触れて、自分でいけてみませんか？</p>
+                <form>
                 <table border="1">
                     <tr>
+                        <td>名前・連絡先・希望日</td>
                         <td>
-                            <ol>
-                                <li>道具はすべて貸し出します</li>
-                                <li>使用した花材は持ち帰れます</li>
-                            </ol>
+                            <textarea name="memo"></textarea>
                         </td>
-                        <td><img src="images/pic2.png" alt="おけいこの様子"></td>
-                    
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <a href="page2.html" target="_blank"><img src="images/icon.png" alt="">
+                        <td>人数</td>
+                        <td>
+                            <input type="radio" name="people" value="1">１名
+                            <input type="radio" name="people" value="2">２名
+                            <input type="radio" name="people" value="3">３名
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>知ったきっかけ</td>
+                        <td>
+                            <input type="checkbox" name="way" value="online">WEB・SNS
+                            <input type="checkbox" name="way" value="life">友人・知人の紹介
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="送信する">
+                        </td>
+                        <td>
+                            <input type="reset" value="取り消す">
                         </td>
                     </tr>
                 </table>
+                </form>
             </main>
         </div>
 </body>
