@@ -93,20 +93,14 @@ a:active {
 /*
  * Header section
  */
-.page-header {
-  border: 1px solid lightcoral;
-}
+
 .page-header__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   margin: 0 auto;
-  padding: 0.625em 0;
+  padding: 0.625em 0; 
 }
-.header-tile {
-  flex: 1;
-}
+
 .home-link {
+  display: inline-block;
   color: var(--brand-green);
   font-size: 1.5rem;
   font-family: Georgia, serif;
@@ -114,10 +108,13 @@ a:active {
   text-decoration: none;
   text-transform: uppercase;
 }
-a.home-link:hover{
-  text-decoration: none;
+.query--small {
+  display: inline-block;
+  font-size: 1.35em;
+  width: 10em;
+  line-height: 1.35;
+  /* margin-top: 1em; */
 }
-
 
 @media (min-width: 35em) {
     .page-header__inner {
@@ -229,6 +226,6 @@ main {
 
 
 
-.border-red {
+.border-sg {
   border: 1px solid lightseagreen;
 }
