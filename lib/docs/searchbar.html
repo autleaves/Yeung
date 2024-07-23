@@ -1,18 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&family=Poppins&display=swap" rel="stylesheet">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        :root {
+            --bg-color: #fff;
+            --brand-green: hsl(162, 87%, 21%);
+            --dark-green: hsl(162, 88%, 30%);
+            --medium-green: hsl(162, 73%, 46%);
+            --text-color: hsl(210, 11%, 15%);
+            --gray: hsl(210, 7%, 56%);
+            --light-gray: hsl(210, 17%, 95%);
+            --extra-light-gray: hsl(210, 17%, 98%);
+            --white: hsl(0, 0%, 100%);
+            --button-bg-color: #fff;
+            --button-bg-color-hover: rgb(202, 190, 190);
+            --red: hsl(342, 63%, 46%);
+
+            box-sizing: border-box;
+            color: var(--text-color);
+            /* font-size: calc(1vw + 0.6em); */
+        }
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+        body {
+            /* margin: 0; */
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.4;
+            letter-spacing: 0.01em;
+            background-color: var(--extra-light-gray);
+        }
         .search-wrapper {
             text-align: center;
         }
         .search-container {
             --search-fontSize: 1.2rem;
             --search-height: 2em;
-            --search-width: 10em;
+            --search-width: 15em;
             --search__clearbutton-color: rgb(107, 108, 111);
             --input-borderColor: transparent;
             --input-radius: 20px;
@@ -23,21 +57,21 @@
         }
         .search-input {
             font: inherit;
-            /* padding-left: 3em;
-            padding-right: 2em; */
+            padding-left: 3em;
+            padding-right: 2em;
             height: var(--search-height);
             width: var(--search-width);
             border-radius: var(--input-radius);
             border: 1px solid var(--input-borderColor);
             box-shadow: 0 0 3px 0 grey;
         }
-        .keywords {
+        .keywords-container {
             position: absolute;
-            top: 2.4em;
+            top: calc(var(--search-height) * 1.2);
             width: var(--search-width);
             height: 8em;
             background-color: rgb(243, 243, 240);
-            border-radius: 4px;
+            border-radius: 7px;
         }
         button[type="submit"]:focus,
         input.search-input:focus {
@@ -49,7 +83,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            /* border-radius: 50%; */
+            border-radius: 50%;
             justify-content: center;
             align-items: center;
             /* button appearane */
@@ -110,17 +144,22 @@
 
 <body>
     <div class="search-wrapper">
-        <div class="search-container border">
+        <div class="search-container">
             <form method="get">
-                <!-- <button class="modal-btn search-submit" type="submit">
+                <button class="modal-btn search-submit" type="submit">
                     <span class="sr-only">search</span>
-                </button> -->
+                </button>
                 <input class="search-input" type="text" placeholder="Search...">
-                <!-- <button class="modal-btn search-clear" type="reset" aria-label="Clear input" title="Clear input">
+                <button class="modal-btn search-clear" type="reset" aria-label="Clear input" title="Clear input">
                     <span class="sr-only">close</span>
-                </button> -->
-                <div class="keywords border">
-                    testtest
+                </button>
+                <div class="keywords-container">
+                    <ul>
+                        <li>keywords 1</li>
+                        <li>keywords 2</li>
+                        <li>keywords 3</li>
+                        <li>keywords 4</li>
+                    </ul>
                 </div>
             </form>
         </div>
