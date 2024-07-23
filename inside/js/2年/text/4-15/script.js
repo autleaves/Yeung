@@ -6,6 +6,8 @@ const getScrollPercent = () => {
     const viewHeight = document.documentElement.clientHeight;
     const percentage = scrolled / (pageHeight - viewHeight) * 100;
     document.querySelector('#bar').style.width = `${percentage}%`;
+
+    console.log(`ページの高さ：${pageHeight}、表示領域の高さ：${viewHeight}`);
   }
   
   window.addEventListener('scroll', getScrollPercent);
