@@ -53,17 +53,24 @@
         left: 50%;
         transform: translate(-50%, -50%);
         }
+        .border {
+            border: 1px solid red;
+        }
+        .border-1 {
+            border: 1px solid blue;
+        }
     </style>
 </head>
 <body>
-    <div class="wrap">
-        <div class="search">
-           <input type="text" class="searchTerm" placeholder="What are you looking for?">
-           <button type="submit" class="searchButton">
-             <i class="fa fa-search"></i>
-          </button>
+    <div class="border-1" style="position: relative; background-color: lightblue;">
+        <div  class="border" style="background-color: lightgreen;">
+          <p>子元素内容</p>
+          <p>子元素内容</p>
+          <p>子元素内容</p>
+          <p>子元素内容</p>
         </div>
-     </div>
+      </div>
+      
     
 </body>
 </html>

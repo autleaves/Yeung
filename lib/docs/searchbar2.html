@@ -17,33 +17,85 @@
         .search-container {
             --search-fontSize: 1rem;
             --search-height: 2.4em;
-            --search-width: 80vw;
-            --search__clearbutton-color: rgb(107, 108, 111);
-            --input-borderColor: transparent;
-            --input-radius: 4px;
+            --search-width: 40vw;
+            --search__clearbutton-color: rgb(145, 146, 147);
+            --input-borderColor: red;
+            --input-radius: 6px;
 
             font-size: var(--search-fontSize);
+            width: var(--search-width);
+            height: var(--search-height);
             position: relative;
             display: inline-block;
-        }
-        @media (min-width:50em) {
-            .search-container {
-                --search-width: 50vw;
-                --search-height: 3em;
-            }
-            .search-submit {
-                left: 1.5em;
-            }
+            border-radius: 4px;
         }
         .search-input {
+            display: inline-block;
+            margin-top: 0;
             font: inherit;
-            padding-left: 3em;
-            padding-right: 2em;
+            padding-left: 1em;
+            background-color: #fff;
+            width: 100%;
+            margin-left: 0;
             height: var(--search-height);
-            width: var(--search-width);
+            border: none;
+            border: 1 solid rgb(73, 208, 194);
             border-radius: var(--input-radius);
-            border: 1px solid var(--input-borderColor);
+            /* box-shadow: 0 0 1px 0; */
+
+        }
+        .modal-btn {
+            position: absolute;
+            top: 0;
+            border-radius: 4px;
+            justify-content: center;
+            align-items: center;
+            /* button appearane */
+            appearance: none;
+            border: none;
+            background: none;
+            margin: 0;
+            cursor: pointer;
+            border: 0;
+        }
+        .search-clear {
+            /* button position */
+            top: 50%;
+            transform: translateY(-50%);
+            right: 4em;
+            height: var(--search-height);
+            width: var(--search-height);
+            color: var(--search__clearbutton-color);
+            /* hide the button initially */
+            display: none;
+        }
+        .search-clear::before {
+            display: block;
+            content: '\00D7';
+            font-size: 2.2em;
+        }
+        .search--touched:focus+.search-clear, 
+        .search--touched:hover+.search-clear, 
+        .search--touched+.search-clear:hover {
+            display: inline-flex;
+        }
+        .search-submit {
+            /* button position */
+            top: 50%;
+            transform: translateY(-50%);
+            right: 1em;
+            background-image: url(../images/base/icon-magnifier-30.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: var(--search-height);
+            width: var(--search-height);
+
+        }
+        button[type="submit"]:focus,
+        input.search-input:focus {
             box-shadow: 0 0 3px 0 grey;
+            border-color: var(--input-borderColor);
+            outline: none;
         }
         .keywords-container {
             position: absolute;
@@ -69,65 +121,6 @@
         .keywords-container ul li:hover {
             background-color: rgb(213, 211, 211);
         }
-        /* .search-container.is-open .keywords-container {
-            display: block;
-        } */
-        button[type="submit"]:focus,
-        input.search-input:focus {
-            box-shadow: 0 0 3px 0 grey;
-            border-color: var(--input-borderColor);
-            outline: none;
-        }
-        .modal-btn {
-            position: absolute;
-            top: 0;
-            right: 0;
-            border-radius: 4px;
-            justify-content: center;
-            align-items: center;
-            /* button appearane */
-            appearance: none;
-            border: none;
-            background: none;
-            margin: 0;
-            cursor: pointer;
-            border: 0;
-        }
-        .search-submit {
-            /* button position */
-            top: 50%;
-            transform: translateY(-50%);
-            left: 1em;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3C!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z'/%3E%3C/svg%3E");
-            height: 1.5em;
-            width: 1.5em;
-            opacity: 0.3;
-
-        }
-        .search-clear {
-            /* button position */
-            top: 50%;
-            transform: translateY(-50%);
-            right: 1em;
-            height: 1.5em;
-            width: 1.5em;
-            color: var(--search__clearbutton-color);
-            /* hide the button initially */
-            display: none;
-        }
-        .search-clear::before {
-            display: block;
-            content: '\00D7';
-            font-size: 2.2em;
-        }
-        .search-submit:hover {
-            opacity: .7;
-        }
-        .search--touched:focus+.search-clear, 
-        .search--touched:hover+.search-clear, 
-        .search--touched+.search-clear:hover {
-            display: inline-flex;
-        }
         .sr-only {
             position: absolute;
             width: 1px;
@@ -139,31 +132,23 @@
         .border {
             border: 1px solid red;
         }
-       
     </style>
 </head>
 
 <body>
     <div class="search-wrapper">
+        <form method="get">
         <div class="search-container" id="search">
-            <form method="get">
-                <button class="modal-btn search-submit" type="submit">
-                    <span class="sr-only">search</span>
-                </button>
                 <input class="search-input" id="search__menu-toggle"  type="text" placeholder="Search...">
-                <button class="modal-btn search-clear" type="reset" aria-label="Clear input" title="Clear input">
-                    <span class="sr-only">close</span>
+                <button class="modal-btn search-clear" type="reset">
+                    <i class="sr-only">clear</i>
                 </button>
-                <div class="keywords-container" id="search__menu-list">
-                    <ul>
-                        <li>keywords 1</li>
-                        <li>keywords 2</li>
-                        <li>keywords 3</li>
-                        <li>keywords 4</li>
-                    </ul>
-                </div>
-            </form>
+                <button class="modal-btn search-submit" type="submit">
+                    <i class="sr-only">search</i>
+                </button>
+               
         </div>
+        </form>
     </div>
     <script>
         const input = document.querySelector(".search-input");
