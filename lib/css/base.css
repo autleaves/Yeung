@@ -18,11 +18,6 @@
   color: var(--text-color);
   font-size: calc(1vw + 0.6em);
 }
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
 /* .poppins-regular {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -43,13 +38,17 @@
     }
 }
 
-
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 /* body * + * {
   margin-top: 1.5em;
 } */
 
 body {
-  margin: 0;
+  /* margin: 0; */
   font-family: "Open Sans", sans-serif;
   line-height: 1.4;
   letter-spacing: 0.01em;
