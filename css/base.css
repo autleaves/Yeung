@@ -39,7 +39,8 @@
 
 @media (min-width: 50em) {
     :root {
-        font-size: 1.125em;
+        /* font-size: 1.125em; */
+        font-size: 1em;
     }
 }
 
