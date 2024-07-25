@@ -11,8 +11,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .header {
+            height: 3em;
+            background-color: #fff;
+        }
         .search-wrapper {
+            margin-top: 5vh;
             text-align: center;
+        }
+        @media (min-width:50em) {
+            .search-wrapper {
+                margin-top: 20vh;
+            }
         }
         .search-container {
             --search-fontSize: 1rem;
@@ -115,7 +125,7 @@
             top: calc(var(--search-height) * 1.1);
             width: var(--search-width);
             height: 8em;
-            background-color: #f7f7f7;
+            background-color: #fff;
             border-radius: 7px;
             line-height: 1.6em;
             display: none;
@@ -148,7 +158,13 @@
 </head>
 
 <body>
+    <header>
+        <div class="header">
+            <h3>Algorithms</h3>
+        </div>
+    </header>
     <div class="search-wrapper">
+        <h2>Hello, What Do You Want To Learn?</h2>
         <form method="get">
         <div class="search-container" id="search">
                 <input class="search-input" id="search__menu-toggle"  type="text" placeholder="Search...">
@@ -158,7 +174,14 @@
                 <button class="modal-btn search-submit" type="submit">
                     <i class="sr-only">search</i>
                 </button>
-               
+                <div class="keywords-container" id="search__menu-list">
+                    <ul>
+                        <li>keywords 1</li>
+                        <li>keywords 2</li>
+                        <li>keywords 3</li>
+                        <li>keywords 4</li>
+                    </ul>
+                </div>
         </div>
         </form>
     </div>
