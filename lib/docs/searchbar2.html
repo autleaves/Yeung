@@ -17,9 +17,9 @@
         .search-container {
             --search-fontSize: 1rem;
             --search-height: 2.4em;
-            --search-width: 40vw;
+            --search-width: 90vw;
             --search__clearbutton-color: rgb(145, 146, 147);
-            --input-borderColor: red;
+            --input-borderColor: #f0f0f0;
             --input-radius: 6px;
 
             font-size: var(--search-fontSize);
@@ -28,6 +28,12 @@
             position: relative;
             display: inline-block;
             border-radius: 4px;
+        }
+        @media (min-width:50em) {
+            .search-container {
+                --search-width: 50vw;
+                --search-height: 3em;
+            }
         }
         .search-input {
             display: inline-block;
@@ -39,9 +45,9 @@
             margin-left: 0;
             height: var(--search-height);
             border: none;
-            border: 1 solid rgb(73, 208, 194);
+            border: 1px solid var(--input-borderColor);
             border-radius: var(--input-radius);
-            /* box-shadow: 0 0 1px 0; */
+            box-shadow: 0 0 1px 0 #fff;
 
         }
         .modal-btn {
@@ -62,7 +68,7 @@
             /* button position */
             top: 50%;
             transform: translateY(-50%);
-            right: 4em;
+            right: 3.3em;
             height: var(--search-height);
             width: var(--search-height);
             color: var(--search__clearbutton-color);
@@ -84,12 +90,17 @@
             top: 50%;
             transform: translateY(-50%);
             right: 1em;
-            background-image: url(../images/base/icon-magnifier-30.png);
+            background-image: url(../images/base/icon-magnifier-20.png);
             background-repeat: no-repeat;
             background-position: center center;
-            height: var(--search-height);
-            width: var(--search-height);
+            height: calc(var(--search-height) * 0.8);
+            width:  calc(var(--search-height) * 0.8);
 
+        }
+        @media (min-width:50em) {
+            .search-submit {
+                background-image: url(../images/base/icon-magnifier-24.png);
+            }
         }
         button[type="submit"]:focus,
         input.search-input:focus {
@@ -97,6 +108,7 @@
             border-color: var(--input-borderColor);
             outline: none;
         }
+        
         .keywords-container {
             position: absolute;
             text-align: left;
