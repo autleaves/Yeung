@@ -7,47 +7,77 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&family=Poppins&display=swap" rel="stylesheet">
-    <link href="css/style.csss" rel="stylesheet">
+    <!-- <link href="css/style.csss" rel="stylesheet"> -->
     <link href="css/base.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/search.css" rel="stylesheet">
+    <link href="css/nav.css" rel="stylesheet">
+    <script src="js/search.js" type="text/javascript" defer></script>
     <title>Algorithms</title>
 </head>
 
 <body>
-    <header class="page-header">
-    <div class="page-header__inner border-sg">
-        <a class="home-link border-sg" href="/">Algorithms</a>
-        <div class="search-container">
-            <form class="no-submit" method="GET">
-              <input class="no-submit" type="search" placeholder="Search...">
-            </form>
+    <header class="header null">
+        <div class="title null">
+            <a class="home-link" href="/">Algorithms</a>
         </div>
-        <input type="text" class="query--small border-sg"  
-            name="" id="" placeholder="Searching...">
-        <nav>
-            <div class="nav-menu" id="main-menu">
-                <button class="nav-menu__toggle" id="toggle-menu">toggle menu</button>
-                <div class="nav-menu__dropdown">
-                    <ul class="nav-menu-list">
-                        <li><a href="/Fundamentals">Fundamentals</a></li>
-                        <li><a href="/Sortings">Sortings</a></li>
-                        <li><a href="/Searching">Searching</a></li>
-                        <li><a href="/Graphs">Graphs</a></li>
-                        <li><a href="/Strings">Strings</a></li>
-                        <!-- <li class="nav-menu__featured"></li> -->
-                    </ul>
-                </div>
+        <nav class="menu null" id="main-menu">
+            <button class="menu-toggle" id="toggle-menu">
+                toggle menu
+            </button>
+            <div class="menu-dropdown">
+                <ul class="nav-menu">
+                <li><a href="/about.html">Fundamentals</a></li>
+                <li><a href="/shop.html">Sortings</a></li>
+                <li><a href="/menu.html">Searching</a></li>
+                <li><a href="/brew.html">Graphs</a></li>
+                <li><a href="/Strings">Strings</a></li>
+                </ul>
             </div>
         </nav>
-    </div>
-    </header>
-    <main>
-        <div class="search-panel">
-            <div class="panel__inner">
-                <h2>Hello, What Do You Want To Learn?</h2>
-                <input type="text" class="query--large" size="30" name="" id="" placeholder="Data Structure and Algorithm ">
-            </div>
+        <div class="icons contact-us null">
+            <a href="https://github.com/"><img src="images/github-mark.png" alt="GitHub"></a>
+            <a href="mailto:@gmail.com"><img src="images/email-mark.png" alt="Email"></a>
         </div>
+    </header>
     
+        <!-- <div class="nav-menu" id="main-menu">
+            <button class="nav-menu__toggle" id="toggle-menu">toggle menu</button>
+            <div class="nav-menu__dropdown">
+                <ul class="nav-menu-list">
+                    <li><a href="/Fundamentals">Fundamentals</a></li>
+                    <li><a href="/Sortings">Sortings</a></li>
+                    <li><a href="/Searching">Searching</a></li>
+                    <li><a href="/Graphs">Graphs</a></li>
+                    <li><a href="/Strings">Strings</a></li>
+                    <li class="nav-menu__featured"></li>
+                </ul>
+            </div>
+        </div> -->
+    </nav>
+    <main>
+        <div class="search-wrapper">
+            <h2>Hello, What Do You Want To Learn?</h2>
+            <form method="get">
+            <div class="search-container" id="search">
+                    <input class="search-input" id="search__menu-toggle"  type="text" placeholder="Search...">
+                    <button class="modal-btn search-clear" type="reset">
+                        <i class="sr-only">clear</i>
+                    </button>
+                    <button class="modal-btn search-submit" type="submit">
+                        <i class="sr-only">search</i>
+                    </button>
+                    <div class="keywords-container" id="search__menu-list">
+                        <ul>
+                            <li>keywords 1</li>
+                            <li>keywords 2</li>
+                            <li>keywords 3</li>
+                            <li>keywords 4</li>
+                        </ul>
+                    </div>
+            </div>
+            </form>
+        </div>
     </main>
     
 
@@ -56,7 +86,7 @@
         Copyright &copy; 2020 Ink, Inc.
     </div> -->
     </footer>
-
+    <!-- <scirpt type="text/javascript" src="js/search.js"></scirpt> -->
     <script type="text/javascript">
         (function() {
         var menuButton = document.getElementById('toggle-menu');
