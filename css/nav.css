@@ -37,7 +37,6 @@ nav.menu a:active {
     text-indent: 5em;
     white-space: nowrap;
     overflow: hidden;
-    border: 1px solid blue;
 }
 .menu-toggle::after {
     position: absolute;
@@ -46,7 +45,6 @@ nav.menu a:active {
     display: block;
     content: "\2261";
     text-indent: 0;
-    border: 1px solid rgb(173, 24, 63);
 }
 
 .menu-dropdown {
