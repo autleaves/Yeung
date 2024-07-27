@@ -24,7 +24,7 @@
 
 .menu-toggle {
     position: absolute;
-    top: -1em;
+    top: -1.5em;
     right: 0.1em;
     border: 0;
     background-color: transparent;
@@ -39,7 +39,7 @@
 .menu-toggle::after {
     position: absolute;
     top: 0.2em;
-    left: 0em;
+    right: 0.2em;
     display: block;
     content: "\2261";
     text-indent: 0;
