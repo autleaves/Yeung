@@ -5,78 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        /* || PRIMARY MENU || */
+      :root {
+        box-sizing: border-box;
+        /* font-size: calc(1vw + 0.6em); */
+      }
+  
+      /* @media (min-width: 50em) {
+        :root {
+          font-size: 1.125em;
+        }
+      } */
+      
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+  
+      body {
+        margin: 0;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+  
+      /*
+       * Links
+       */
+      a:link {
+        color: #1476b8;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      a:visited {
+        color: #1430b8;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a:active {
+        color: #b81414;
+      }
+      
+      
 
-/* .primary-nav {
-  align-items: center;
-  height: 50px;
-  left: 0px;
-  padding: 15px;
-  width: 100%;
-  margin: 0px;
-  background-color: darkgray;
-  display: inline;
-  position: fixed;
-  top: 70px;
-  z-index: 3;
-  font-weight: bold;
-} */
+      /* .red {
+        line-height: 1.1em;
+        border: solid red;
+      }
 
-.search-container {
-  align-items: center;
-  display: flex;
-  justify-content: left;
-}
-
-form .no-submit {
-  width: 180px;
-  align-items: center;
-  color: white;
-  right: 0;
-  display: flex;
-  padding: 2px;
-  border: 1px solid currentColor;
-  border-radius: 5px;
-  margin: 0 0;
-}
-
-input.no-submit {
-  border: 1px solid white;
-  width: 100%;
-  padding: 9px 4px 9px 4px;
-  /* You can use your image but having cleaner code is better, so I suggest saving the file and just linking it*/
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3C!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z'/%3E%3C/svg%3E") ;
-  /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg"); */
-  background-size: 1em;
-  background-repeat: no-repeat;
-  background-position: 0.5em center;
-}
-
-input[type="search"] {
-  background-color: transparent;
-  margin: 0;
-  padding: 7px 8px 7px 2em;
-  /* font-size: 16px; */
-  border: 1px solid black;
-  border-radius: inherit;
-}
-
-input[type="search"]::placeholder {
-  color: white;
-}
-
-input[type="search"]:focus {
-  box-shadow: 0 0 3px 0 #3f69a8;
-  border-color: #3f69a8;
-  outline: none;
-}
+      h1 {
+        font-size: 30px;
+      }*/
+      body {
+        padding-top: 3em;
+      }
+      .box {
+        font-size: 3em;
+        width: 18em;
+        height: 1em;
+        vertical-align: bottom;
+       
+      } 
+      .green {
+        line-height: 0;
+        border: solid limegreen;
+      }
+     
+  
+    </style>
     </style>
 </head>
 <body>
-    <div class="search-container">
-        <form class="no-submit">
-          <input class="no-submit" type="search" placeholder="Search..." method="GET">
-        </form>
-      </div>
+  <div class="box green">
+    Length and percentage line-heights have poor inheritance behavior.
+  </div>
 </body>
 </html>

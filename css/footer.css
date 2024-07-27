@@ -4,7 +4,10 @@
     clear: both;
     color: #666;
     position: relative;
-    height: 2.4em;
+    /* height: 2.4em; */
+    line-height: 2.4em;
     background-color: #ececec;
-    margin-top: -2em;
+    margin-top: -2.4em;
+    text-align: right;
+    padding-right: 3em;
 }

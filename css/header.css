@@ -1,18 +1,23 @@
 @charset "utf-8";
 
-.title {
+.logo {
     padding-top: .8em;
     padding-left: 1em;
 }
 .icons {
     padding-top: .8em;
 }
-.title a{
-    color: lightskyblue;
+.logo a{
+    /* color: lightskyblue; */
+}
+.logo img {
+    width: 9.5em;
+    height: 2em;
 }
 .header {
     /* height: 3em; */
     background-color: #fff;
+    border-bottom: 1px solid #dedede;
 }
 .header a:hover {
     text-decoration: none;
@@ -39,7 +44,7 @@ nav.menu a:active {
         align-items: flex-end;
         flex-wrap: nowrap;
     }
-    .header > .title {
+    .header > .logo {
         flex: 1;
         align-self: center;
         padding-right: 2em;

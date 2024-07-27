@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+
 .icons img {
     width: 2em;
     height: 2em;
@@ -23,14 +24,14 @@
 
 .menu-toggle {
     position: absolute;
-    top: -1.2em;
+    top: -1em;
     right: 0.1em;
     border: 0;
     background-color: transparent;
     font-size: 3em;
     width: 1em;
     height: 1em;
-    line-height: 0.4;
+    line-height: 0.9;
     text-indent: 5em;
     white-space: nowrap;
     overflow: hidden;
@@ -38,11 +39,10 @@
 .menu-toggle::after {
     position: absolute;
     top: 0.2em;
-    left: 0.2em;
+    left: 0em;
     display: block;
     content: "\2261";
     text-indent: 0;
-    border: 1px solid red;
 }
 
 .menu-dropdown {
@@ -91,9 +91,12 @@
     padding: 0.8em 1em;
     /* color: #fff; */
     font-weight: normal;
+    border-radius: 5px 5px 0 0;
 }
 .nav-menu > li > a:hover {
-    background-color: #f3f3f3;
+    /* background-color: #dedede; */
+    background-color: #969696;
+    color: #fff;
 }
 @media (min-width: 35em) {
     .menu-dropdown {
@@ -114,7 +117,7 @@
     .nav-menu > li > a {
         padding: 0.3em;
         text-align: left;
-        font-weight: 800;
+        font-weight: 600;
     }
 }
 

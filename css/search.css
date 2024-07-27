@@ -3,6 +3,10 @@
 .search-wrapper {
     margin-top: 5vh;
     text-align: center;
+    font-weight: normal;
+}
+.search-wrapper h2 {
+    font-weight: 300;
 }
 @media (min-width:50em) {
     .search-wrapper {

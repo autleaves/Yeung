@@ -153,8 +153,8 @@
       font-size: 3em;
       width: 1em;
       height: 1em;
-      line-height: 0.4;
-      text-indent: 5em;
+      line-height: 1;
+      /* text-indent: 5em; */
       white-space: nowrap;
       overflow: hidden;
     }
@@ -164,7 +164,7 @@
       left: 0.2em;
       display: block;
       content: "\2261";
-      text-indent: 0;
+      /* text-indent: 0; */
     }
 
     .menu-dropdown {
@@ -259,7 +259,9 @@
         margin-left: 0.75em;
       }
     }
-
+    .border {
+      border: 1px solid red;
+    }
   </style>
 </head>
 
@@ -273,7 +275,7 @@
   </header>
 
   <nav class="menu" id="main-menu">
-    <button class="menu-toggle" id="toggle-menu">
+    <button class="menu-toggle border" id="toggle-menu">
       toggle menu
     </button>
     <div class="menu-dropdown">
