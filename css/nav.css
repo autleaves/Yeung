@@ -1,17 +1,19 @@
 @charset "utf-8";
 
 
-.icons img {
-    width: 2em;
-    height: 2em;
+nav.menu a {
+    color: #000;
+    text-decoration: none;
+  }
+nav.menu a:visited {
+    color: var(--brand-green);
 }
-.icons.contact-us {
-    display: none;
+nav.menur a:hover {
+    color: var(--brand-green);
+    text-decoration: underline;
 }
-@media (min-width: 35em) {
-    .icons.contact-us {
-        display: inline-block;
-    }
+nav.menu a:active {
+    color: var(--red);
 }
 
 /*

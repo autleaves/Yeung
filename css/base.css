@@ -29,19 +29,6 @@
 *::after {
   box-sizing: inherit;
 }
-/* .poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-.open-sans-light {
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-} */
 
 @media (min-width: 50em) {
     :root {
@@ -50,10 +37,6 @@
     }
 }
 
-
-/* body * + * {
-  margin-top: 1.5em;
-} */
 
 body {
   margin: 0;
@@ -65,7 +48,10 @@ body {
   display: flex;
   flex-direction: column;
 }
-
+main {
+  padding: 1em;
+  flex: 1;
+}
 h1, h2, h3, h4 {
   font-family: Poppins, sans-serif;
   letter-spacing: 0.03em;
@@ -97,8 +83,6 @@ a:hover {
 a:active {
   color: #000;
 }
-
-
 
 /*
  * Header section
@@ -136,17 +120,6 @@ a:active {
       padding: 1em 4em;
     }
 }
-
-
-
-
-main {
-  /* border: 1px solid lightseagreen; */
-  padding: 1em;
-  flex: 1;
-}
-
-
 
 .border {
   border: 1px solid lightseagreen;

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/search.css" rel="stylesheet">
+    <link href="css/nav.css" rel="stylesheet">
+    <link href="css/explore.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <script src="js/search.js" type="text/javascript" defer></script>
+    <title>Algorithms</title>
+</head>
+
+<body>
+    <header class="header null">
+        <div class="logo null">
+            <a class="home-link" href="/">
+                <img src="images/base/logo2.png">
+            </a>
+        </div>
+        <nav class="menu null" id="main-menu">
+            <button class="menu-toggle" id="toggle-menu">
+                toggle menu
+            </button>
+            <div class="menu-dropdown">
+                <ul class="nav-menu">
+                <li><a href="/about.html">Fundamentals</a></li>
+                <li><a href="/shop.html">Sortings</a></li>
+                <li><a href="/menu.html">Searching</a></li>
+                <li><a href="/brew.html">Graphs</a></li>
+                <li><a href="/Strings">Strings</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="icons contact-us null">
+            <a href="https://github.com/"><img src="images/github-mark.png" alt="GitHub"></a>
+            <a href="mailto:@gmail.com"><img src="images/email-mark.png" alt="Email"></a>
+        </div>
+    </header>
+    <main>
+        <div class="search-wrapper ">
+            <h2>Hello, What Do You Want To Learn?</h2>
+            <form method="get">
+            <div class="search-container" id="search">
+                    <input class="search-input" id="search__menu-toggle"  type="text" placeholder="Search...">
+                    <button class="modal-btn search-clear" type="reset">
+                        <i class="sr-only">clear</i>
+                    </button>
+                    <button class="modal-btn search-submit" type="submit">
+                        <i class="sr-only">search</i>
+                    </button>
+                    <div class="keywords-container" id="search__menu-list">
+                        <ul>
+                            <li>keywords 1</li>
+                            <li>keywords 2</li>
+                            <li>keywords 3</li>
+                            <li>keywords 4</li>
+                        </ul>
+                    </div>
+            </div>
+            </form>
+        </div>
+        <div class="explore-wrapper ">
+            <h3>Explore</h3>
+            <div class="explore-container ">
+                <div class="explore-item color--1 ">
+                    <p>Sortings</p>
+                    <a href="">View more</a>
+                </div>
+                <div class="explore-item color--2">
+                    <p>Searching</p>
+                    <a href="">View more</a>
+                </div>
+                <div class="explore-item color--3">
+                    <p>Graphs</p>
+                    <a href="">View more</a>
+                </div>
+                <div class="explore-item color--4">
+                    <p>Strings</p>
+                    <a href="">View more</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer border">
+        <div class="page-footer__inner">
+            <small>Copyright &copy; 2024 Yeung, Inc.</small>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        (function() {
+        var menuButton = document.getElementById('toggle-menu');
+        menuButton.addEventListener('click', function(event) {
+          event.preventDefault();
+          var menu = document.getElementById('main-menu');
+          menu.classList.toggle('is-open');
+        });
+      })();
+    </script>
+</body>
+
+</html>

@@ -4,35 +4,28 @@
     padding-top: .8em;
     padding-left: 1em;
 }
-.icons {
-    padding-top: .8em;
-}
 
 .logo img {
     width: 9.5em;
     height: 2em;
 }
+
+.icons img {
+    width: 2em;
+    height: 2em;
+}
+.icons.contact-us {
+    display: none;
+}
+@media (min-width: 50em) {
+    .icons.contact-us {
+        display: inline-block;
+    }
+}
+
 .header {
-    /* height: 3em; */
     background-color: #fff;
     border-bottom: 1px solid #dedede;
-}
-.header a:hover {
-    text-decoration: none;
-}
-nav.menu a {
-    color: #000;
-    text-decoration: none;
-  }
-nav.menu a:visited {
-    color: var(--brand-green);
-}
-nav.menur a:hover {
-    color: var(--brand-green);
-    text-decoration: underline;
-}
-nav.menu a:active {
-    color: var(--red);
 }
 
 @media (min-width:50em) {
@@ -49,7 +42,6 @@ nav.menu a:active {
     }
     .header > .menu {
         flex: 8;
-        /* align-self: center; */
     }
     .header > .icons {
         text-align: right;
