@@ -57,7 +57,7 @@
     display: block;
 }
 
-@media (min-width: 35em) {
+@media (min-width: 50em) {
     .menu-toggle {
         display: none;
     }
@@ -98,7 +98,7 @@
     background-color: #969696;
     color: #fff;
 }
-@media (min-width: 35em) {
+@media (min-width: 50em) {
     .menu-dropdown {
         position: static;
     }
