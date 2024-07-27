@@ -35,7 +35,7 @@ nav.menu a:active {
     color: var(--red);
 }
 
-@media (min-width:35em) {
+@media (min-width:50em) {
     .header {
         /* height: 3.5em; */
         display: flex;
