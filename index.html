@@ -7,28 +7,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
     <link href="css/base.css" rel="stylesheet">
+    <link href="css/lib.css" rel="stylesheet">
+    <link href="css/coms/com-nav.css" rel="stylesheet">
+    <link href="css/coms/com-search.css" rel="stylesheet">
+    <link href="css/coms/com-explore.css" rel="stylesheet">
     <link href="css/header.css" rel="stylesheet">
-    <link href="css/search.css" rel="stylesheet">
-    <link href="css/nav.css" rel="stylesheet">
-    <link href="css/explore.css" rel="stylesheet">
     <link href="css/footer.css" rel="stylesheet">
+
     <script src="js/search.js" type="text/javascript" defer></script>
+    <script src="js/menu.js" type="text/javascript" defer></script>
     <title>Algorithms</title>
 </head>
 
 <body>
     <header class="header null">
         <div class="logo null">
-            <a class="home-link" href="index.html">
-                <img src="images/base/logo2.png">
-            </a>
+            <a href="index.html"><img src="images/base/logo2.png"></a>
         </div>
-        <nav class="menu null" id="main-menu">
-            <button class="menu-toggle" id="toggle-menu">
-                toggle menu
+        <nav class="-lib--menu border" id="main-menu">
+            <button class="-lib--menu-toggle" id="toggle-menu">
+                <i class="-utils--sr-only">toggle menu</i>
             </button>
-            <div class="menu-dropdown">
+            <div class="-lib--menu-dropdown border">
                 <ul class="nav-menu">
                 <li><a href="/about.html">Fundamentals</a></li>
                 <li><a href="/shop.html">Sortings</a></li>
@@ -38,9 +40,9 @@
                 </ul>
             </div>
         </nav>
-        <div class="icons contact-us null">
-            <a href="https://github.com/"><img src="images/github-mark.png" alt="GitHub"></a>
-            <a href="mailto:@gmail.com"><img src="images/email-mark.png" alt="Email"></a>
+        <div class="contact-us--icons null">
+            <a href="https://github.com/"><img src="images/base/github-mark.png" alt="GitHub"></a>
+            <a href="mailto:@gmail.com"><img src="images/base/email-mark.png" alt="Email"></a>
         </div>
     </header>
     <main>
@@ -50,10 +52,10 @@
             <div class="search-container" id="search">
                     <input class="search-input" id="search__menu-toggle"  type="text" placeholder="Search...">
                     <button class="modal-btn search-clear" type="reset">
-                        <i class="sr-only">clear</i>
+                        <i class="-utils--sr-only">clear</i>
                     </button>
                     <button class="modal-btn search-submit" type="submit">
-                        <i class="sr-only">search</i>
+                        <i class="-utils--sr-only">search</i>
                     </button>
                     <div class="keywords-container" id="search__menu-list">
                         <ul>
@@ -88,21 +90,11 @@
             </div>
         </div>
     </main>
-    <footer class="page-footer">
-        <div class="page-footer__inner">
+    <footer class="footer">
+        <div class="footer__inner">
             <small>Copyright &copy; 2024 Yeung, Inc.</small>
         </div>
     </footer>
-    <script type="text/javascript">
-        (function() {
-        var menuButton = document.getElementById('toggle-menu');
-        menuButton.addEventListener('click', function(event) {
-          event.preventDefault();
-          var menu = document.getElementById('main-menu');
-          menu.classList.toggle('is-open');
-        });
-      })();
-    </script>
 </body>
 
 </html>
