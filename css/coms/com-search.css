@@ -5,6 +5,7 @@
     margin-top: 6vh;
     text-align: center;
     font-weight: normal;
+    z-index: 0;
 }
 .search-wrapper > h2 {
     font-weight: 300;

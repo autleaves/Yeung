@@ -18,6 +18,13 @@
   --z-dropdown-menu:    300;
   --z-modal-backdrop:   400;
   --z-model-body:       410;
+
+  --radius-A:   4px;
+  --radius-B:   6px;
+  --radius-C:   8px;
+  --radius-X:   20px;
+  --radius-Y:   4px;
+  --radius-Z:   4px;
   
   box-sizing: border-box;
   color: var(--text-color);
