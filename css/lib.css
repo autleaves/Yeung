@@ -71,7 +71,9 @@
 .-lib--menu.is-open .-lib--menu-backdrop {
     display: block;
 }
-
+.-lib--menu.is-open .-lib--menu-toggle::before {
+    content: "\00d7";
+}
 @media (min-width: 35em) {
     .-lib--menu-toggle {
         display: none;
