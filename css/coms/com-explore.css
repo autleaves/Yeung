@@ -44,13 +44,11 @@
     background-color: #fff;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 35em) {
     .explore-wrapper {
         width: 40vw;
-        margin-top: 5em;
+        margin-top: 6em;
     }
-}
-@media (min-width: 50em) {
     .explore-item {
         width: 16em;
     }

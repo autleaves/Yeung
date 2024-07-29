@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calc {
+            width: 300px;
+            border: 1px dotted #000;
+            text-align: center;
+        }
+        span.underline {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        span.res {
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+        button.reset {
+            background-color: orange;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="calc">
+        <h1>簡単カウンター</h1>
+        <div class="display">
+            <span class="minus underline">減＜</span>
+            <span class="res">100</span>
+            <span class="add underline">＞増</span>
+            <p>
+                <button type="button" class="reset">リセット</button>
+            </p>
+        </div>
+    </div>
+    <script src="js/01.js"></script>
+</body>
+</html>

@@ -13,18 +13,28 @@
   --white: hsl(0, 0%, 100%);
   --red: hsl(342, 63%, 46%);
 
+  --z-static:             0;
   --z-loading-indicator:100;
   --z-nav-menu:         200;
   --z-dropdown-menu:    300;
   --z-modal-backdrop:   400;
   --z-model-body:       410;
 
+  --z-dropdown:       1000;
+  --z-sticky:         1020;
+  --z-fixed:          1030;
+  --z-modal-backdrop: 1040;
+  --z-modal:          1050;
+  --z-popover:        1060;
+  --z-tooltip:        1070;
+
+
   --radius-A:   4px;
   --radius-B:   6px;
   --radius-C:   8px;
   --radius-X:   20px;
-  --radius-Y:   4px;
-  --radius-Z:   4px;
+  --radius-Y:   24px;
+  --radius-Z:   29px;
   
   box-sizing: border-box;
   color: var(--text-color);
