@@ -32,13 +32,13 @@
 }
 @media (min-width:35em) {
     .search-container {
-        --search-width: 85vw;
+        --search-width: 40vw;
         --search-height: 3em;
     }
 }
-@media (min-width:50em) {
+/* @media (min-width:50em) {
     .search-container {
-        --search-width: 75vw;
+        --search-width: 60vw;
         --search-height: 3em;
     }
 }
@@ -47,7 +47,7 @@
         --search-width: 50vw;
         --search-height: 3em;
     }
-}
+} */
 .search-input {
     display: inline-block;
     margin-top: 0;
