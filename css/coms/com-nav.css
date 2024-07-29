@@ -23,13 +23,12 @@
     
 }
 .nav-menu > li > a:hover {
-    /* background-color: #dedede; */
-    background-color: #969696;
+    background-color: #969696;/* #dedede */
     color: #fff;
     text-decoration: none;
 }
 .nav-menu a:visited {
-    color: var(--gray);
+    color: var(--text-color);
 }
 
 .nav-menu a:active {
@@ -52,16 +51,19 @@
         padding: 0.3em;
         text-align: left;
         font-weight: 600;
-    }
-    .nav-menu a {
         border-radius: 5px 5px 0 0;
     }
     .nav-menu a:visited {
-        color: var(--gray);
+        color: var(--text-color);
     }
+    .fundamentals   li.nav_fundamentals > a,
+    .sortings       li.nav_sortings > a,
+    .searching      li.nav_searching > a,
+    .graphs         li.nav_graphs > a,
+    .strings        li.nav_strings > a,
     .nav-menu a:hover {
-        color: var(--brand-green);
-        text-decoration: underline;
+        background-color: #969696;
+        color: #fff;
     }
     .nav-menu a:active {
         color: var(--red);
