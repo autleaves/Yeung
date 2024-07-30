@@ -8,14 +8,7 @@
 */
 .-lib--menu {
     position: relative;
-    z-index: 1;
-}
-.-lib--menu-body {
-    z-index: 3;
-}
-.-lib--menu-toggle,
-.-lib--menu-dropdown {
-    z-index: 4;
+    z-index: var(-z-dropdown);
 }
 .-lib--menu-backdrop {
     position: fixed;
@@ -24,9 +17,16 @@
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
+    z-index: calc(var(--z-modal-backdrop) + 1);
     display: none;
 }
+
+.-lib--menu-body {
+    position: inherit;
+    z-index: calc(var(--z-modal-backdrop) + 2);
+}
+
+
 .-lib--menu-toggle {
     position: absolute;
     font-size: 3em;
@@ -63,13 +63,14 @@
     margin: 0;
 }
 
-/* .-lib--menu.is-open .-lib--menu-dropdown {
+.-lib--menu.is-open .-lib--menu-dropdown {
     display: block;
-} */
+}
 
-.-lib--menu.is-open .-lib--menu-dropdown,
+
 .-lib--menu.is-open .-lib--menu-backdrop {
     display: block;
+    /* z-index: var(--z-modal-backdrop); */
 }
 .-lib--menu.is-open .-lib--menu-toggle::before {
     content: "\00d7";

@@ -5,7 +5,7 @@
     margin-top: 6vh;
     text-align: center;
     font-weight: normal;
-    z-index: var(--z-static);
+    
 }
 .search-wrapper > h2 {
     font-weight: 300;
@@ -23,10 +23,10 @@
     --input-borderColor: #f0f0f0;
     --input-radius: 6px;
 
+    position: relative;
     font-size: var(--search-fontSize);
     width: var(--search-width);
     height: var(--search-height);
-    position: relative;
     display: inline-block;
     border-radius: 4px;
 }
@@ -97,8 +97,9 @@
     background-image: url(../../images/base/icon-magnifier-20.png);
     background-repeat: no-repeat;
     background-position: center center;
-    height: calc(var(--search-height) * 0.8);
     aspect-ratio: 1 / 1;
+    height: calc(var(--search-height) * 0.8);
+    width: auto;
 
 }
 @media (min-width:35em) {
@@ -124,8 +125,6 @@ input.search-input:focus {
     border-radius: 7px;
     line-height: 1.6em;
     display: none;
-    z-index: var(--z-dropdown-menu);
-
 }
 .keywords-container ul {
     padding-left: 1em;
